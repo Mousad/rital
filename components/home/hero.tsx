@@ -108,13 +108,13 @@ export function Hero() {
             <div className="relative aspect-[4/5] sm:aspect-[5/6] lg:aspect-[4/5] max-w-md mx-auto lg:max-w-none">
               <div className="absolute inset-0 rounded-[2rem] overflow-hidden shadow-2xl ring-1 ring-primary/10">
                 <Image
-                  src="/images/bsnk.JPG"
-                  alt="طلاب سعداء يحتفلون بتخرجهم"
-                  fill
-                  priority
-                  sizes="(min-width: 1024px) 560px, 100vw"
-                  className="object-cover"
-                />
+  src="/images/bsnk.jpg"
+  alt="طلاب سعداء يحتفلون بتخرجهم"
+  fill
+  priority
+  sizes="(min-width: 1024px) 560px, 100vw"
+  className="object-cover"
+/>
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/40 via-transparent to-transparent" />
               </div>
 
