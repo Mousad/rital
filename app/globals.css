@@ -1,0 +1,187 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Neutrals */
+  --background: #fbfaf6;
+  --foreground: #0f1f18;
+
+  --card: #ffffff;
+  --card-foreground: #0f1f18;
+
+  --popover: #ffffff;
+  --popover-foreground: #0f1f18;
+
+  /* Brand */
+  --primary: #1b4332;
+  --primary-foreground: #ffffff;
+
+  --secondary: #e9f3ec;
+  --secondary-foreground: #1b4332;
+
+  --muted: #f3f1ea;
+  --muted-foreground: #5a6b62;
+
+  --accent: #d4af37;
+  --accent-foreground: #0f1f18;
+
+  --destructive: #c0392b;
+  --destructive-foreground: #ffffff;
+
+  --border: #e7e3d6;
+  --input: #e7e3d6;
+  --ring: #52b788;
+
+  /* Additional brand tokens */
+  --brand-green: #1b4332;
+  --brand-green-light: #52b788;
+  --brand-gold: #d4af37;
+
+  --radius: 0.875rem;
+
+  --sidebar: #ffffff;
+  --sidebar-foreground: #0f1f18;
+  --sidebar-primary: #1b4332;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #e9f3ec;
+  --sidebar-accent-foreground: #1b4332;
+  --sidebar-border: #e7e3d6;
+  --sidebar-ring: #52b788;
+}
+
+.dark {
+  --background: #0b1511;
+  --foreground: #f3f1ea;
+  --card: #112019;
+  --card-foreground: #f3f1ea;
+  --popover: #112019;
+  --popover-foreground: #f3f1ea;
+  --primary: #52b788;
+  --primary-foreground: #0b1511;
+  --secondary: #16291f;
+  --secondary-foreground: #e9f3ec;
+  --muted: #16291f;
+  --muted-foreground: #9cb1a5;
+  --accent: #d4af37;
+  --accent-foreground: #0b1511;
+  --destructive: #c0392b;
+  --destructive-foreground: #ffffff;
+  --border: #1f3a2c;
+  --input: #1f3a2c;
+  --ring: #52b788;
+}
+
+@theme inline {
+  --font-sans: var(--font-arabic), 'Cairo', 'Tajawal', ui-sans-serif, system-ui;
+  --font-display: var(--font-arabic-display), var(--font-arabic), 'Cairo', ui-sans-serif, system-ui;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-brand-green: var(--brand-green);
+  --color-brand-green-light: var(--brand-green-light);
+  --color-brand-gold: var(--brand-gold);
+
+  --radius-sm: calc(var(--radius) - 6px);
+  --radius-md: calc(var(--radius) - 4px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 6px);
+  --radius-2xl: calc(var(--radius) + 12px);
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: 'ss01', 'cv02', 'cv11';
+  }
+}
+
+/* RTL utility fixes */
+[dir='rtl'] .lucide {
+  /* keep icons visually consistent in RTL */
+}
+
+/* Soft pattern background utility */
+.bg-pattern-dots {
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    rgba(27, 67, 50, 0.08) 1px,
+    transparent 0
+  );
+  background-size: 24px 24px;
+}
+
+.bg-pattern-grid {
+  background-image: linear-gradient(
+      rgba(27, 67, 50, 0.06) 1px,
+      transparent 1px
+    ),
+    linear-gradient(90deg, rgba(27, 67, 50, 0.06) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+/* Text balance helpers already supported by Tailwind */
+
+/* Subtle reveal animation */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.7s ease-out both;
+}
+
+@keyframes marquee-rtl {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(50%);
+  }
+}
+
+.animate-marquee-rtl {
+  animation: marquee-rtl 40s linear infinite;
+}
