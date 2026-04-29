@@ -10,13 +10,13 @@ import { MapSection } from "@/components/home/map-section"
 export default function HomePage() {
   return (
     <>
-      {/* <Hero /> */}
-      {/* <Services /> */}
-      {/* <Universities /> */}
-        {/* <Destinations /> */}
+      <Hero />
+      <Services />
+      <Universities />
+        <Destinations />
 
-      {/* <AboutPreview /> */}
-      {/* <ScholarshipsCTA /> */}
+      <AboutPreview />
+      <ScholarshipsCTA />
       <Reviews />
       <MapSection />
     </>
