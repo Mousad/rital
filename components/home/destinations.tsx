@@ -9,7 +9,7 @@ const DESTINATIONS = [
     title: "الدراسة في الصين",
     description:
       "فرص استثنائية في أعرق الجامعات الصينية، بتكاليف معقولة ومنح دراسية متنوعة لجميع التخصصات.",
-    image: "/images/china.jpg",
+    image: "https://i.pinimg.com/236x/8c/11/45/8c11459130e2fb9e0529afdf41b61fda.jpg",
     tag: "الصين",
     stats: [
       { v: "30+", l: "جامعة" },
@@ -32,7 +32,7 @@ const DESTINATIONS = [
 
 export function Destinations() {
   return (
-    <section className="py-20 md:py-24 bg-secondary/40">
+    <section className="py-8 md:py-24 bg-secondary/40">
       <div className="mx-auto max-w-7xl px-4 md:px-6">
         <SectionHeading
           eyebrow="وجهات الدراسة"
@@ -40,14 +40,14 @@ export function Destinations() {
           description="اختر وجهتك الدراسية واستفد من خبرتنا الكاملة في التقديم والقبول."
         />
 
-        <div className="mt-12 grid gap-6 md:grid-cols-2">
+        <div className="mt-8 grid gap-3  md:grid-cols-2">
           {DESTINATIONS.map((dest) => (
             <Link
               key={dest.href}
               href={dest.href}
-              className="group relative overflow-hidden rounded-3xl bg-card border border-border hover:shadow-xl transition-all duration-500"
+              className="group relative overflow-hidden rounded-[10px] bg-card border border-border hover:shadow-xl transition-all duration-500"
             >
-              <div className="relative aspect-[5/4]">
+              <div className="relative aspect-[4/3]">
                 <Image
                   src={dest.image || "/placeholder.svg"}
                   alt={dest.title}
@@ -55,10 +55,10 @@ export function Destinations() {
                   sizes="(min-width: 768px) 50vw, 100vw"
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/50 to-transparent" />
 
                 <span className="absolute top-5 right-5 inline-flex items-center gap-1.5 rounded-full bg-background/95 backdrop-blur-sm text-primary px-3 py-1.5 text-xs font-semibold shadow-sm">
-                  <MapPin className="h-3.5 w-3.5 text-accent" />
+                  <MapPin className="h-3.5 w-3.5 text-[#1b4332]" />
                   {dest.tag}
                 </span>
 
@@ -74,7 +74,7 @@ export function Destinations() {
                     <div className="flex items-center gap-5">
                       {dest.stats.map((s) => (
                         <div key={s.l}>
-                          <div className="text-lg font-bold text-accent">
+                          <div className="text-lg font-bold text-[#fbfaf6]">
                             {s.v}
                           </div>
                           <div className="text-[11px] text-primary-foreground/70">
@@ -84,7 +84,7 @@ export function Destinations() {
                       ))}
                     </div>
 
-                    <span className="inline-flex items-center gap-1.5 rounded-full bg-accent text-accent-foreground hover:bg-accent/90 transition-colors px-4 h-9 text-xs font-semibold">
+                    <span className="inline-flex items-center gap-1.5 rounded-full bg-[#1b4332] text-[#fbfaf6] hover:bg-accent/90 transition-colors px-4 h-9 text-xs font-semibold">
                       اكتشف المزيد
                       <ArrowLeft className="h-4 w-4" />
                     </span>

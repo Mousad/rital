@@ -12,40 +12,50 @@ const FEATURES = [
 
 export function AboutPreview() {
   return (
-    <section className="py-20 md:py-24">
+    <section className="py-9 md:py-24">
       <div className="mx-auto max-w-7xl px-4 md:px-6">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
           <div className="relative">
-            <div className="relative aspect-[4/5] max-w-md mx-auto lg:max-w-none rounded-[2rem] overflow-hidden shadow-2xl ring-1 ring-primary/10">
-              <Image
-                src="/images/about.jpg"
-                alt="استشارة تعليمية احترافية"
-                fill
-                sizes="(min-width: 1024px) 560px, 100vw"
-                className="object-cover"
-              />
-            </div>
-            <div className="absolute -bottom-6 -left-6 bg-primary text-primary-foreground rounded-2xl p-5 shadow-xl hidden sm:block">
-              <div className="text-3xl font-bold text-accent">98%</div>
-              <p className="text-xs text-primary-foreground/80 mt-1 max-w-[160px] leading-relaxed">
-                معدل رضا الطلاب عن خدماتنا
-              </p>
-            </div>
-          </div>
-
-          <div>
             <span className="inline-flex items-center gap-2 rounded-full bg-secondary text-primary px-3.5 py-1 text-xs font-semibold">
               <span className="h-1.5 w-1.5 rounded-full bg-accent" />
               من نحن
             </span>
-            <h2 className="mt-4 text-3xl md:text-4xl font-bold text-foreground leading-tight text-balance">
-              نحن ريتال، شريكك الأمين في بناء مستقبل تعليمي مميز
-            </h2>
-            <p className="mt-4 text-muted-foreground leading-relaxed text-pretty">
-              تأسست ريتال لتكون الجسر الذي يصل الطلاب الطموحين بأفضل الفرص
-              التعليمية حول العالم. نؤمن بأن كل طالب يستحق فرصة لتحقيق أحلامه،
-              ونعمل بكل جدية لتحويل هذه الأحلام إلى واقع ملموس.
-            </p>
+           <div className="relative aspect-[4/3] max-w-md mx-auto lg:max-w-none rounded-[2rem] overflow-hidden shadow-2xl ring-1 ring-primary/10">
+
+  {/* 🖼️ Image */}
+  <Image
+    src="https://rital-sd.com/lovable-uploads/a5c80a15-6935-45ec-8852-551e961cc11f.png"
+    alt="استشارة تعليمية احترافية"
+    fill
+    sizes="(min-width: 1024px) 460px, 100vw"
+    className="object-cover"
+  />
+
+  {/* 🌑 Dark Shadow Overlay */}
+  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/10" />
+
+  {/* ✨ Soft glow shadow effect */}
+  <div className="absolute inset-0 shadow-[inset_0_-80px_120px_rgba(0,0,0,0.6)]" />
+
+  {/* 📝 Text */}
+  <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+    <h2 className="text-lg md:text-xl font-bold leading-snug drop-shadow-md">
+      نحن ريتال، شريكك الأمين في بناء مستقبل تعليمي مميز
+    </h2>
+
+    <p className="mt-2 text-sm text-white/80 leading-relaxed drop-shadow-sm">
+      تأسست ريتال لتكون الجسر الذي يصل الطلاب الطموحين بأفضل الفرص التعليمية حول العالم.
+      نؤمن بأن كل طالب يستحق فرصة لتحقيق أحلامه.
+    </p>
+  </div>
+
+</div>
+            
+          </div>
+
+          <div>
+            
+           
 
             <ul className="mt-6 space-y-3">
               {FEATURES.map((feature) => (

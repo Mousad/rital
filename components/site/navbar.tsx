@@ -48,18 +48,18 @@ export function Navbar() {
     >
       <div className="mx-auto max-w-7xl px-4 md:px-6">
         <div className="flex h-16 md:h-20 items-center justify-between gap-4">
-          
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group shrink-0">
-            <span className="flex h-10 w-10 items-center justify-center rounded-xl text-primary shadow-sm transition-transform group-hover:scale-105">
-              <GraduationCap className="h-5 w-5" />
-            </span>
+            
             <span className="flex flex-col leading-tight">
               <span className="font-bold text-primary text-lg md:text-xl">
                 Rital
               </span>
+             
             </span>
           </Link>
+
+          
 
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-1">
@@ -109,20 +109,19 @@ export function Navbar() {
                   <Menu className="h-5 w-5" />
                 </Button>
               </SheetTrigger>
-
               <SheetContent
                 side="right"
-                className="w-[86%] max-w-sm p-0 flex flex-col [&>button]:left-4 [&>button]:right-auto"
+                className="w-[86%] max-w-sm p-0 flex flex-col"
               >
                 <SheetHeader className="p-5 border-b border-border text-right">
                   <SheetTitle className="flex items-center gap-2">
-                    <span className="flex h-9 w-9 items-center justify-center rounded-xl text-primary">
+                    <span className="flex h-9 w-9 items-center justify-center rounded-xl  text-primary">
                       <GraduationCap className="h-4 w-4" />
                     </span>
                     <span className="text-primary font-bold">Rital</span>
                   </SheetTitle>
                 </SheetHeader>
-
+                
                 <nav className="flex-1 overflow-y-auto px-4 js py-4">
                   <ul className="flex flex-col gap-1">
                     {NAV_LINKS.map((link) => {
@@ -149,7 +148,6 @@ export function Navbar() {
                     })}
                   </ul>
                 </nav>
-
                 <div className="p-4 border-t border-border">
                   <Button
                     asChild

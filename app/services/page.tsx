@@ -85,8 +85,8 @@ export default function ServicesPage() {
         description="نوفر لك كل ما تحتاجه في رحلتك التعليمية، من استخراج الشهادات إلى الوصول للجامعة وما بعدها."
       />
 
-      <section className="py-16 md:py-20">
-        <div className="mx-auto max-w-7xl px-4 md:px-6">
+      <section className="py-10 md:py-20">
+        <div className="mx-auto max-w-3xl px-4 md:px-6">
           <SectionHeading
             eyebrow="ما نقدمه"
             title="اختر الخدمة التي تحتاجها"

@@ -5,7 +5,7 @@ const INFO = [
   {
     icon: MapPin,
     title: "عنواننا",
-    value: "دمشق - سوريا، شارع بغداد",
+    value: "القاهرة، مصر - محي الدين ابو العز/ الدقي",
   },
   {
     icon: Phone,
@@ -16,7 +16,7 @@ const INFO = [
   {
     icon: Mail,
     title: "البريد الإلكتروني",
-    value: "info@rital-edu.com",
+    value: "Ritaloffice22@gmail.com",
     dir: "ltr" as const,
   },
   {

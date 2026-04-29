@@ -17,12 +17,7 @@ const QUICK_LINKS = [
   { href: "/contact", label: "تواصل معنا" },
 ]
 
-const SERVICE_LINKS = [
-  { href: "/certificates", label: "استخراج الشهادات" },
-  { href: "/study-china", label: "الدراسة في الصين" },
-  { href: "/study-egypt", label: "الدراسة في مصر" },
-  { href: "/scholarships", label: "المنح الدراسية" },
-]
+
 
 export function Footer() {
   return (
@@ -37,9 +32,7 @@ export function Footer() {
               </span>
               <span className="flex flex-col leading-tight">
                 <span className="font-bold text-lg">Rital</span>
-                <span className="text-[11px] text-primary-foreground/70">
-                  للخدمات التعليمية
-                </span>
+               
               </span>
             </Link>
             <p className="mt-4 text-sm text-primary-foreground/75 leading-relaxed text-pretty">
@@ -83,23 +76,7 @@ export function Footer() {
           </div>
 
           {/* Services */}
-          <div>
-            <h3 className="text-sm font-semibold text-accent uppercase tracking-wide">
-              خدماتنا
-            </h3>
-            <ul className="mt-4 space-y-2.5 text-sm">
-              {SERVICE_LINKS.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-primary-foreground/80 hover:text-accent transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          
 
           {/* Contact */}
           <div>
@@ -125,7 +102,7 @@ export function Footer() {
 
         <div className="mt-12 pt-6 border-t border-primary-foreground/15 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-primary-foreground/60">
           <p>© {new Date().getFullYear()} ريتال للخدمات التعليمية. جميع الحقوق محفوظة.</p>
-          <p>مصمم بعناية لمستقبلك التعليمي</p>
+          <a href="https://soob-portfolio.vercel.app/">تصميم soube</a>
         </div>
       </div>
     </footer>
