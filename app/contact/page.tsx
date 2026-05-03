@@ -1,6 +1,9 @@
 import { PageHero } from "@/components/site/page-hero"
 import { ContactForm } from "@/components/site/contact-form"
 import { MapPin, Phone, Mail, Clock, MessageCircle } from "lucide-react"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faWhatsapp } from "@fortawesome/free-brands-svg-icons"
+
 
 type SearchParamsType = Promise<{ service?: string }>
 
@@ -45,13 +48,34 @@ export default async function ContactPage({
 
   return (
     <>
-      <PageHero
-        eyebrow="تواصل معنا"
-        title="نحن هنا لمساعدتك"
-        description="املأ النموذج التالي وسيتواصل معك أحد مستشارينا خلال 24 ساعة."
-      />
+      <div className="relative h-[220px] md:h-[420px] overflow-hidden">
 
-      <section className="py-16 md:py-20">
+  {/* الصورة */}
+  <img
+    src="https://i.pinimg.com/736x/ed/d6/52/edd65281a0804a8c936c22953e7c3beb.jpg"
+    alt="Contact"
+    className="absolute inset-0 w-full h-full object-cover"
+  />
+
+  {/* Overlay */}
+  <div className="absolute inset-0 bg-black/50" />
+
+  {/* المحتوى */}
+  <div className="relative z-10 flex items-center justify-center h-full text-center px-4">
+    <div className="max-w-2xl text-white">
+      <p className="text-sm mb-3 opacity-80">تواصل معنا</p>
+      <h1 className="text-3xl md:text-5xl font-bold">
+        نحن هنا لمساعدتك
+      </h1>
+      <p className="mt-4 text-lg opacity-90">
+        املأ النموذج التالي وسيتواصل معك أحد مستشارينا خلال 24 ساعة.
+      </p>
+    </div>
+  </div>
+
+</div>
+
+      <section className="py-8 md:py-20">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           <div className="grid gap-8 lg:grid-cols-5">
             {/* Form */}
@@ -117,6 +141,13 @@ export default async function ContactPage({
           </div>
         </div>
       </section>
+<a
+  href="https://wa.me/201001234567"
+  target="_blank"
+  className="fixed bottom-6 right-6 z-100 flex items-center justify-center h-12 w-12 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg transition"
+>
+  <FontAwesomeIcon icon={faWhatsapp} className="text-2xl" />
+</a>
     </>
   )
 }

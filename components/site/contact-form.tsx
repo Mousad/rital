@@ -37,23 +37,45 @@ export function ContactForm({
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
     setLoading(true)
+
     const formData = new FormData(e.currentTarget)
     const payload = Object.fromEntries(formData.entries())
-    console.log("[v0] Contact form submitted:", payload)
 
-    // Simulate async submission
-    await new Promise((r) => setTimeout(r, 900))
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...payload,
+          service,
+        }),
+      })
+
+      const data = await res.json()
+
+      if (data.success) {
+        toast.success("تم إرسال طلبك بنجاح!", {
+          description: "سنتواصل معك خلال 24 ساعة.",
+        })
+
+        e.currentTarget.reset()
+        setService(defaultService || undefined)
+      } else {
+        toast.error("حدث خطأ أثناء الإرسال ❌")
+      }
+    } catch (error) {
+      toast.error("تعذر الاتصال بالسيرفر ❌")
+    }
 
     setLoading(false)
-    toast.success("تم إرسال طلبك بنجاح!", {
-      description: "سنتواصل معك خلال 24 ساعة.",
-    })
-    e.currentTarget.reset()
-    setService(defaultService)
   }
 
   return (
     <form onSubmit={handleSubmit} className="grid gap-4">
+
+      {/* الاسم + الهاتف */}
       <div className={compact ? "grid gap-4" : "grid gap-4 sm:grid-cols-2"}>
         <div className="grid gap-2">
           <Label htmlFor="name" className="text-sm font-medium">
@@ -67,6 +89,7 @@ export function ContactForm({
             className="h-11 rounded-xl bg-background"
           />
         </div>
+
         <div className="grid gap-2">
           <Label htmlFor="phone" className="text-sm font-medium">
             رقم الهاتف
@@ -83,6 +106,7 @@ export function ContactForm({
         </div>
       </div>
 
+      {/* الإيميل */}
       {!compact && (
         <div className="grid gap-2">
           <Label htmlFor="email" className="text-sm font-medium">
@@ -99,19 +123,22 @@ export function ContactForm({
         </div>
       )}
 
+       {/* الخدمة */}
       <div className="grid gap-2">
         <Label htmlFor="service" className="text-sm font-medium">
           الخدمة المطلوبة
         </Label>
+
         <Select
           name="service"
           value={service}
           onValueChange={setService}
           required
         >
-          <SelectTrigger id="service" className="h-11 rounded-xl bg-background">
+          <SelectTrigger className="h-11 rounded-xl bg-background">
             <SelectValue placeholder="اختر الخدمة" />
           </SelectTrigger>
+
           <SelectContent>
             {SERVICES.map((s) => (
               <SelectItem key={s.value} value={s.value}>
@@ -122,11 +149,13 @@ export function ContactForm({
         </Select>
       </div>
 
+      {/* الرسالة */}
       {!compact && (
         <div className="grid gap-2">
           <Label htmlFor="message" className="text-sm font-medium">
             رسالتك
           </Label>
+
           <Textarea
             id="message"
             name="message"
@@ -137,6 +166,7 @@ export function ContactForm({
         </div>
       )}
 
+      {/* زر الإرسال */}
       <Button
         type="submit"
         disabled={loading}
@@ -155,6 +185,7 @@ export function ContactForm({
           </>
         )}
       </Button>
+
       <p className="text-xs text-muted-foreground text-center">
         بإرسالك هذا النموذج فإنك توافق على أن نتواصل معك بخصوص استفسارك.
       </p>

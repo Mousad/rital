@@ -101,7 +101,7 @@ export default function StudyEgyptPage() {
       </PageHero>
 
       {/* Hero image */}
-      <section className="py-14 md:py-20">
+      <section className="py-10 md:py-20">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           <div className="relative aspect-[16/7] rounded-3xl overflow-hidden shadow-xl ring-1 ring-primary/10">
             <Image
@@ -117,7 +117,7 @@ export default function StudyEgyptPage() {
       </section>
 
       {/* Why */}
-      <section className="pb-16 md:pb-20">
+      <section className="pb-10 md:pb-20">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           <SectionHeading
             eyebrow="لماذا مصر؟"
@@ -149,7 +149,7 @@ export default function StudyEgyptPage() {
       </section>
 
       {/* Universities */}
-      <section id="universities" className="py-16 md:py-20 bg-secondary/40">
+      <section id="universities" className="py-10 md:py-20 bg-secondary/40">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           <SectionHeading
             eyebrow="الجامعات الشريكة"
@@ -180,7 +180,7 @@ export default function StudyEgyptPage() {
       </section>
 
       {/* Majors */}
-      <section className="py-16 md:py-20">
+      <section className="py-10 md:py-20">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           <SectionHeading
             eyebrow="التخصصات"
@@ -209,7 +209,7 @@ export default function StudyEgyptPage() {
       </section>
 
       {/* Steps */}
-      <section className="py-16 md:py-20 bg-secondary/40">
+      <section className="py-10 md:py-20 bg-secondary/40">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           <SectionHeading
             eyebrow="خطواتك معنا"
@@ -223,7 +223,7 @@ export default function StudyEgyptPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 md:py-24">
+      <section className="py-10 md:py-24">
         <div className="mx-auto max-w-5xl px-4 md:px-6">
           <div className="relative overflow-hidden rounded-3xl bg-primary text-primary-foreground p-8 md:p-12 text-center">
             <div aria-hidden className="absolute inset-0 bg-pattern-grid opacity-[0.12]" />

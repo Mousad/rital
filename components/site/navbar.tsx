@@ -16,12 +16,12 @@ import {
 
 const NAV_LINKS = [
   { href: "/", label: "الرئيسية" },
-  { href: "/about", label: "عنّا" },
   { href: "/services", label: "الخدمات" },
+  { href: "/scholarships", label: "منح" },
   { href: "/certificates", label: "استخراج الشهادات" },
   { href: "/study-china", label: "الدراسة في الصين" },
   { href: "/study-egypt", label: "الدراسة في مصر" },
-  { href: "/scholarships", label: "المنح" },
+  { href: "/about", label: "عنّا" },
   { href: "/contact", label: "تواصل معنا" },
 ]
 
@@ -48,18 +48,15 @@ export function Navbar() {
     >
       <div className="mx-auto max-w-7xl px-4 md:px-6">
         <div className="flex h-16 md:h-20 items-center justify-between gap-4">
+          
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group shrink-0">
-            
             <span className="flex flex-col leading-tight">
               <span className="font-bold text-primary text-lg md:text-xl">
                 Rital
               </span>
-             
             </span>
           </Link>
-
-          
 
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-1">
@@ -90,6 +87,8 @@ export function Navbar() {
 
           {/* CTA + Mobile menu */}
           <div className="flex items-center gap-2">
+            
+            {/* زرار احجز استشارة */}
             <Button
               asChild
               size="sm"
@@ -98,7 +97,9 @@ export function Navbar() {
               <Link href="/contact">احجز استشارة</Link>
             </Button>
 
+            {/* المينيو */}
             <Sheet open={open} onOpenChange={setOpen}>
+              
               <SheetTrigger asChild>
                 <Button
                   variant="ghost"
@@ -109,26 +110,52 @@ export function Navbar() {
                   <Menu className="h-5 w-5" />
                 </Button>
               </SheetTrigger>
+
               <SheetContent
                 side="right"
                 className="w-[86%] max-w-sm p-0 flex flex-col"
               >
-                <SheetHeader className="p-5 border-b border-border text-right">
-                  <SheetTitle className="flex items-center gap-2">
-                    <span className="flex h-9 w-9 items-center justify-center rounded-xl  text-primary">
-                      <GraduationCap className="h-4 w-4" />
-                    </span>
-                    <span className="text-primary font-bold">Rital</span>
+                
+                {/* HEADER */}
+                <SheetHeader className="p-5 border-b border-border">
+                  <SheetTitle className="w-full">
+                    <div className="flex items-center justify-between">
+
+                      {/* اللوجو */}
+                      <Link
+                        href="/"
+                        onClick={() => setOpen(false)}
+                        className="flex items-center gap-2"
+                      >
+                        <img
+                          src="/lovable-uploads/a5c80a15-6935-45ec-8852-551e961cc11f.png"
+                          alt="Rital Logo"
+                          className="h-8 w-auto"
+                        />
+                      </Link>
+
+                      {/* زر الإغلاق */}
+                      <button
+                        onClick={() => setOpen(false)}
+                        className="rounded-full p-2 hover:bg-muted transition"
+                        aria-label="إغلاق القائمة"
+                      >
+                        <X className="h-5 w-5" />
+                      </button>
+
+                    </div>
                   </SheetTitle>
                 </SheetHeader>
-                
-                <nav className="flex-1 overflow-y-auto px-4 js py-4">
+
+                {/* الروابط */}
+                <nav className="flex-1 overflow-y-auto px-4 py-4">
                   <ul className="flex flex-col gap-1">
                     {NAV_LINKS.map((link) => {
                       const active =
                         link.href === "/"
                           ? pathname === "/"
                           : pathname.startsWith(link.href)
+
                       return (
                         <li key={link.href}>
                           <Link
@@ -138,7 +165,7 @@ export function Navbar() {
                               "block rounded-xl px-4 py-3 text-[15px] font-medium transition-colors",
                               active
                                 ? "bg-secondary text-primary"
-                                : "text-foreground/80 hover:bg-muted",
+                                : "text-foreground/80 hover:bg-muted"
                             )}
                           >
                             {link.label}
@@ -148,6 +175,8 @@ export function Navbar() {
                     })}
                   </ul>
                 </nav>
+
+                {/* زرار تحت */}
                 <div className="p-4 border-t border-border">
                   <Button
                     asChild
@@ -158,8 +187,10 @@ export function Navbar() {
                     </Link>
                   </Button>
                 </div>
+
               </SheetContent>
             </Sheet>
+
           </div>
         </div>
       </div>

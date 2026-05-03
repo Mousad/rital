@@ -1,8 +1,8 @@
-import Link from "next/link"
-import Image from "next/image"
-import { PageHero } from "@/components/site/page-hero"
-import { SectionHeading } from "@/components/site/section-heading"
-import { Button } from "@/components/ui/button"
+import Link from "next/link";
+import Image from "next/image";
+import { PageHero } from "@/components/site/page-hero";
+import { SectionHeading } from "@/components/site/section-heading";
+import { Button } from "@/components/ui/button";
 import {
   ArrowLeft,
   Award,
@@ -14,7 +14,7 @@ import {
   Languages,
   BadgeCheck,
   Check,
-} from "lucide-react"
+} from "lucide-react";
 
 const TYPES = [
   {
@@ -41,7 +41,7 @@ const TYPES = [
     features: ["رسوم مخفضة", "خصومات سكن", "إعفاءات جزئية"],
     tone: "primary",
   },
-]
+];
 
 const REQUIREMENTS = [
   { icon: FileText, label: "نسخة من جواز السفر" },
@@ -50,47 +50,66 @@ const REQUIREMENTS = [
   { icon: Languages, label: "شهادة لغة (إن وجدت)" },
   { icon: BadgeCheck, label: "السجل الأكاديمي" },
   { icon: FileText, label: "رسالة تحفيزية" },
-]
+];
 
 export default function ScholarshipsPage() {
   return (
     <>
-      <PageHero
-        eyebrow="المنح الدراسية"
-        title="حوّل حلمك إلى منحة دراسية"
-        description="نرشدك إلى أفضل المنح الدراسية المتاحة ونتابع معك كل خطوة من التقديم حتى القبول."
-      >
-        <Button
-          asChild
-          size="lg"
-          className="rounded-full bg-accent text-accent-foreground hover:bg-accent/90"
-        >
-          <Link href="/contact?service=scholarships">
-            ابدأ التقديم للمنح
-            <ArrowLeft className="h-4 w-4" />
-          </Link>
-        </Button>
-      </PageHero>
+      {/* HERO */}
 
-      {/* Types */}
-      <section className="py-16 md:py-20">
+      <div className="relative py-8 overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img
+            src="https://i.pinimg.com/736x/6b/ea/c3/6beac3914fd768904cb963fed155aa5f.jpg"
+            alt="education"
+            className="w-full h-full object-cover"
+          />
+        </div>
+
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/60"></div>
+
+        {/* Content */}
+        <div className="relative z-10 text-center text-white px-4">
+          <p className="text-sm md:text-base mb-3 tracking-wider text-gray-200">
+            المنح الدراسية
+          </p>
+
+          <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+            حوّل حلمك إلى منحة دراسية
+          </h1>
+
+          <p className="text-sm md:text-base mb-3 tracking-wider text-gray-200">
+            نرشدك إلى أفضل المنح الدراسية المتاحة ونتابع معك كل خطوة من التقديم
+            حتى القبول.
+          </p>
+        </div>
+      </div>
+
+
+
+      {/* TYPES */}
+      <section className="py-8 md:py-20">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           <SectionHeading
             eyebrow="أنواع المنح"
             title="منح تناسب جميع الطموحات"
             description="اختر من بين باقة متنوعة من المنح الدراسية في أفضل الدول."
           />
+
           <div className="mt-12 grid gap-5 md:grid-cols-3">
             {TYPES.map((t, idx) => {
-              const Icon = t.icon
-              const highlight = idx === 0
+              const Icon = t.icon;
+              const highlight = idx === 0;
+
               return (
                 <div
                   key={t.title}
-                  className={`relative rounded-3xl p-6 md:p-7 border transition-all flex flex-col ${
+                  className={`relative rounded-3xl p-6 md:p-7 border flex flex-col transition-all hover:-translate-y-1 hover:shadow-xl ${
                     highlight
                       ? "bg-primary text-primary-foreground border-primary shadow-xl lg:scale-[1.02]"
-                      : "bg-card text-card-foreground border-border hover:border-primary/30 hover:shadow-lg"
+                      : "bg-card text-card-foreground border-border"
                   }`}
                 >
                   {highlight && (
@@ -98,6 +117,7 @@ export default function ScholarshipsPage() {
                       الأكثر طلباً
                     </span>
                   )}
+
                   <div
                     className={`flex h-14 w-14 items-center justify-center rounded-2xl ${
                       highlight
@@ -107,6 +127,7 @@ export default function ScholarshipsPage() {
                   >
                     <Icon className="h-6 w-6" />
                   </div>
+
                   <h3
                     className={`mt-5 text-xl font-bold ${
                       highlight ? "text-primary-foreground" : "text-foreground"
@@ -114,6 +135,7 @@ export default function ScholarshipsPage() {
                   >
                     {t.title}
                   </h3>
+
                   <p
                     className={`mt-2 text-sm leading-relaxed flex-1 ${
                       highlight
@@ -123,6 +145,7 @@ export default function ScholarshipsPage() {
                   >
                     {t.description}
                   </p>
+
                   <ul className="mt-5 space-y-2">
                     {t.features.map((f) => (
                       <li key={f} className="flex items-center gap-2 text-sm">
@@ -135,15 +158,7 @@ export default function ScholarshipsPage() {
                         >
                           <Check className="h-3 w-3" />
                         </span>
-                        <span
-                          className={
-                            highlight
-                              ? "text-primary-foreground/90"
-                              : "text-foreground/85"
-                          }
-                        >
-                          {f}
-                        </span>
+                        {f}
                       </li>
                     ))}
                   </ul>
@@ -163,55 +178,57 @@ export default function ScholarshipsPage() {
                     </Link>
                   </Button>
                 </div>
-              )
+              );
             })}
           </div>
         </div>
       </section>
 
-      {/* Requirements */}
-      <section className="py-16 md:py-20 bg-secondary/40">
+      {/* REQUIREMENTS */}
+      <section className="py-8 md:py-20 bg-secondary/40">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           <div className="grid gap-12 lg:grid-cols-2 items-center">
+            {/* IMAGE */}
             <div className="relative aspect-square max-w-md mx-auto lg:max-w-none rounded-3xl overflow-hidden shadow-xl ring-1 ring-primary/10">
               <Image
                 src="/images/scholarships.jpg"
                 alt="المستندات المطلوبة للمنح"
                 fill
                 sizes="(min-width: 1024px) 560px, 100vw"
-                className="object-cover"
+                className="object-cover hover:scale-105 transition duration-700"
               />
             </div>
 
+            {/* TEXT */}
             <div>
               <span className="inline-flex items-center gap-2 rounded-full bg-secondary text-primary px-3.5 py-1 text-xs font-semibold">
                 <span className="h-1.5 w-1.5 rounded-full bg-accent" />
                 المتطلبات
               </span>
-              <h2 className="mt-4 text-3xl md:text-4xl font-bold text-foreground leading-tight text-balance">
+
+              <h2 className="mt-4 text-3xl md:text-4xl font-bold text-foreground leading-tight">
                 مستندات التقديم الأساسية
               </h2>
+
               <p className="mt-4 text-muted-foreground leading-relaxed">
                 المتطلبات التالية هي الأكثر شيوعاً للتقديم على المنح، وقد تختلف
-                حسب الجامعة والتخصص. نحن نرشدك لكل مستند بدقة.
+                حسب الجامعة والتخصص.
               </p>
 
               <div className="mt-8 grid sm:grid-cols-2 gap-3">
                 {REQUIREMENTS.map((r) => {
-                  const Icon = r.icon
+                  const Icon = r.icon;
                   return (
                     <div
                       key={r.label}
-                      className="bg-card border border-border rounded-xl p-4 flex items-center gap-3"
+                      className="bg-card border border-border rounded-xl p-4 flex items-center gap-3 hover:shadow-md transition"
                     >
-                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary text-primary shrink-0">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary text-primary">
                         <Icon className="h-4 w-4" />
                       </div>
-                      <span className="text-sm font-medium text-foreground">
-                        {r.label}
-                      </span>
+                      <span className="text-sm font-medium">{r.label}</span>
                     </div>
-                  )
+                  );
                 })}
               </div>
             </div>
@@ -220,32 +237,52 @@ export default function ScholarshipsPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 md:py-24">
-        <div className="mx-auto max-w-5xl px-4 md:px-6">
-          <div className="relative overflow-hidden rounded-3xl bg-primary text-primary-foreground p-8 md:p-12 text-center">
-            <div aria-hidden className="absolute inset-0 bg-pattern-grid opacity-[0.12]" />
-            <div className="relative">
-              <Award className="h-10 w-10 text-accent mx-auto" />
-              <h3 className="mt-4 text-2xl md:text-3xl font-bold text-balance">
-                منحتك على بعد خطوة واحدة
-              </h3>
-              <p className="mt-3 text-primary-foreground/80 max-w-xl mx-auto">
-                دعنا نساعدك في الحصول على منحتك الدراسية. تواصل معنا اليوم.
-              </p>
-              <Button
-                asChild
-                size="lg"
-                className="mt-6 rounded-full bg-accent text-accent-foreground hover:bg-accent/90"
-              >
-                <Link href="/contact?service=scholarships">
-                  تقديم طلب منحة
-                  <ArrowLeft className="h-4 w-4" />
-                </Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+     <section className="py-8 md:py-24">
+  <div className="mx-auto max-w-5xl px-4 md:px-6">
+
+    <div className="relative overflow-hidden rounded-3xl text-white text-center p-8 md:p-12">
+
+      {/* 🖼️ Background Image */}
+      <div className="absolute inset-0">
+        <img
+          src="https://i.pinimg.com/736x/77/13/20/77132011e0fe9a7dd2a689d462a4ef05.jpg"
+          alt="scholarship"
+          className="w-full h-full object-cover"
+        />
+      </div>
+
+      {/* 🌑 Overlay */}
+      <div className="absolute inset-0 bg-black/60" />
+
+      {/* Content */}
+      <div className="relative z-10">
+
+       
+
+        <h3 className="mt-4 text-2xl md:text-3xl font-bold">
+          منحتك على بعد خطوة واحدة
+        </h3>
+
+        <p className="mt-3 text-gray-200 max-w-xl mx-auto">
+          دعنا نساعدك في الحصول على منحتك الدراسية.
+        </p>
+
+        <Button
+          asChild
+          size="lg"
+          className="mt-6 rounded-full bg-accent text-accent-foreground hover:bg-accent/90 transition"
+        >
+          <Link href="/contact?service=scholarships">
+            تقديم طلب منحة
+            <ArrowLeft className="h-4 w-4" />
+          </Link>
+        </Button>
+
+      </div>
+
+    </div>
+  </div>
+</section>
     </>
-  )
+  );
 }

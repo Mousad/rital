@@ -33,19 +33,19 @@ const REVIEWS: Review[] = [
   {
     name: "عمر خليل",
     role: "طالب ماجستير - جامعة بكين",
-    video: "https://www.w3schools.com/html/mov_bbb.mp4",
+    video: "https://player.vimeo.com/video/1091953434?h=0&autopause=0&player_id=0&app_id=58479",
     gradient: "from-brand-green-light to-brand-green",
   },
   {
     name: "ليلى الشامي",
     role: "طالبة صيدلة - عين شمس",
-    video: "https://www.w3schools.com/html/movie.mp4",
+    video: "https://player.vimeo.com/video/1091953434?h=0&autopause=0&player_id=0&app_id=58479",
     gradient: "from-brand-gold to-accent",
   },
   {
     name: "محمد يوسف",
     role: "طالب علوم حاسوب - فودان",
-    video: "https://www.w3schools.com/html/mov_bbb.mp4",
+    video: "https://player.vimeo.com/video/1091953434?h=0&autopause=0&player_id=0&app_id=58479",
     gradient: "from-brand-green to-accent",
   },
 ]

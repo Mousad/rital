@@ -36,7 +36,7 @@ export default function CertificatesPage() {
         description="نوفر لك خدمة استخراج الشهادات الرسمية بأسلوب قانوني موثوق، مع متابعة كاملة حتى التسليم."
       />
 
-      <section className="py-16 md:py-20">
+      <section className="py-10 md:py-20">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           <div className="grid gap-4 md:grid-cols-3">
             {FEATURES.map((f) => {
@@ -75,14 +75,14 @@ export default function CertificatesPage() {
         id="grade-8"
         reverse
         badge="الصف الثامن"
-        title="استخراج شهادة الصف الثامن"
+        title="استخراج شهادة الثامن"
         description="نساعدك في استخراج شهادة الصف الثامن بخطوات واضحة وبدون عناء، سواءً كنت داخل البلاد أو خارجها."
         image="/images/certificate-grade8.jpg"
         steps={GRADE8_STEPS}
       />
 
       {/* CTA */}
-      <section className="py-20 md:py-24">
+      <section className="py-10 md:py-24">
         <div className="mx-auto max-w-5xl px-4 md:px-6">
           <div className="relative overflow-hidden rounded-3xl bg-primary text-primary-foreground p-8 md:p-12 text-center">
             <div aria-hidden className="absolute inset-0 bg-pattern-grid opacity-[0.12]" />
@@ -130,7 +130,7 @@ function CertificateService({
   reverse?: boolean
 }) {
   return (
-    <section id={id} className="py-16 md:py-20 bg-secondary/30 even:bg-background">
+    <section id={id} className="py-10 md:py-20 bg-secondary/30 even:bg-background">
       <div className="mx-auto max-w-7xl px-4 md:px-6">
         <div
           className={`grid gap-10 lg:gap-14 lg:grid-cols-2 items-center ${
@@ -142,7 +142,7 @@ function CertificateService({
               <span className="h-1.5 w-1.5 rounded-full bg-accent" />
               {badge}
             </span>
-            <h2 className="mt-4 text-3xl md:text-4xl font-bold text-foreground leading-tight text-balance">
+            <h2 className="mt-4 flex text-3xl md:text-4xl font-bold text-foreground items-center justify-center leading-tight text-balance">
               {title}
             </h2>
             <p className="mt-4 text-muted-foreground leading-relaxed text-pretty">

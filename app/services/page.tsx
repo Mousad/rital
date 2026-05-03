@@ -1,5 +1,4 @@
 import Link from "next/link"
-import { PageHero } from "@/components/site/page-hero"
 import { SectionHeading } from "@/components/site/section-heading"
 import { Button } from "@/components/ui/button"
 import {
@@ -79,21 +78,48 @@ const SERVICES = [
 export default function ServicesPage() {
   return (
     <>
-      <PageHero
-        eyebrow="خدماتنا"
-        title="خدمات متكاملة لمستقبلك التعليمي"
-        description="نوفر لك كل ما تحتاجه في رحلتك التعليمية، من استخراج الشهادات إلى الوصول للجامعة وما بعدها."
-      />
+      {/* HERO */}
+      <div className="relative py-14 overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img
+            src="https://i.pinimg.com/736x/6b/ea/c3/6beac3914fd768904cb963fed155aa5f.jpg"
+            alt="education"
+            className="w-full h-full object-cover"
+          />
+        </div>
 
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/60"></div>
+
+        {/* Content */}
+        <div className="relative z-10 text-center text-white px-4">
+          <p className="text-sm md:text-base mb-3 tracking-wider text-gray-200">
+            خدماتنا
+          </p>
+
+          <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+            خدمات متكاملة <br className="hidden md:block" />
+            لمستقبلك التعليمي
+          </h1>
+
+         
+        </div>
+      </div>
+
+      {/* SERVICES */}
       <section className="py-10 md:py-20">
         <div className="mx-auto max-w-3xl px-4 md:px-6">
           <SectionHeading
             eyebrow="ما نقدمه"
             title="اختر الخدمة التي تحتاجها"
-            description="كل خدمة مصممة لتمنحك أقصى قيمة وأفضل تجربة."
+            description="
+            نوفر لك كل ما تحتاجه في رحلتك التعليمية، من استخراج الشهادات إلى الوصول
+            للجامعة وما بعدها، بخبرة تمتد لسنوات وخدمات موثوقة.
+          "
           />
 
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 grid gap-5  sm:grid-cols-2 lg:grid-cols-3">
             {SERVICES.map((s) => {
               const Icon = s.icon
               return (
@@ -107,15 +133,19 @@ export default function ServicesPage() {
                       {s.tag}
                     </span>
                   )}
+
                   <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-secondary text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
                     <Icon className="h-6 w-6" />
                   </div>
+
                   <h3 className="mt-5 text-lg font-bold text-foreground group-hover:text-primary transition-colors">
                     {s.title}
                   </h3>
+
                   <p className="mt-2 text-sm text-muted-foreground leading-relaxed flex-1">
                     {s.description}
                   </p>
+
                   <span className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-primary">
                     اكتشف المزيد
                     <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1" />
@@ -128,28 +158,46 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 md:py-24 bg-secondary/40">
-        <div className="mx-auto max-w-5xl px-4 md:px-6">
-          <div className="rounded-3xl bg-card border border-border p-8 md:p-12 text-center shadow-sm">
-            <h3 className="text-2xl md:text-3xl font-bold text-foreground text-balance">
-              لست متأكداً من الخدمة المناسبة؟
-            </h3>
-            <p className="mt-3 text-muted-foreground max-w-xl mx-auto">
-              احجز استشارة مجانية مع خبرائنا وسنرشدك للخيار الأنسب لك.
-            </p>
-            <Button
-              asChild
-              size="lg"
-              className="mt-6 rounded-full bg-primary hover:bg-primary/90 text-primary-foreground"
-            >
-              <Link href="/contact">
-                احجز استشارة مجانية
-                <ArrowLeft className="h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+    <section className="relative py-20 md:py-24 overflow-hidden">
+
+  {/* Background Image */}
+  <div className="absolute inset-0">
+    <img
+      src="https://i.pinimg.com/736x/6b/ea/c3/6beac3914fd768904cb963fed155aa5f.jpg"
+      alt="students"
+      className="w-full h-full object-cover"
+    />
+  </div>
+
+  {/* Overlay */}
+  <div className="absolute inset-0 bg-black/60"></div>
+
+  {/* Content */}
+  <div className="relative z-10 mx-auto max-w-5xl px-4 md:px-6">
+    <div className="rounded-3xl bg-white/10 backdrop-blur-md border border-white/20 p-8 md:p-12 text-center shadow-lg text-white">
+      
+      <h3 className="text-2xl md:text-3xl font-bold">
+        لست متأكداً من الخدمة المناسبة؟
+      </h3>
+
+      <p className="mt-3 max-w-xl mx-auto text-gray-200">
+        احجز استشارة مجانية مع خبرائنا وسنرشدك للخيار الأنسب لك.
+      </p>
+
+      <Button
+        asChild
+        size="lg"
+        className="mt-6 rounded-full bg-white text-black hover:bg-gray-200"
+      >
+        <Link href="/contact">
+          احجز استشارة مجانية
+          <ArrowLeft className="h-4 w-4" />
+        </Link>
+      </Button>
+
+    </div>
+  </div>
+</section>
     </>
   )
 }

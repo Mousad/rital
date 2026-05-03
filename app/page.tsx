@@ -6,6 +6,8 @@ import { Destinations } from "@/components/home/destinations"
 import { ScholarshipsCTA } from "@/components/home/scholarships-cta"
 import { Reviews } from "@/components/home/reviews"
 import { MapSection } from "@/components/home/map-section"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faWhatsapp } from "@fortawesome/free-brands-svg-icons"
 
 export default function HomePage() {
   return (
@@ -13,12 +15,20 @@ export default function HomePage() {
       <Hero />
       <Services />
       <Universities />
-        <Destinations />
-
+      <Destinations />
       <AboutPreview />
       <ScholarshipsCTA />
       <Reviews />
       <MapSection />
+
+      {/* 💬 WhatsApp Floating Button */}
+      <a
+        href="https://wa.me/201001234567"
+        target="_blank"
+        className="fixed bottom-6 right-6 z-50 flex items-center justify-center h-14 w-14 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg transition hover:scale-110"
+      >
+        <FontAwesomeIcon icon={faWhatsapp} className="text-2xl" />
+      </a>
     </>
   )
 }

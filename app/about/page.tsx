@@ -46,36 +46,59 @@ const TEAM = [
   {
     name: "د. محمد العلي",
     role: "المدير التنفيذي",
-    gradient: "from-brand-green to-brand-green-light",
+    image: "https://i.pinimg.com/736x/43/d7/16/43d716925da061a194dc992feb4b34ed.jpg",
   },
   {
-    name: "أ. هدى الشامي",
+    name: "أ. عثمان الشامي",
     role: "مسؤولة الاستشارات",
-    gradient: "from-accent to-brand-gold",
+    image: "https://i.pinimg.com/736x/67/d4/73/67d473ac5acd3069d909813c79d55942.jpg",
   },
   {
-    name: "أ. سامي كريم",
+    name: "أ. هدى كريم",
     role: "منسق جامعات الصين",
-    gradient: "from-brand-green-light to-brand-green",
+    image: "https://i.pinimg.com/736x/0a/d1/93/0ad19309a59be71b028548801ac38353.jpg",
   },
   {
     name: "أ. ريم أحمد",
     role: "منسقة جامعات مصر",
-    gradient: "from-brand-gold to-accent",
+    image: "https://i.pinimg.com/736x/0c/22/90/0c2290cf168019e6cbfe5cb31187a471.jpg",
   },
 ]
 
 export default function AboutPage() {
   return (
     <>
-      <PageHero
-        eyebrow="عنّا"
-        title="نحن ريتال للخدمات التعليمية"
-        description="قصة شغف بالتعليم وإيمان بأن كل طالب يستحق فرصة لتحقيق أحلامه الأكاديمية."
-      />
+      
+
+       <div className="relative py-8 overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img
+            src="https://i.pinimg.com/736x/6b/ea/c3/6beac3914fd768904cb963fed155aa5f.jpg"
+            alt="education"
+            className="w-full h-full object-cover" 
+          />
+        </div>
+
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/60"></div>
+
+        {/* Content */}
+        <div className="relative z-10 text-center text-white px-4">
+          <p className="text-sm md:text-base mb-3 tracking-wider text-gray-200">
+            عنّا
+          </p>
+
+          <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+        نحن ريتال للخدمات التعليمية
+          </h1>
+
+          
+        </div>
+      </div>
 
       {/* Story */}
-      <section className="py-16 md:py-24">
+      <section className="py-8 md:py-24">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           <div className="grid gap-12 lg:grid-cols-2 items-center">
             <div className="relative aspect-[4/5] max-w-md mx-auto lg:max-w-none rounded-3xl overflow-hidden shadow-2xl ring-1 ring-primary/10">
@@ -115,7 +138,7 @@ export default function AboutPage() {
       </section>
 
       {/* Values */}
-      <section className="py-16 md:py-20 bg-secondary/40">
+      <section className="py-8 md:py-20 bg-secondary/40">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           <SectionHeading
             eyebrow="ما يميزنا"
@@ -123,7 +146,7 @@ export default function AboutPage() {
             description="ثلاثة مبادئ أساسية توجّه كل قرار وكل خطوة نتخذها."
           />
 
-          <div className="mt-12 grid gap-5 md:grid-cols-3">
+          <div className="mt-12 grid gap-5 grid-cols- md:grid-cols-3">
             {VALUES.map((v) => {
               const Icon = v.icon
               return (
@@ -148,7 +171,7 @@ export default function AboutPage() {
       </section>
 
       {/* Stats */}
-      <section className="py-16 md:py-20">
+      <section className="py-8 md:py-20">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           <div className="rounded-3xl bg-primary text-primary-foreground p-8 md:p-12 relative overflow-hidden">
             <div aria-hidden className="absolute inset-0 bg-pattern-grid opacity-[0.12]" />
@@ -162,7 +185,7 @@ export default function AboutPage() {
                     </div>
                     <div className="mt-3 text-3xl md:text-4xl font-bold text-accent">
                       {s.value}
-                    </div>
+                    </div> 
                     <div className="mt-1 text-sm text-primary-foreground/80">
                       {s.label}
                     </div>
@@ -174,62 +197,89 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Team */}
-      <section className="py-16 md:py-20 bg-secondary/40">
-        <div className="mx-auto max-w-7xl px-4 md:px-6">
-          <SectionHeading
-            eyebrow="فريقنا"
-            title="أشخاص يجعلون الفرق"
-            description="فريق من الخبراء المتخصصين في الإرشاد التعليمي والجامعي."
-          />
-          <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-5">
-            {TEAM.map((t) => (
-              <div
-                key={t.name}
-                className="group bg-card border border-border rounded-3xl overflow-hidden hover:shadow-lg transition-all"
-              >
-                <div
-                  className={`aspect-square bg-gradient-to-br ${t.gradient} flex items-center justify-center`}
-                >
-                  <div className="text-4xl font-bold text-primary-foreground/90">
-                    {t.name.trim().split(" ").slice(-1)[0][0]}
-                  </div>
-                </div>
-                <div className="p-5 text-center">
-                  <h4 className="font-bold text-foreground">{t.name}</h4>
-                  <p className="mt-1 text-xs text-muted-foreground">
-                    {t.role}
-                  </p>
-                </div>
-              </div>
-            ))}
+      <section className="py-8 md:py-20 bg-secondary/40">
+  <div className="mx-auto max-w-7xl px-4 md:px-6">
+    <SectionHeading
+      eyebrow="فريقنا"
+      title="أشخاص يجعلون الفرق"
+      description="فريق من الخبراء المتخصصين في الإرشاد التعليمي والجامعي."
+    />
+
+    <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-5">
+      {TEAM.map((t) => (
+        <div
+          key={t.name}
+          className="group bg-card border border-border rounded-3xl overflow-hidden hover:shadow-lg transition-all"
+        >
+          {/* الصورة */}
+          <div className="aspect-square overflow-hidden">
+            <img
+              src={t.image}
+              alt={t.name}
+              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+            />
+          </div>
+
+          {/* الاسم + الوظيفة */}
+          <div className="p-5 text-center">
+            <h4 className="font-bold text-foreground">{t.name}</h4>
+            <p className="mt-1 text-xs text-muted-foreground">
+              {t.role}
+            </p>
           </div>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
+
+    
 
       {/* CTA */}
-      <section className="py-20 md:py-24">
-        <div className="mx-auto max-w-5xl px-4 md:px-6">
-          <div className="rounded-3xl bg-card border border-border p-8 md:p-12 text-center shadow-sm">
-            <h3 className="text-2xl md:text-3xl font-bold text-foreground text-balance">
-              جاهز لبدء رحلتك معنا؟
-            </h3>
-            <p className="mt-3 text-muted-foreground max-w-xl mx-auto">
-              انضم لآلاف الطلاب الذين بدؤوا رحلتهم التعليمية مع ريتال.
-            </p>
-            <Button
-              asChild
-              size="lg"
-              className="mt-6 rounded-full bg-primary hover:bg-primary/90 text-primary-foreground"
-            >
-              <Link href="/contact">
-                احجز استشارة مجانية
-                <ArrowLeft className="h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+    
+      <section className="relative py-8 md:py-24 overflow-hidden">
+
+  {/* Background Image */}
+  <div className="absolute inset-0">
+    <img
+      src="https://i.pinimg.com/736x/6b/ea/c3/6beac3914fd768904cb963fed155aa5f.jpg"
+      alt="students"
+      className="w-full h-full object-cover"
+    />
+  </div>
+
+  {/* Overlay */}
+  <div className="absolute inset-0 bg-black/60"></div>
+
+  {/* Content */}
+  <div className="relative z-10 mx-auto max-w-5xl px-4 md:px-6">
+    <div className="rounded-3xl bg-white/10 backdrop-blur-md border border-white/20 p-8 md:p-12 text-center shadow-lg text-white">
+      
+      <h3 className="text-2xl md:text-3xl font-bold">
+        جاهز لبدء رحلتك معنا؟
+      </h3>
+
+      <p className="mt-3 max-w-xl mx-auto text-gray-200">
+    انضم لآلاف الطلاب الذين بدؤوا رحلتهم التعليمية مع ريتال.
+      </p>
+
+      <Button
+        asChild
+        size="lg"
+        className="mt-6 rounded-full bg-white text-black hover:bg-gray-200"
+      >
+        <Link href="/contact">
+          احجز استشارة مجانية
+          <ArrowLeft className="h-4 w-4" />
+        </Link>
+      </Button>
+
+    </div>
+  </div>
+</section>
+
+
+     
     </>
   )
 }
