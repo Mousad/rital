@@ -2,6 +2,8 @@
 
 import { useState } from "react"
 import { toast } from "sonner"
+import emailjs from "@emailjs/browser"
+
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -13,6 +15,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
+
 import { Loader2, Send } from "lucide-react"
 
 const SERVICES = [
@@ -38,38 +41,36 @@ export function ContactForm({
     e.preventDefault()
     setLoading(true)
 
-    const formData = new FormData(e.currentTarget)
-    const payload = Object.fromEntries(formData.entries())
-
     try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      const formData = new FormData(e.currentTarget)
+      const payload = Object.fromEntries(formData.entries())
+
+      await emailjs.send(
+        "service_6f9wr56",      // Service ID ✔️
+        "template_i16kxce",     // Template ID ✔️
+        {
+          name: payload.name,
+          email: payload.email,
+          phone: payload.phone,
+          message: payload.message,
+          service: service,
         },
-        body: JSON.stringify({
-          ...payload,
-          service,
-        }),
+       "1r417iv__IDFDFN9D"      // ⚠️ حط Public Key هنا
+      )
+
+      toast.success("تم إرسال طلبك بنجاح!", {
+        description: "سنتواصل معك خلال 24 ساعة.",
       })
 
-      const data = await res.json()
+      e.currentTarget.reset()
+      setService(defaultService || undefined)
 
-      if (data.success) {
-        toast.success("تم إرسال طلبك بنجاح!", {
-          description: "سنتواصل معك خلال 24 ساعة.",
-        })
-
-        e.currentTarget.reset()
-        setService(defaultService || undefined)
-      } else {
-        toast.error("حدث خطأ أثناء الإرسال ❌")
-      }
     } catch (error) {
-      toast.error("تعذر الاتصال بالسيرفر ❌")
+      console.log(error)
+      toast.error("فشل إرسال الرسالة ❌")
+    } finally {
+      setLoading(false)
     }
-
-    setLoading(false)
   }
 
   return (
@@ -78,64 +79,30 @@ export function ContactForm({
       {/* الاسم + الهاتف */}
       <div className={compact ? "grid gap-4" : "grid gap-4 sm:grid-cols-2"}>
         <div className="grid gap-2">
-          <Label htmlFor="name" className="text-sm font-medium">
-            الاسم الكامل
-          </Label>
-          <Input
-            id="name"
-            name="name"
-            required
-            placeholder="أدخل اسمك"
-            className="h-11 rounded-xl bg-background"
-          />
+          <Label htmlFor="name">الاسم الكامل</Label>
+          <Input id="name" name="name" required placeholder="أدخل اسمك" />
         </div>
 
         <div className="grid gap-2">
-          <Label htmlFor="phone" className="text-sm font-medium">
-            رقم الهاتف
-          </Label>
-          <Input
-            id="phone"
-            name="phone"
-            required
-            type="tel"
-            placeholder="+20 ..."
-            dir="ltr"
-            className="h-11 rounded-xl bg-background text-right"
-          />
+          <Label htmlFor="phone">رقم الهاتف</Label>
+          <Input id="phone" name="phone" required type="tel" placeholder="+20 ..." />
         </div>
       </div>
 
       {/* الإيميل */}
       {!compact && (
         <div className="grid gap-2">
-          <Label htmlFor="email" className="text-sm font-medium">
-            البريد الإلكتروني (اختياري)
-          </Label>
-          <Input
-            id="email"
-            name="email"
-            type="email"
-            placeholder="email@example.com"
-            dir="ltr"
-            className="h-11 rounded-xl bg-background text-right"
-          />
+          <Label htmlFor="email">الإيميل (اختياري)</Label>
+          <Input id="email" name="email" type="email" placeholder="email@example.com" />
         </div>
       )}
 
-       {/* الخدمة */}
+      {/* الخدمة */}
       <div className="grid gap-2">
-        <Label htmlFor="service" className="text-sm font-medium">
-          الخدمة المطلوبة
-        </Label>
+        <Label>الخدمة المطلوبة</Label>
 
-        <Select
-          name="service"
-          value={service}
-          onValueChange={setService}
-          required
-        >
-          <SelectTrigger className="h-11 rounded-xl bg-background">
+        <Select value={service} onValueChange={setService} required>
+          <SelectTrigger>
             <SelectValue placeholder="اختر الخدمة" />
           </SelectTrigger>
 
@@ -152,43 +119,26 @@ export function ContactForm({
       {/* الرسالة */}
       {!compact && (
         <div className="grid gap-2">
-          <Label htmlFor="message" className="text-sm font-medium">
-            رسالتك
-          </Label>
-
-          <Textarea
-            id="message"
-            name="message"
-            placeholder="اكتب تفاصيل طلبك هنا..."
-            rows={4}
-            className="rounded-xl bg-background resize-none"
-          />
+          <Label htmlFor="message">رسالتك</Label>
+          <Textarea id="message" name="message" rows={4} />
         </div>
       )}
 
       {/* زر الإرسال */}
-      <Button
-        type="submit"
-        disabled={loading}
-        size="lg"
-        className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground mt-2"
-      >
+      <Button type="submit" disabled={loading}>
         {loading ? (
           <>
-            <Loader2 className="h-4 w-4 animate-spin" />
+            <Loader2 className="animate-spin w-4 h-4" />
             جارٍ الإرسال...
           </>
         ) : (
           <>
-            <Send className="h-4 w-4" />
+            <Send className="w-4 h-4" />
             إرسال الطلب
           </>
         )}
       </Button>
 
-      <p className="text-xs text-muted-foreground text-center">
-        بإرسالك هذا النموذج فإنك توافق على أن نتواصل معك بخصوص استفسارك.
-      </p>
     </form>
   )
 }

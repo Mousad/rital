@@ -15,7 +15,7 @@ const SERVICES = [
   },
   {
     title: "استخراج الشهادات",
-    description: "خدمة استخراج الشهادة الثانوية وشهادة الصف الثامن.",
+    description: " استخراج الشهادة الثانوية وشهادة الصف الثامن.",
     href: "/certificates",
   },
   {
@@ -37,16 +37,16 @@ export function Services() {
         />
 
         {/* Cards */}
-        <div className="mt-10 grid gap-4 grid-cols-2 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 grid gap-2 grid-cols-2 sm:grid-cols-2 lg:grid-cols-4">
 
           {SERVICES.map((service) => (
             <Link
               key={service.title}
               href={service.href}
-              className="group rounded-2xl border border-border bg-card p-5 hover:shadow-md transition-all"
+              className="group rounded-2xl border border-border bg-card p-4 hover:shadow-md transition-all"
             >
               {/* Title */}
-              <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition">
+              <h3 className="text-[18px] font-bold text-foreground group-hover:text-primary transition">
                 {service.title}
               </h3>
 
@@ -56,7 +56,7 @@ export function Services() {
               </p>
 
               {/* Arrow */}
-              <div className="mt-4 flex items-center gap-1 text-sm font-semibold text-primary">
+              <div className="mt-3 flex items-center gap-1 text-sm font-semibold text-primary">
                  المزيد
                 <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1" />
               </div>

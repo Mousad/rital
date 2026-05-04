@@ -1,29 +1,30 @@
 import { Resend } from "resend"
 
-const resend = new Resend(process.env.RESEND_API_KEY)
-
 export async function POST(req: Request) {
-  const body = await req.json()
-
-  const { name, email, phone, message, service } = body
-
   try {
+    const resend = new Resend(process.env.RESEND_API_KEY)
+
+    const body = await req.json()
+    const { name, email, phone, message, service } = body
+
     await resend.emails.send({
       from: "onboarding@resend.dev",
-      to: "youremail@gmail.com", // ← حط إيميلك هنا
-      subject: "طلب استشارة جديد",
+      to: "suppors249@gmail.com",
+      subject: "📩 رسالة جديدة من الموقع",
       html: `
-        <h2>طلب جديد من الموقع</h2>
-        <p><strong>الاسم:</strong> ${name}</p>
-        <p><strong>الإيميل:</strong> ${email}</p>
-        <p><strong>الموبايل:</strong> ${phone}</p>
-        <p><strong>الخدمة:</strong> ${service}</p>
-        <p><strong>الرسالة:</strong> ${message}</p>
+        <h2>طلب جديد</h2>
+        <p>الاسم: ${name}</p>
+        <p>الهاتف: ${phone}</p>
+        <p>الإيميل: ${email}</p>
+        <p>الخدمة: ${service}</p>
+        <p>الرسالة: ${message}</p>
       `,
     })
 
     return Response.json({ success: true })
-  } catch (error) {
-    return Response.json({ success: false }, { status: 500 })
+
+  } catch (err) {
+    console.error(err)
+    return Response.json({ success: false })
   }
 }
