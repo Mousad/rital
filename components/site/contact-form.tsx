@@ -46,56 +46,58 @@ export function ContactForm({
       const payload = Object.fromEntries(formData.entries())
 
       await emailjs.send(
-        "service_6f9wr56",      // Service ID ✔️
-        "template_i16kxce",     // Template ID ✔️
-        {
-          name: payload.name,
-          email: payload.email,
-          phone: payload.phone,
-          message: payload.message,
-          service: service,
-        },
-       "1r417iv__IDFDFN9D"      // ⚠️ حط Public Key هنا
-      )
+  "service_6f9wr56",
+  "template_i16kxce",
+  {
+    name: payload.name,
+    email: payload.email,
+    phone: payload.phone,
+    whatsapp: payload.whatsapp, // 👈 مهم
+    message: payload.message,
+    service: service,
+  },
+  "1r417iv__IDFDFN9D"
+)
 
-      toast.success("تم إرسال طلبك بنجاح!", {
-        description: "سنتواصل معك خلال 24 ساعة.",
-      })
+     toast.success("تم إرسال طلبك بنجاح!", {
+  description: "سنتواصل معك خلال الان .",
+})
 
-      e.currentTarget.reset()
-      setService(defaultService || undefined)
+e.currentTarget.reset()
+setService(defaultService || undefined)
 
-    } catch (error) {
-      console.log(error)
-      toast.error("فشل إرسال الرسالة ❌")
-    } finally {
-      setLoading(false)
-    }
+} catch (error) {
+  console.log(error)
+  // تجاهل الخطأ بالكامل بدون رسالة
+} finally {
+  setLoading(false)
+}
   }
 
-  return (
-    <form onSubmit={handleSubmit} className="grid gap-4">
+ return (
+  <form onSubmit={handleSubmit} className="grid gap-4">
 
-      {/* الاسم + الهاتف */}
-      <div className={compact ? "grid gap-4" : "grid gap-4 sm:grid-cols-2"}>
-        <div className="grid gap-2">
-          <Label htmlFor="name">الاسم الكامل</Label>
-          <Input id="name" name="name" required placeholder="أدخل اسمك" />
-        </div>
+    {/* الاسم + الهاتف + الخدمة (Row واحد في الموبايل) */}
+    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
 
-        <div className="grid gap-2">
-          <Label htmlFor="phone">رقم الهاتف</Label>
-          <Input id="phone" name="phone" required type="tel" placeholder="+20 ..." />
-        </div>
+      {/* الاسم */}
+      <div className="grid gap-2">
+        <Label htmlFor="name">الاسم الكامل</Label>
+        <Input id="name" name="name" required placeholder="أدخل اسمك" />
       </div>
 
-      {/* الإيميل */}
-      {!compact && (
-        <div className="grid gap-2">
-          <Label htmlFor="email">الإيميل (اختياري)</Label>
-          <Input id="email" name="email" type="email" placeholder="email@example.com" />
-        </div>
-      )}
+      {/* الهاتف */}
+      <div className="grid gap-2">
+        <Label htmlFor="phone">رقم الهاتف</Label>
+        <Input
+          id="phone"
+          name="phone"
+          required
+          type="tel"
+          placeholder="+20 ..."
+          dir="ltr"
+        />
+      </div>
 
       {/* الخدمة */}
       <div className="grid gap-2">
@@ -116,29 +118,59 @@ export function ContactForm({
         </Select>
       </div>
 
-      {/* الرسالة */}
-      {!compact && (
-        <div className="grid gap-2">
-          <Label htmlFor="message">رسالتك</Label>
-          <Textarea id="message" name="message" rows={4} />
-        </div>
+    </div>
+
+    {/* واتساب */}
+    <div className="grid gap-2">
+      <Label htmlFor="whatsapp">رقم الواتساب</Label>
+      <Input
+        id="whatsapp"
+        name="whatsapp"
+        type="tel"
+        required
+        placeholder="+20 10xxxxxxxx"
+        dir="ltr"
+      />
+    </div>
+
+    {/* الإيميل */}
+    {!compact && (
+      <div className="grid gap-2">
+        <Label htmlFor="email">الإيميل (اختياري)</Label>
+        <Input
+          id="email"
+          name="email"
+          type="email"
+          placeholder="example@gmail.com"
+          autoComplete="email"
+          dir="ltr"
+        />
+      </div>
+    )}
+
+    {/* الرسالة */}
+    {!compact && (
+      <div className="grid gap-2">
+        <Label htmlFor="message">رسالتك</Label>
+        <Textarea id="message" name="message" rows={4} />
+      </div>
+    )}
+
+    {/* زر الإرسال */}
+    <Button type="submit" disabled={loading}>
+      {loading ? (
+        <>
+          <Loader2 className="animate-spin w-4 h-4" />
+          جارٍ الإرسال...
+        </>
+      ) : (
+        <>
+          <Send className="w-4 h-4" />
+          إرسال الطلب
+        </>
       )}
+    </Button>
 
-      {/* زر الإرسال */}
-      <Button type="submit" disabled={loading}>
-        {loading ? (
-          <>
-            <Loader2 className="animate-spin w-4 h-4" />
-            جارٍ الإرسال...
-          </>
-        ) : (
-          <>
-            <Send className="w-4 h-4" />
-            إرسال الطلب
-          </>
-        )}
-      </Button>
-
-    </form>
-  )
+  </form>
+)
 }

@@ -41,15 +41,71 @@ const WHY_CARDS = [
 ]
 
 const UNIVERSITIES = [
-  { short: "CU", name: "Cairo University", ar: "جامعة القاهرة", rank: "الأقدم" },
-  { short: "ASU", name: "Ain Shams", ar: "جامعة عين شمس", rank: "عريقة" },
-  { short: "AU", name: "Alexandria", ar: "جامعة الإسكندرية", rank: "رائدة" },
-  { short: "AUC", name: "AUC", ar: "الجامعة الأمريكية", rank: "دولية" },
-  { short: "HU", name: "Helwan", ar: "جامعة حلوان", rank: "متخصصة" },
-  { short: "MU", name: "Mansoura", ar: "جامعة المنصورة", rank: "معتمدة" },
-  { short: "AzU", name: "Al-Azhar", ar: "جامعة الأزهر", rank: "إسلامية" },
-  { short: "AsU", name: "Assiut", ar: "جامعة أسيوط", rank: "إقليمية" },
-]
+  {
+    short: "CU",
+    name: "Cairo University",
+    ar: "جامعة القاهرة",
+    rank: "الأقدم",
+    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRU0tC7Tde8prBk71kR0q8X4_ZzjYb5U6H4Fw&s",
+    image: "https://i.pinimg.com/736x/87/88/be/8788be8848f6be42891703ba35bf9245.jpg",
+  },
+  {
+    short: "ASU",
+    name: "Ain Shams University",
+    ar: "جامعة عين شمس",
+    rank: "عريقة",
+    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPexnp__kxYwObIwrPlJUGiJ9BTq5l316E5A&s",
+    image: "https://i.pinimg.com/736x/4f/70/4f/4f704fe380b9553009c855b7b8b9b489.jpg",
+  },
+  {
+    short: "AU",
+    name: "Alexandria University",
+    ar: "جامعة الإسكندرية",
+    rank: "رائدة",
+    logo: "https://scu.eg/storage/2023/05/%D8%A7%D9%84%D8%A7%D8%B3%D9%83%D9%86%D8%AF%D8%B1%D9%8A%D8%A9-%D8%A7%D9%84%D8%A7%D9%87%D9%84%D9%8A%D8%A9.png",
+    image: "https://i.pinimg.com/1200x/9f/d7/b4/9fd7b4a50d8d297c69fc0c47726da31c.jpg",
+  },
+  {
+    short: "AUC",
+    name: "The American University in Cairo",
+    ar: "الجامعة الأمريكية",
+    rank: "دولية",
+    logo: "https://www.universitiesegypt.com/ImageHandler.ashx?Id=12734&SS=2f4b759a533e4ad5b1db622ff646146c",
+    image: "https://www.aucegypt.edu/sites/default/files/styles/large_widget/public/2020-03/auc.jpg?itok=rMovBrF8",
+  },
+  {
+    short: "HU",
+    name: "Helwan University",
+    ar: "جامعة حلوان",
+    rank: "متخصصة",
+    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpMSaoo1LwM8qdso_B6VVPs7ffGqJ-nXDdiA&s",
+    image: "https://upload.wikimedia.org/wikipedia/commons/1/1d/%D8%AC%D8%A7%D9%85%D8%B9%D8%A9_%D8%AD%D9%84%D9%88%D8%A7%D9%86.jpg",
+  },
+  {
+    short: "MU",
+    name: "Mansoura University",
+    ar: "جامعة المنصورة",
+    rank: "معتمدة",
+    logo: "https://upload.wikimedia.org/wikipedia/ar/5/5e/%D8%B4%D8%B9%D8%A7%D8%B1_%D8%AC%D8%A7%D9%85%D8%B9%D8%A9_%D8%A7%D9%84%D9%85%D9%86%D8%B5%D9%88%D8%B1%D8%A9.png",
+    image: "https://oktamam.com/wp-content/uploads/2024/03/mansoura-university-campus.jpg.webp",
+  },
+  {
+    short: "AZU",
+    name: "Al-Azhar University",
+    ar: "جامعة الأزهر",
+    rank: "إسلامية",
+    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTF3pjveBHwoK8PyMVheQf80exUg-C4VWlrTg&s",
+    image: "https://media.gemini.media/img/medium/2025/7/24/2025_7_24_14_50_18_1.webp",
+  },
+  {
+    short: "ASU",
+    name: "Assiut University",
+    ar: "جامعة أسيوط",
+    rank: "إقليمية",
+    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAUpscSqRd_vP1QS9hZTuUpdLthR-2ywXJqg&s",
+    image: "https://i.pinimg.com/1200x/ee/a4/9e/eea49ec489c75243ae4b2618ef2d138b.jpg",
+  },
+];
 
 const MAJORS = [
   { icon: Stethoscope, label: "الطب والصيدلة" },
@@ -149,35 +205,64 @@ export default function StudyEgyptPage() {
       </section>
 
       {/* Universities */}
-      <section id="universities" className="py-10 md:py-20 bg-secondary/40">
-        <div className="mx-auto max-w-7xl px-4 md:px-6">
-          <SectionHeading
-            eyebrow="الجامعات الشريكة"
-            title="أعرق الجامعات المصرية"
-            description="نتعاون مع أفضل الجامعات المصرية الحكومية والخاصة."
-          />
-          <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4">
-            {UNIVERSITIES.map((u) => (
-              <div
-                key={u.short}
-                className="group bg-card rounded-2xl border border-border p-5 text-center hover:border-primary/40 hover:shadow-md transition-all"
-              >
-                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-secondary text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                  <span className="text-sm font-bold" dir="ltr">
-                    {u.short}
-                  </span>
-                </div>
-                <h4 className="mt-4 font-semibold text-sm text-foreground leading-tight">
-                  {u.ar}
-                </h4>
-                <span className="mt-2 inline-block text-[11px] text-accent font-medium">
-                  {u.rank}
-                </span>
+     <section id="universities" className="py-10 md:py-20 bg-secondary/40">
+  <div className="mx-auto max-w-7xl px-4 md:px-6">
+
+    <SectionHeading
+      eyebrow="الجامعات الشريكة"
+      title="أعرق الجامعات المصرية"
+      description="نتعاون مع أفضل الجامعات المصرية الحكومية والخاصة."
+    />
+
+    <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-5">
+
+      {UNIVERSITIES.map((u) => (
+        <div
+          key={u.short}
+          className="group relative overflow-hidden rounded-2xl border border-border bg-card hover:shadow-xl transition-all"
+        >
+
+          {/* Image */}
+          <div className="relative h-28 w-full">
+            <img
+              src={u.image}
+              alt={u.name}
+              className="h-full w-full object-cover group-hover:scale-110 transition duration-500"
+            />
+          </div>
+
+          {/* Content */}
+          <div className="p-4 text-center space-y-2">
+
+            {/* Logo */}
+            <div className="flex justify-center -mt-10">
+              <div className="h-14 w-14 rounded-xl bg-white z-50 shadow-md border flex items-center justify-center">
+                <img
+                  src={u.logo}
+                  alt={u.short}
+                  className="h-8 w-8 object-contain"
+                />
               </div>
-            ))}
+            </div>
+
+            {/* Name */}
+            <h4 className="font-semibold text-sm text-foreground leading-snug">
+              {u.ar}
+            </h4>
+
+            {/* Rank badge */}
+            <span className="inline-block text-xs text-green-600 font-medium">
+              {u.rank}
+            </span>
+
           </div>
         </div>
-      </section>
+      ))}
+
+    </div>
+
+  </div>
+</section>
 
       {/* Majors */}
       <section className="py-10 md:py-20">

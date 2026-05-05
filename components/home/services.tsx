@@ -9,57 +9,67 @@ const SERVICES = [
     href: "/scholarships",
   },
   {
-    title: "الاستشارات ",
-    description: "نساعدك في اختيار التخصص والمسار .",
+    title: "الاستشارات",
+    description: "نساعدك في اختيار التخصص والمسار المناسب لك.",
     href: "/services",
   },
   {
     title: "استخراج الشهادات",
-    description: " استخراج الشهادة الثانوية وشهادة الصف الثامن.",
+    description: "استخراج الشهادة الثانوية وشهادة الصف الثامن",
     href: "/certificates",
   },
   {
     title: "التقديم للجامعات",
-    description: "نتكفل بإجراءات التقديم والقبول الجامعي في الصين ومصر.",
+    description: "نتكفل بإجراءات التقديم والقبول في الصين ومصر.",
     href: "/services",
   },
 ]
 
 export function Services() {
   return (
-    <section className="py-12 md:py-24 bg-background">
+    <section className="py-14 md:py-24 bg-background">
       <div className="mx-auto max-w-6xl px-4 md:px-6">
 
         <SectionHeading
           eyebrow="خدماتنا"
           title="مستقبلك التعليمي"
-          description="نقدم مجموعة متكاملة من الخدمات التي ترافقك من لحظة التفكير في الدراسة حتى بدء رحلتك الجامعية."
+          description="نرافقك من أول خطوة حتى الوصول للجامعة المناسبة."
         />
 
-        {/* Cards */}
-        <div className="mt-10 grid gap-2 grid-cols-2 sm:grid-cols-2 lg:grid-cols-4">
+        {/* Grid */}
+        <div className="mt-10 grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-6">
 
           {SERVICES.map((service) => (
             <Link
               key={service.title}
               href={service.href}
-              className="group rounded-2xl border border-border bg-card p-4 hover:shadow-md transition-all"
+              className="
+                group relative flex flex-col justify-between
+                rounded-[8px] border border-border bg-card
+                p-4 sm:p-6
+                min-h-[130px]
+                transition-all duration-300
+                hover:shadow-lg hover:-translate-y-1
+              "
             >
               {/* Title */}
-              <h3 className="text-[18px] font-bold text-foreground group-hover:text-primary transition">
+              <h3 className="text-sm sm:text-base items-center justify-center flex font-bold text-foreground leading-snug group-hover:text-primary transition">
                 {service.title}
               </h3>
 
               {/* Description */}
-              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+              <p className="mt-2 text-xs sm:text-sm text-muted-foreground leading-relaxed">
                 {service.description}
               </p>
 
-              {/* Arrow */}
-              <div className="mt-3 flex items-center gap-1 text-sm font-semibold text-primary">
-                 المزيد
+              {/* Footer */}
+              <div className="mt-4 flex items-center text-xs sm:text-sm font-semibold text-primary">
+                <span>المزيد</span>
                 <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1" />
               </div>
+
+              {/* hover glow */}
+              <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition bg-primary/5 pointer-events-none" />
             </Link>
           ))}
 

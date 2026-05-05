@@ -8,9 +8,9 @@ import { SectionHeading } from "@/components/site/section-heading"
 const UNIVERSITIES = [
   {
     name: "Tsinghua University",
-    ar: "جامعة تركيا",
-    logo: "https://images.for9a.com/thumb/fit-256-256-100-webp/organization/49344-c60e79The_Logo_of_Tsinghua_Hua_University,_in_1928.png",
-    cover: "https://i.pinimg.com/1200x/aa/9f/5f/aa9f5fde0992e2d2821b37716d870a00.jpg",
+    ar: "جامعة القاهرة",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/%D8%B4%D8%B9%D8%A7%D8%B1_%D8%AC%D8%A7%D9%85%D8%B9%D8%A9_%D8%A7%D9%84%D9%82%D8%A7%D9%87%D8%B1%D8%A9.png/500px-%D8%B4%D8%B9%D8%A7%D8%B1_%D8%AC%D8%A7%D9%85%D8%B9%D8%A9_%D8%A7%D9%84%D9%82%D8%A7%D9%87%D8%B1%D8%A9.png",
+    cover: "https://i.pinimg.com/736x/27/71/57/277157a5755cfab9d6b384ddb66f41d0.jpg",
   },
   {
     name: "Peking University",
@@ -22,13 +22,13 @@ const UNIVERSITIES = [
     name: "Fudan University",
     ar: "جامعة فودان",
     logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Fudan_University_Logo.svg/960px-Fudan_University_Logo.svg.png",
-    cover: "https://i.pinimg.com/1200x/02/ad/ff/02adffd298ec57061b93e8d46c4e4ee2.jpg",
+    cover: "https://i.pinimg.com/736x/56/51/13/56511319e4f9555dca92e283f40e18d4.jpg",
   },
   {
     name: "Cairo University",
-    ar: "جامعة القاهرة",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/%D8%B4%D8%B9%D8%A7%D8%B1_%D8%AC%D8%A7%D9%85%D8%B9%D8%A9_%D8%A7%D9%84%D9%82%D8%A7%D9%87%D8%B1%D8%A9.png/500px-%D8%B4%D8%B9%D8%A7%D8%B1_%D8%AC%D8%A7%D9%85%D8%B9%D8%A9_%D8%A7%D9%84%D9%82%D8%A7%D9%87%D8%B1%D8%A9.png",
-    cover: "https://i.pinimg.com/736x/c2/79/1f/c2791fe2b7b5bf2e7f970fb9dfe1074e.jpg",
+    ar: "جامعة تركيا",
+    logo: "https://imtiyaz-cms-media-eu.s3.eu-central-1.amazonaws.com/Dicle_University_Logo_imtiyaz_188b1d545f.png",
+    cover: "https://taksimtours.com/wp-content/uploads/2021/09/%D8%AC%D8%A7%D9%85%D8%B9%D8%A9-%D8%A5%D8%B3%D8%B7%D9%86%D8%A8%D9%88%D9%84-1.jpg",
   },
   {
     name: "Ain Shams University",
@@ -40,31 +40,31 @@ const UNIVERSITIES = [
     name: "Alexandria University",
     ar: "جامعة الإسكندرية",
     logo: "https://i.pinimg.com/1200x/02/8a/83/028a83da40719f789fbdd957a1fd9f7b.jpg",
-    cover: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Alexandria_University.jpg",
+    cover: "https://i.pinimg.com/1200x/9f/d7/b4/9fd7b4a50d8d297c69fc0c47726da31c.jpg",
   },
   {
     name: "American University in Cairo",
     ar: "الجامعة الأمريكية بالقاهرة",
     logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBF0hFskneSbxHFfZ5-JFzf0pINCkR8p7wcsFjXXKKLA&s",
-    cover: "https://upload.wikimedia.org/wikipedia/commons/8/8c/AUC_New_Campus.jpg",
+    cover: "https://i.pinimg.com/736x/f6/c5/f4/f6c5f4d6ecfe0f937a946fc1a34bfc9f.jpg",
   },
   {
     name: "Helwan University",
     ar: "جامعة حلوان",
     logo: "https://i.pinimg.com/1200x/22/ef/d3/22efd3d2c9d5e920e0c230c881bdf57b.jpg",
-    cover: "https://upload.wikimedia.org/wikipedia/commons/4/4b/Helwan_University.jpg",
+    cover: "https://i.pinimg.com/1200x/3b/55/57/3b555797c92148ab7d3b5cfdb425ba26.jpg",
   },
   {
     name: "Mansoura University",
     ar: "جامعة المنصورة",
     logo: "https://i.pinimg.com/1200x/7c/58/72/7c58726c015595d5a940874a285ff936.jpg",
-    cover: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Mansoura_University.jpg",
+    cover: "https://i.pinimg.com/1200x/bc/02/cf/bc02cf6ec1bbe2debab39443351de781.jpg",
   },
   {
     name: "Assiut University",
     ar: "جامعة أسيوط",
     logo: "https://i.pinimg.com/736x/17/30/e4/1730e402e79e16a08875423ba2d42659.jpg",
-    cover: "https://upload.wikimedia.org/wikipedia/commons/3/3d/Assiut_University.jpg",
+    cover: "https://i.pinimg.com/1200x/ee/a4/9e/eea49ec489c75243ae4b2618ef2d138b.jpg",
   },
 ]
 

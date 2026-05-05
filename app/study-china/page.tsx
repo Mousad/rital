@@ -4,6 +4,8 @@ import { PageHero } from "@/components/site/page-hero"
 import { Timeline } from "@/components/site/timeline"
 import { SectionHeading } from "@/components/site/section-heading"
 import { Button } from "@/components/ui/button"
+import {  MessageCircle } from "lucide-react";
+
 import {
   ArrowLeft,
   Award,
@@ -41,15 +43,71 @@ const WHY_CARDS = [
 ]
 
 const UNIVERSITIES = [
-  { short: "THU", name: "Tsinghua University", ar: "جامعة تسينغهوا", rank: "#12 عالمياً" },
-  { short: "PKU", name: "Peking University", ar: "جامعة بكين", rank: "#17 عالمياً" },
-  { short: "FDU", name: "Fudan University", ar: "جامعة فودان", rank: "#50 عالمياً" },
-  { short: "ZJU", name: "Zhejiang University", ar: "جامعة تشجيانغ", rank: "#44 عالمياً" },
-  { short: "SJTU", name: "Shanghai Jiao Tong", ar: "شانغهاي جياو تونغ", rank: "#51 عالمياً" },
-  { short: "USTC", name: "USTC", ar: "العلوم والتكنولوجيا", rank: "#74 عالمياً" },
-  { short: "NJU", name: "Nanjing University", ar: "جامعة نانجينغ", rank: "#120 عالمياً" },
-  { short: "WHU", name: "Wuhan University", ar: "جامعة ووهان", rank: "#194 عالمياً" },
-]
+  {
+    short: "THU",
+    name: "Tsinghua University",
+    ar: "جامعة تسينغهوا",
+    rank: "#12 عالمياً",
+    logo: "https://images.for9a.com/thumb/fit-256-256-100-webp/organization/49344-c60e79The_Logo_of_Tsinghua_Hua_University,_in_1928.png",
+    image: "https://i.pinimg.com/1200x/93/60/b4/9360b43aad028029d98ab2bd562013d8.jpg",
+  },
+  {
+    short: "PKU",
+    name: "Peking University",
+    ar: "جامعة بكين",
+    rank: "#17 عالمياً",
+    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrlTwhrRGi7cbSBnpv7VbVgx1e2AtK7kiHzA&s",
+    image: "https://i.pinimg.com/736x/93/11/d9/9311d9e374e12fff9602f7c69995a16a.jpg",
+  },
+  {
+    short: "FDU",
+    name: "Fudan University",
+    ar: "جامعة فودان",
+    rank: "#50 عالمياً",
+    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjifIRE2pkBeQT97GgUOl4XuXQgBY29zU51w&s",
+    image: "https://i.pinimg.com/1200x/48/87/82/4887826ad5b819eac71acde547dea4ce.jpg",
+  },
+  {
+    short: "ZJU",
+    name: "Zhejiang University",
+    ar: "جامعة تشجيانغ",
+    rank: "#44 عالمياً",
+    logo: "https://upload.wikimedia.org/wikipedia/en/thumb/1/16/Zhejiang_University_Logo.svg/1280px-Zhejiang_University_Logo.svg.png",
+    image: "https://i.pinimg.com/736x/93/d4/40/93d440a4e8fec1104ed4e1478f4e3d7a.jpg",
+  },
+  {
+    short: "SJTU",
+    name: "Shanghai Jiao Tong University",
+    ar: "جامعة شانغهاي جياو تونغ",
+    rank: "#51 عالمياً",
+    logo: "https://upload.wikimedia.org/wikipedia/en/thumb/d/da/Sjtu-logo-standard-red.png/250px-Sjtu-logo-standard-red.png",
+    image: "https://i.pinimg.com/736x/75/12/96/751296796653a7abb936e2a62b41c4dc.jpg",
+  },
+  {
+    short: "USTC",
+    name: "University of Science and Technology of China",
+    ar: "جامعة العلوم والتكنولوجيا الصينية",
+    rank: "#74 عالمياً",
+    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSc4xQATqQk9snhcfMWWi1_A158zyAu8OlQjA&s",
+    image: "https://i.pinimg.com/736x/20/c8/af/20c8afbb0830479766ac49afb91d8cf8.jpg",
+  },
+  {
+    short: "NJU",
+    name: "Nanjing University",
+    ar: "جامعة نانجينغ",
+    rank: "#120 عالمياً",
+    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHa5wEn87Ra45M8YNsSYB2CTJ1UKQKzxPCSw&s",
+    image: "https://i.pinimg.com/1200x/fd/d4/2d/fdd42d84b800a0b3c854d89b2a274cc0.jpg",
+  },
+  {
+    short: "WHU",
+    name: "Wuhan University",
+    ar: "جامعة ووهان",
+    rank: "#194 عالمياً",
+    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSANiAIuoIDJljf4M7AlRxeU_KRMe5LGwImfg&s",
+    image: "https://i.pinimg.com/236x/29/b0/5d/29b05d765078fc7ad7967d014eef36f6.jpg",
+  },
+];
 
 const MAJORS = [
   { icon: Stethoscope, label: "الطب والصيدلة" },
@@ -74,11 +132,11 @@ export default function StudyChinaPage() {
   return (
     <>
       <PageHero
-        eyebrow="الدراسة في الصين"
+        eyebrow=""
         title="ابدأ رحلتك في أعرق الجامعات الصينية"
         description="الصين وجهة تعليمية متميزة تجمع بين الجودة العالمية والتكاليف المعقولة والمنح الحكومية الكبرى."
       >
-        <div className="flex flex-wrap justify-center gap-3">
+        <div className="flex flex-wrap justify-center gap-2">
           <Button
             asChild
             size="lg"
@@ -105,7 +163,7 @@ export default function StudyChinaPage() {
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           <div className="relative aspect-[16/7] rounded-3xl overflow-hidden shadow-xl ring-1 ring-primary/10">
             <Image
-              src="/images/china.jpg"
+              src="https://i.pinimg.com/736x/b1/0f/86/b10f862f488b95effa3281e5783f2fe6.jpg"
               alt="حرم جامعي في الصين"
               fill
               sizes="100vw"
@@ -149,38 +207,67 @@ export default function StudyChinaPage() {
       </section>
 
       {/* Universities */}
-      <section id="universities" className="py-16 md:py-20 bg-secondary/40">
-        <div className="mx-auto max-w-7xl px-4 md:px-6">
-          <SectionHeading
-            eyebrow="الجامعات الشريكة"
-            title="أفضل الجامعات الصينية"
-            description="نتعاون مع أعرق الجامعات الصينية لتوفير أفضل الفرص لطلابنا."
-          />
-          <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4">
-            {UNIVERSITIES.map((u) => (
-              <div
-                key={u.short}
-                className="group bg-card rounded-2xl border border-border p-5 text-center hover:border-primary/40 hover:shadow-md transition-all"
-              >
-                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-secondary text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                  <span className="text-sm font-bold" dir="ltr">
-                    {u.short}
-                  </span>
-                </div>
-                <h4 className="mt-4 font-semibold text-sm text-foreground leading-tight">
-                  {u.ar}
-                </h4>
-                <span className="mt-2 inline-block text-[11px] text-accent font-medium">
-                  {u.rank}
-                </span>
+    <section id="universities" className="py-8 md:py-20 bg-secondary/40">
+  <div className="mx-auto max-w-7xl px-4 md:px-6">
+    
+    <SectionHeading
+      eyebrow="الجامعات الشريكة"
+      title="أفضل الجامعات الصينية"
+      description="نتعاون مع أعرق الجامعات الصينية لتوفير أفضل الفرص لطلابنا."
+    />
+
+    <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-5">
+      {UNIVERSITIES.map((u) => (
+        
+        <div
+          key={u.short}
+          className="group rounded-2xl overflow-hidden border border-border bg-card hover:shadow-xl transition-all"
+        >
+          
+          {/* Image */}
+          <div className="relative h-28 w-full overflow-hidden">
+            <img
+              src={u.image}
+              alt={u.name}
+              className="h-full w-full object-cover group-hover:scale-110 transition duration-500"
+            />
+          </div>
+
+          {/* Content */}
+          <div className="p-4 text-center space-y-2">
+
+            {/* Logo / Short */}
+            <div className="flex justify-center -mt-10 ">
+              <div className="h-14 w-14 rounded-xl z-50 bg-white shadow-md flex items-center justify-center border">
+                <img
+                  src={u.logo}
+                  alt={u.short}
+                  className="h-8 w-8 object-contain"
+                />
               </div>
-            ))}
+            </div>
+
+            {/* Name */}
+            <h4 className="font-semibold text-sm text-foreground leading-snug">
+              {u.ar}
+            </h4>
+
+            {/* Rank */}
+            <span className="inline-block text-xs text-green-600 font-medium">
+              {u.rank}
+            </span>
+
           </div>
         </div>
-      </section>
+
+      ))}
+    </div>
+
+  </div>
+</section>
 
       {/* Majors */}
-      <section className="py-16 md:py-20">
+      <section className="py-8 md:py-20">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           <SectionHeading
             eyebrow="التخصصات"
@@ -209,45 +296,98 @@ export default function StudyChinaPage() {
       </section>
 
       {/* Steps */}
-      <section className="py-16 md:py-20 bg-secondary/40">
-        <div className="mx-auto max-w-7xl px-4 md:px-6">
-          <SectionHeading
-            eyebrow="خطواتك معنا"
-            title="من التقديم إلى الوصول"
-            description="خمس خطوات فقط تفصلك عن بدء رحلتك الدراسية في الصين."
-          />
-          <div className="mt-14 bg-card border border-border rounded-3xl p-6 md:p-10">
-            <Timeline steps={STEPS} />
-          </div>
-        </div>
-      </section>
+    <section className="py-8 md:py-20 bg-secondary/40">
+  <div className="mx-auto max-w-7xl px-4 md:px-6">
+
+    <SectionHeading
+      eyebrow="خطواتك معنا"
+      title="من التقديم إلى الوصول"
+      description="خمس خطوات فقط تفصلك عن بدء رحلتك الدراسية في الصين."
+    />
+
+    <div className="mt-14 bg-card border border-border rounded-3xl p-6 md:p-10">
+      <Timeline steps={STEPS} />
+    </div>
+
+    {/* CTA Button */}
+    <div className="mt-8 text-center">
+      <Button
+        asChild
+        size="lg"
+        className="rounded-full bg-accent text-accent-foreground hover:bg-accent/90"
+      >
+        <Link href="/contact?service=study-china">
+          قدّم الآن
+          <ArrowLeft className="h-4 w-4 mr-2" />
+        </Link>
+      </Button>
+
+     
+    </div>
+
+  </div>
+</section>
 
       {/* CTA */}
-      <section className="py-20 md:py-24">
-        <div className="mx-auto max-w-5xl px-4 md:px-6">
-          <div className="relative overflow-hidden rounded-3xl bg-primary text-primary-foreground p-8 md:p-12 text-center">
-            <div aria-hidden className="absolute inset-0 bg-pattern-grid opacity-[0.12]" />
-            <div className="relative">
-              <h3 className="text-2xl md:text-3xl font-bold text-balance">
-                جاهز لبدء رحلتك إلى الصين؟
-              </h3>
-              <p className="mt-3 text-primary-foreground/80 max-w-xl mx-auto">
-                احجز استشارة مجانية الآن وسيتواصل معك فريقنا لمناقشة خياراتك.
-              </p>
-              <Button
-                asChild
-                size="lg"
-                className="mt-6 rounded-full bg-accent text-accent-foreground hover:bg-accent/90"
-              >
-                <Link href="/contact?service=study-china">
-                  احجز استشارتك
-                  <ArrowLeft className="h-4 w-4" />
-                </Link>
-              </Button>
-            </div>
-          </div>
+     <section className="py-8 md:py-24">
+  <div className="mx-auto max-w-5xl px-4 md:px-6">
+
+    <div className="relative overflow-hidden rounded-3xl text-white">
+
+      {/* Background Image */}
+      <img
+        src="https://i.pinimg.com/736x/cb/a2/1e/cba21e45e8ace5cf1f703a1ce25d59b7.jpg"
+        alt="Study in China"
+        className="absolute inset-0 h-full w-full object-cover"
+      />
+
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/60" />
+
+      {/* Content */}
+      <div className="relative p-8 md:p-12 text-center">
+
+        <h3 className="text-2xl md:text-3xl font-bold">
+          جاهز لبدء رحلتك إلى الصين؟
+        </h3>
+
+        <p className="mt-3 text-white/80 max-w-xl mx-auto">
+          احجز استشارة مجانية الآن أو تواصل معنا مباشرة عبر واتساب.
+        </p>
+
+        {/* Buttons */}
+        <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
+
+          {/* Book Consultation */}
+          <Button
+            asChild
+            size="lg"
+            className="rounded-full bg-accent text-accent-foreground hover:bg-accent/90"
+          >
+            <Link href="/contact?service=study-china">
+              احجز استشارتك
+              <ArrowLeft className="h-4 w-4 mr-2" />
+            </Link>
+          </Button>
+
+          {/* WhatsApp Button */}
+          <a
+            href="https://wa.me/201234567890"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 rounded-full border border-white/30 px-6 py-3 text-white hover:bg-white/10 transition"
+          >
+            <MessageCircle className="h-5 w-5" />
+            واتساب 
+          </a>
+
         </div>
-      </section>
+
+      </div>
+    </div>
+
+  </div>
+</section>
     </>
   )
 }

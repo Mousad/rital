@@ -11,7 +11,7 @@ const INFO = [
   {
     icon: MapPin,
     title: "عنواننا",
-    value: " مصر - القاهرة - الدقي",
+    value: "٤ محي الدين ابو العز/ الدقي، القاهرة، مصر",
   },
   {
     icon: Phone,
@@ -28,13 +28,13 @@ const INFO = [
   {
     icon: Mail,
     title: "البريد الإلكتروني",
-    value: "info@rital-edu.com",
+    value: "Ritaloffice22@gmail.com",
     dir: "ltr" as const,
   },
   {
     icon: Clock,
     title: "أوقات العمل",
-    value: "السبت - الخميس، 9:00 - 18:00",
+    value: "من السبت إلى الخميس: ٩ صباحاً",
   },
 ]
 
@@ -132,7 +132,7 @@ export default async function ContactPage({
               <div className="rounded-3xl overflow-hidden border border-border aspect-[4/3]">
                 <iframe
                   title="موقعنا"
-                  src="https://www.openstreetmap.org/export/embed.html?bbox=36.2565%2C33.4975%2C36.3265%2C33.5375&layer=mapnik&marker=33.5175%2C36.2915"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.6675272203337!2d31.2118!3d30.0444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145841c9c8c7a7ef%3A0x3a2b5d1a2c3d4e5f!2s4%20Mohy%20El%20Din%20Abo%20El%20Ez%2C%20Ad%20Doqi%2C%20Giza%20Governorate%2C%20Egypt!5e0!3m2!1sen!2sus!4v1713459996237!5m2!1sen!2sus"
                   className="w-full h-full border-0"
                   loading="lazy"
                 />

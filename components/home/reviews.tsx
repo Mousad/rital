@@ -122,7 +122,7 @@ function ReviewCard({ review }: { review: Review }) {
 
       {/* 🧾 Content (ما اتغيرش غير تحويل النص) */}
       <div className="p-6 flex-1 flex flex-col">
-        <Quote className="h-6 w-6 text-accent" />
+       
 
         <p className="mt-3 text-foreground/90 leading-relaxed text-pretty">
           تجربة فيديو حقيقية من أحد طلابنا

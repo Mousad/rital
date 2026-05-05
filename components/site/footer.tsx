@@ -86,15 +86,15 @@ export function Footer() {
             <ul className="mt-4 space-y-3 text-sm">
               <li className="flex items-start gap-2.5 text-primary-foreground/80">
                 <MapPin className="h-4 w-4 mt-0.5 shrink-0 text-accent" />
-                <span>مصر - القاهرة - الدقي </span>
+                <span>مصر - القاهرة - ٤ محي الدين ابو العز/ الدقي </span>
               </li>
               <li className="flex items-center gap-2.5 text-primary-foreground/80">
                 <Phone className="h-4 w-4 shrink-0 text-accent" />
-                <span dir="ltr">+20 11 123 4567</span>
+                <span dir="ltr">+20 </span>
               </li>
               <li className="flex items-center gap-2.5 text-primary-foreground/80">
                 <Mail className="h-4 w-4 shrink-0 text-accent" />
-                <span dir="ltr">info@rital-edu.com</span>
+                <span dir="ltr"> Ritaloffice22@gmail.com</span>
               </li>
             </ul>
           </div>
