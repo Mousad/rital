@@ -18,7 +18,7 @@ export default function HomePage() {
       <Destinations />
       <AboutPreview />
       <ScholarshipsCTA />
-      {/* <Reviews /> */}
+      <Reviews />
       <MapSection />
 
       {/* 💬 WhatsApp Floating Button */}

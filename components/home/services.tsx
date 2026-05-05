@@ -27,7 +27,7 @@ const SERVICES = [
 
 export function Services() {
   return (
-    <section className="py-14 md:py-24 bg-background">
+    <section className="py-6 md:py-24 bg-background">
       <div className="mx-auto max-w-6xl px-4 md:px-6">
 
         <SectionHeading
@@ -58,9 +58,9 @@ export function Services() {
               </h3>
 
               {/* Description */}
-              <p className="mt-2 text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                {service.description}
-              </p>
+              <p className="mt-2 text-xs sm:text-sm text-muted-foreground leading-7 text-justify break-words">
+  {service.description}
+</p>
 
               {/* Footer */}
               <div className="mt-4 flex items-center text-xs sm:text-sm font-semibold text-primary">

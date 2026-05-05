@@ -17,19 +17,19 @@ export function AboutPreview() {
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
           <div className="relative">
             <span className="inline-flex items-center gap-2 rounded-full bg-secondary text-primary px-3.5 py-1 text-xs font-semibold">
-              <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-              من نحن
+              
+             
             </span>
            <div className="relative aspect-[4/3] max-w-md mx-auto lg:max-w-none rounded-[2rem] overflow-hidden shadow-2xl ring-1 ring-primary/10">
 
   {/* 🖼️ Image */}
   <Image
-    src="https://rital-sd.com/lovable-uploads/a5c80a15-6935-45ec-8852-551e961cc11f.png"
-    alt="استشارة تعليمية احترافية"
-    fill
-    sizes="(min-width: 1024px) 460px, 100vw"
-    className="object-cover"
-  />
+  src="/images/Klo.png"
+  alt="استشارة تعليمية احترافية"
+  fill
+  sizes="(min-width: 1024px) 460px, 100vw"
+  className="object-cover"
+/>
 
   {/* 🌑 Dark Shadow Overlay */}
   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/10" />
@@ -38,15 +38,12 @@ export function AboutPreview() {
   <div className="absolute inset-0 shadow-[inset_0_-80px_120px_rgba(0,0,0,0.6)]" />
 
   {/* 📝 Text */}
-  <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-    <h2 className="text-lg md:text-xl font-bold leading-snug drop-shadow-md">
-      نحن ريتال، شريكك الأمين في بناء مستقبل تعليمي مميز
+  <div className="absolute bottom-28 left-0 right-0 p-6 text-white">
+    <h2 className="text-[22px] md:text-xl font-bold leading-snug drop-shadow-md">
+       ريتال <span className="text-[#634d32] text-[29px] ">نوباتيا</span> شركاء الطالب في النجاح 
     </h2>
 
-    <p className="mt-2 text-sm text-white/80 leading-relaxed drop-shadow-sm">
-      تأسست ريتال لتكون الجسر الذي يصل الطلاب الطموحين بأفضل الفرص التعليمية حول العالم.
-      نؤمن بأن كل طالب يستحق فرصة لتحقيق أحلامه.
-    </p>
+    
   </div>
 
 </div>

@@ -3,6 +3,9 @@ import Image from "next/image";
 import { PageHero } from "@/components/site/page-hero";
 import { SectionHeading } from "@/components/site/section-heading";
 import { Button } from "@/components/ui/button";
+import { faWhatsapp } from "@fortawesome/free-brands-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+
 import {
   ArrowLeft,
   Award,
@@ -57,38 +60,23 @@ export default function ScholarshipsPage() {
     <>
       {/* HERO */}
 
-      <div className="relative py-8 overflow-hidden">
+        <div className="relative py-14 h-[36vh] overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
-          <img
-            src="https://i.pinimg.com/736x/6b/ea/c3/6beac3914fd768904cb963fed155aa5f.jpg"
+          <Image
+            src="/images/upess.png"
             alt="education"
-            className="w-full h-full object-cover"
+            fill
+            className="object-cover"
           />
-        </div>
+</div>
 
         {/* Overlay */}
-        <div className="absolute inset-0 bg-black/60"></div>
-
-        {/* Content */}
-        <div className="relative z-10 text-center text-white px-4">
-          <p className="text-sm md:text-base mb-3 tracking-wider text-gray-200">
-            المنح الدراسية
-          </p>
-
-          <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
-            حوّل حلمك إلى منحة دراسية
-          </h1>
-
-          <p className="text-sm md:text-base mb-3 tracking-wider text-gray-200">
-            نرشدك إلى أفضل المنح الدراسية المتاحة ونتابع معك كل خطوة من التقديم
-            حتى القبول.
-          </p>
-        </div>
+      
       </div>
 
 
-
+ 
       {/* TYPES */}
       <section className="py-8 md:py-20">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
@@ -282,7 +270,16 @@ export default function ScholarshipsPage() {
 
     </div>
   </div>
+  
 </section>
+
+   <a
+        href="https://wa.me/201001234567"
+        target="_blank"
+        className="fixed bottom-6 right-6 z-50 flex items-center justify-center h-12 w-12 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg transition hover:scale-110"
+      >
+        <FontAwesomeIcon icon={faWhatsapp} className="text-2xl" />
+      </a>
     </>
   );
 }

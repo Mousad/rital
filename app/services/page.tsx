@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image";
 import { SectionHeading } from "@/components/site/section-heading"
 import { Button } from "@/components/ui/button"
 import {
@@ -79,34 +80,24 @@ export default function ServicesPage() {
   return (
     <>
       {/* HERO */}
-      <div className="relative py-14 overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0">
-          <img
-            src="https://i.pinimg.com/736x/6b/ea/c3/6beac3914fd768904cb963fed155aa5f.jpg"
-            alt="education"
-            className="w-full h-full object-cover"
-          />
+     <div className="relative py-14 h-[36vh] overflow-hidden">
+  {/* Background Image */}
+  <div className="absolute inset-0">
+    <Image
+      src="/images/service.png"
+      alt="education"
+      fill
+      className="object-cover"
+    />
+  
         </div>
 
         {/* Overlay */}
-        <div className="absolute inset-0 bg-black/60"></div>
+        {/* <div className="absolute inset-0 bg-black/60"></div> */}
 
-        {/* Content */}
-        <div className="relative z-10 text-center text-white px-4">
-          <p className="text-sm md:text-base mb-3 tracking-wider text-gray-200">
-            خدماتنا
-          </p>
-
-          <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
-            خدمات متكاملة <br className="hidden md:block" />
-            لمستقبلك التعليمي
-          </h1>
-
-         
-        </div>
+       
       </div>
-
+  
       {/* SERVICES */}
       <section className="py-10 md:py-20">
         <div className="mx-auto max-w-3xl px-4 md:px-6">

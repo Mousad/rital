@@ -34,7 +34,7 @@ const UNIVERSITIES = [
     name: "Ain Shams University",
     ar: "جامعة عين شمس",
     logo: "https://i.pinimg.com/1200x/f9/45/f5/f945f57c443bf37fb720228401bd605b.jpg",
-    cover: "https://upload.wikimedia.org/wikipedia/commons/5/5d/Ain_Shams_University.jpg",
+    cover: "https://i.pinimg.com/736x/4f/70/4f/4f704fe380b9553009c855b7b8b9b489.jpg",
   },
   {
     name: "Alexandria University",
