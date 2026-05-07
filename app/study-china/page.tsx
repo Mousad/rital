@@ -135,33 +135,65 @@ const STEPS = [
 export default function StudyChinaPage() {
   return (
     <>
-      <PageHero
-        eyebrow=""
-        title="ابدأ رحلتك في أعرق الجامعات الصينية"
-        description="الصين وجهة تعليمية متميزة تجمع بين الجودة العالمية والتكاليف المعقولة والمنح الحكومية الكبرى."
-      >
-        <div className="flex flex-wrap justify-center gap-2">
-          <Button
-            asChild
-            size="lg"
-            className="rounded-full bg-accent text-accent-foreground hover:bg-accent/90"
-          >
-            <Link href="/contact?service=study-china">
-              ابدأ التقديم
-              <ArrowLeft className="h-4 w-4" />
-            </Link>
-          </Button>
-          <Button
-            asChild
-            size="lg"
-            variant="outline"
-            className="rounded-full border-primary-foreground/20 bg-transparent text-primary-foreground hover:bg-primary-foreground/10"
-          >
-            <Link href="#universities">استعرض الجامعات</Link>
-          </Button>
-        </div>
-      </PageHero>
+    <div className="relative py-8 overflow-hidden ">
 
+  {/* Background Image */}
+  <div className="absolute inset-0">
+    <img
+      src="https://i.pinimg.com/1200x/93/60/b4/9360b43aad028029d98ab2bd562013d8.jpg"
+      alt="study in china"
+      className="w-full h-full object-cover"
+    />
+  </div>
+
+  {/* Overlay */}
+  <div className="absolute inset-0 bg-black/60" />
+
+  {/* Content */}
+  <div className="relative z-10 text-center text-white px-4">
+
+    <p className="text-sm md:text-base mb-3 tracking-wider text-gray-200">
+      الدراسة في الصين
+    </p>
+
+    <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+      ابدأ رحلتك في أعرق الجامعات الصينية 🇨🇳
+    </h1>
+
+    <p className="max-w-2xl mx-auto text-sm md:text-base text-gray-200 mb-6">
+      اكتشف أفضل الفرص الدراسية، المنح الحكومية، والتخصصات المتنوعة مع دعم كامل من التقديم حتى الوصول.
+    </p>
+
+    {/* Buttons */}
+    <div className="flex flex-wrap justify-center gap-3">
+
+      <Button
+        asChild
+        size="lg"
+        className="rounded-full bg-blue-600 text-white hover:bg-blue-700"
+      >
+        <Link href="/contact?service=study-china">
+          ابدأ التقديم
+          <ArrowLeft className="h-4 w-4 mr-1" />
+        </Link>
+      </Button>
+
+      <Button
+        asChild
+        size="lg"
+        variant="outline"
+        className="rounded-full border-white/30 text-[#101213] hover:bg-white/10"
+      >
+        <Link href="#universities">
+          استعرض الجامعات
+        </Link>
+      </Button>
+
+    </div>
+
+  </div>
+
+</div>
       {/* Hero image */}
       
 
@@ -437,6 +469,94 @@ export default function StudyChinaPage() {
 
   </div>
   
+</section>
+
+<section className="py-10 md:py-20 bg-secondary/40">
+  <div className="mx-auto max-w-7xl px-4 md:px-6">
+
+    <SectionHeading
+      eyebrow="معلومات مهمة"
+      title="كل ما تحتاج معرفته للدراسة في الصين"
+      description="تفاصيل عملية تساعدك على اتخاذ قرارك والتقديم بسهولة."
+    />
+
+    <div className="mt-12 grid gap-6 md:grid-cols-2">
+
+      {/* Fees */}
+      <div className="bg-card border border-border rounded-2xl p-6">
+        <h3 className="font-bold text-lg">💰 الرسوم التقريبية</h3>
+        <p className="mt-2 text-sm text-muted-foreground">
+          من 2,000 إلى 10,000 دولار سنويًا حسب الجامعة والتخصص، مع وجود منح تغطي الرسوم بالكامل في بعض الحالات.
+        </p>
+      </div>
+
+      {/* Requirements */}
+      <div className="bg-card border border-border rounded-2xl p-6">
+        <h3 className="font-bold text-lg">📄 شروط التقديم</h3>
+        <p className="mt-2 text-sm text-muted-foreground">
+          شهادة ثانوية أو جامعية + معدل جيد + بعض التخصصات تتطلب لغة إنجليزية أو صينية.
+        </p>
+      </div>
+
+      {/* Documents */}
+      <div className="bg-card border border-border rounded-2xl p-6">
+        <h3 className="font-bold text-lg">📑 الأوراق المطلوبة</h3>
+        <p className="mt-2 text-sm text-muted-foreground">
+          جواز سفر، شهادات دراسية، كشف درجات، CV، رسالة دافع، صور شخصية.
+        </p>
+      </div>
+
+      {/* Language */}
+      <div className="bg-card border border-border rounded-2xl p-6">
+        <h3 className="font-bold text-lg">🗣️ لغة الدراسة</h3>
+        <p className="mt-2 text-sm text-muted-foreground">
+          الإنجليزية في برامج كثيرة + الصينية مع سنة تحضيرية للغة.
+        </p>
+      </div>
+
+      {/* Dates */}
+      <div className="bg-card border border-border rounded-2xl p-6">
+        <h3 className="font-bold text-lg">📅 مواعيد التقديم</h3>
+        <p className="mt-2 text-sm text-muted-foreground">
+          من يناير إلى أغسطس حسب المنحة أو الجامعة.
+        </p>
+      </div>
+
+      {/* Steps */}
+      <div className="bg-card border border-border rounded-2xl p-6">
+        <h3 className="font-bold text-lg">🪜 خطوات التقديم</h3>
+        <p className="mt-2 text-sm text-muted-foreground">
+          اختيار الجامعة → تجهيز الأوراق → التقديم → القبول → الفيزا → السفر.
+        </p>
+      </div>
+
+    </div>
+
+    {/* Sudan Section */}
+    <div className="mt-10 bg-card border border-border rounded-2xl p-6">
+      <h3 className="font-bold text-lg">🇸🇩 الطلاب السودانيون</h3>
+
+      <div className="mt-4 grid gap-4 md:grid-cols-3 text-sm text-muted-foreground">
+
+        <div>
+          <strong className="text-foreground">داخل السودان:</strong><br />
+          توثيق الشهادة من الجهات الرسمية + التقديم عبر مكاتب أو أونلاين.
+        </div>
+
+        <div>
+          <strong className="text-foreground">داخل مصر:</strong><br />
+          يمكن التقديم مباشرة أو تحويل القيد مع إثبات إقامة.
+        </div>
+
+        <div>
+          <strong className="text-foreground">خارج السودان ومصر:</strong><br />
+          تقديم كطالب دولي + توثيق سفارة + فيزا طالب.
+        </div>
+
+      </div>
+    </div>
+
+  </div>
 </section>
 
  <a

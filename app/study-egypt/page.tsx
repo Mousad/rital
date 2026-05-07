@@ -1,4 +1,5 @@
 import Image from "next/image"
+import { FileText } from "lucide-react"
 import Link from "next/link"
 import { PageHero } from "@/components/site/page-hero"
 import { Timeline } from "@/components/site/timeline"
@@ -131,85 +132,181 @@ const STEPS = [
 export default function StudyEgyptPage() {
   return (
     <>
-      <PageHero
-        eyebrow="الدراسة في مصر"
-        title="الدراسة في ارض الفراعنة"
-        description="ادرس في جامعات مصرية معتمدة تجمع بين الجودة الأكاديمية والبيئة العربية المألوفة والتكاليف المعقولة."
+      <div className="relative py-8 overflow-hidden ">
+
+  {/* Background Image */}
+  <div className="absolute inset-0">
+    <img
+      src="https://i.pinimg.com/1200x/6b/ea/c3/6beac3914fd768904cb963fed155aa5f.jpg"
+      alt="study in egypt"
+      className="w-full h-full object-cover"
+    />
+  </div>
+
+  {/* Overlay */}
+  <div className="absolute inset-0 bg-black/60" />
+
+  {/* Content */}
+  <div className="relative z-10 text-center text-white px-4">
+
+    <p className="text-sm md:text-base mb-3 tracking-wider text-gray-200">
+      الدراسة في مصر
+    </p>
+
+    <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+      الدراسة في أرض الفراعنة 
+    </h1>
+
+    <p className="max-w-2xl mx-auto text-sm md:text-base text-gray-200 mb-6">
+      ادرس في جامعات مصرية معتمدة تجمع بين الجودة الأكاديمية والبيئة العربية المألوفة والتكاليف المعقولة.
+    </p>
+
+    {/* Buttons */}
+    <div className="flex flex-wrap justify-center gap-3">
+
+      <Button
+        asChild
+        size="lg"
+        className="rounded-full bg-blue-600 text-white hover:bg-blue-700"
       >
-        <div className="flex flex-wrap justify-center gap-3">
-          <Button
-            asChild
-            size="lg"
-            className="rounded-full bg-accent text-accent-foreground hover:bg-accent/90"
-          >
-            <Link href="/contact?service=study-egypt">
-              ابدأ التقديم
-              <ArrowLeft className="h-4 w-4" />
-            </Link>
-          </Button>
-          <Button
-            asChild
-            size="lg"
-            variant="outline"
-            className="rounded-full border-primary-foreground/20 bg-transparent text-primary-foreground hover:bg-primary-foreground/10"
-          >
-            <Link href="#universities">استعرض الجامعات</Link>
-          </Button>
-        </div>
-      </PageHero>
+        <Link href="/contact?service=study-egypt">
+          ابدأ التقديم
+          <ArrowLeft className="h-4 w-4 mr-1" />
+        </Link>
+      </Button>
 
-      {/* Hero image */}
-     <section className="py-10 md:py-20">
-  <div className="mx-auto max-w-7xl px-4 md:px-6">
+      <Button
+        asChild
+        size="lg"
+        variant="outline"
+        className="rounded-full border-white/30 text-[#101213] hover:bg-white/10"
+      >
+        <Link href="#universities">
+          استعرض الجامعات
+        </Link>
+      </Button>
 
-    {/* Wrapper */}
-    <div className="relative">
+    </div>
 
-      {/* 👉 Hint Arrow */}
-      <div className="absolute right-3 top-1/2 -translate-y-1/2 z-10 pointer-events-none animate-bounce">
-        <div className="bg-black/40 text-white p-2 rounded-full text-xl">
-          →
-        </div>
-      </div>
+  </div>
 
-      {/* Slider */}
-      <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-smooth scrollbar-hide">
+</div>
 
-        {[
-          "https://i.pinimg.com/736x/b5/b1/ae/b5b1ae0ea9440f6fe54339a11154ddd6.jpg",
-          "https://i.pinimg.com/736x/8d/52/b0/8d52b04e2d2e4975673a3c94ac1e6df5.jpg",
-          "https://i.pinimg.com/1200x/17/9d/e1/179de1afe096d5602ba6d94646520183.jpg",
-          "https://i.pinimg.com/736x/71/5e/40/715e40599b335ded54efce0e5c192dcf.jpg",
-          "https://i.pinimg.com/webp/1200x/b3/85/fe/b385fe50daeacc53edf7abbef6233472.webp",
-          "https://i.pinimg.com/736x/a5/02/9a/a5029a21754784022ba39f1ecdf87e29.jpg",
-        ].map((img, i) => (
-          <div
-            key={i}
-            className="min-w-full md:min-w-[48%] lg:min-w-[32%] snap-center"
-          >
-            <div className="relative aspect-[4/4] rounded-3xl overflow-hidden shadow-xl">
-              <Image
-                src={img}
-                alt={`image-${i}`}
-                fill
-                className="object-cover"
-              />
-            </div>
-          </div>
-        ))}
+
+<section className="py-10 md:py-20 bg-secondary/40">
+  <div className="mx-auto max-w-6xl px-4 md:px-6">
+
+    <div className="grid md:grid-cols-2 gap-10 items-center">
+
+      {/* Text */}
+      <div>
+
+        <h2 className="text-2xl md:text-4xl font-bold text-foreground">
+          كيف تساعدك ريتال في تحقيق حلمك الدراسي؟
+        </h2>
+
+        <p className="mt-4 text-muted-foreground leading-relaxed">
+          نحن في ريتال نرافقك خطوة بخطوة من لحظة اختيار الدولة والجامعة المناسبة،
+          وحتى القبول النهائي والسفر، مع متابعة كاملة لكل تفاصيل التقديم.
+        </p>
+
+        <ul className="mt-6 space-y-3 text-sm text-muted-foreground">
+
+          <li>✔ اختيار الجامعة والتخصص المناسب حسب ملفك</li>
+          <li>✔ تجهيز وتدقيق جميع الأوراق المطلوبة</li>
+          <li>✔ التقديم للجامعات والمنح الدراسية</li>
+          <li>✔ متابعة القبول وإجراءات الفيزا</li>
+          <li>✔ دعم كامل حتى الوصول وبدء الدراسة</li>
+
+        </ul>
 
       </div>
+     <div className="mt-0 flex justify-center">
+<a
+  href="/study-egypt.pdf"
+  download
+  className="inline-flex items-center px-5 py-2 rounded-full bg-accent text-accent-foreground"
+>
+  المزيد
+</a>
+</div>
 
-      {/* 👉 Swipe Text */}
-      <p className="text-center text-sm text-muted-foreground mt-3">
-        اسحب لعرض المزيد ←
-      </p>
+      {/* Image */}
+      
 
     </div>
 
   </div>
 </section>
+ 
 
+ <section className="py-10 md:py-20 bg-secondary/40" >
+  <div className="mx-auto max-w-6xl px-4 md:px-6">
+
+    <div className="text-center mb-10">
+      <h2 className="text-2xl md:text-4xl font-bold">
+        الأوراق المطلوبة للتقديم
+      </h2>
+    </div>
+
+    {/* Box */}
+    <div className="relative border border-[#101213] rounded- overflow-hidden">
+
+      {/* Vertical Line */}
+      <div className="absolute left-[65%] top-0 h-full w-px bg-[#101213]"></div>
+
+      {/* Row 1 */}
+      <div className="flex border-b border-[#101213]">
+<div className="w-[35%] p-4 flex items-center justify-start text-right">      
+      <h3 className="font-semibold text-[15px]"> جواز السفر</h3>
+        </div>
+        <div className="w-[65%] p-4 text-muted-foreground text-sm leading-relaxed">
+         ﻳﺸﺘﺮط ان ﻳﻜﻮن ﺳﺎري او ﻋﻠﻴﻪ ﺗﻤﺪﻳﺪ ﻟﻤﺪة 6 اﺷﻬﺮ
+ﻳﻤﻜﻦ     
+        </div>
+      </div>
+
+      {/* Row 2 */}
+      <div className="flex border-b border-[#101213]">
+<div className="w-[35%] p-4 flex items-center justify-start text-right">        
+    <h3 className="font-semibold text-[13px]"> الشهادة الثانوية</h3>
+        </div>
+        <div className="w-[65%] p-4 text-muted-foreground text-sm leading-relaxed">
+          في التقديم الإلكتروني يتم إرسال صورة من المستندات فقط، وبعد القبول يتم طلب الأصول.  
+ 
+        </div>
+      </div>
+
+      {/* Row 3 */}
+      <div className="flex border-b border-[#101213]">
+        <div className="w-[35%] p-4 flex items-center justify-start text-right">
+  <h3 className="font-semibold text-[14px]">
+    شهادة الميلاد
+  </h3>
+</div>
+        <div className="w-[65%] p-4 text-muted-foreground text-sm leading-relaxed">
+        ﺻﻮرة ﻓﻲ اﻟﻤﺮﺣﻠﺔ اﻻوﻟﻲ ﻣﻦ اﻟﺘﻘﺪﻳﻢ واﻻﺻﻞ ﺑﻌﺪ اﻟﻘﺒﻮل .
+
+
+        </div>
+      </div>
+
+      {/* Row 4 */}
+      <div className="flex">
+        <div className="w-[35%] p-4 flex items-center justify-start text-right">
+          <h3 className="font-semibold text-[14px]"> صور شخصية</h3>
+        </div>
+        <div className="w-[65%] p-4 text-muted-foreground text-sm leading-relaxed">
+          ﻋﺪد 8 ﺻﻮر ﺷﺨﺼﻴﺔ ﺑﺨﻠﻔﻴﺔ ﺑﻴﻀﺎء
+ﻳﺸﺘﺮط ان ﺗﻜﻮن ﺣﺪﻳﺜﺔ  
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+   
       {/* Why */}
       <section className="pb-10 md:pb-20">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
@@ -344,6 +441,178 @@ export default function StudyEgyptPage() {
           </div>
         </div>
       </section>
+
+      <section className="py-10 md:py-20">
+  <div className="mx-auto max-w-6xl px-4 md:px-6">
+
+    <div className="text-center mb-10">
+      <h2 className="text-2xl md:text-4xl font-bold">
+        الخدمات والرسوم
+      </h2>
+    </div>
+
+    <div className="relative border border-[#101213]  overflow-hidden">
+
+      {/* vertical line */}
+      <div className="absolute left-[36%] top-0 h-full w-px bg-[#3c3c3c]"></div>
+
+      {/* Header */}
+      <div className="flex bg-secondary/30 border-b border-[#3c3c3c]">
+        <div className="w-[65%] p-4 text-right font-bold">
+          اﻟﺨـــــــــــــــــــــــــﺪﻣﺔ
+        </div>
+        <div className="w-[35%] p-4 text-right font-bold">
+          الرسوم
+        </div>
+      </div>
+
+    
+
+      {/* Row 2 */}
+      <div className="flex border-b border-[#101213]">
+        <div className="w-[65%] p-4 text-sm text-muted-foreground">
+          خدمات التنسيق
+        </div>
+        <div className="w-[35%] p-4 text-right font-semibold">
+          172 دولار
+        </div>
+      </div>
+
+      {/* Row 3 */}
+      <div className="flex border-b border-[#101213]">
+        <div className="w-[65%] p-4 text-sm text-muted-foreground">
+          تأجيل القيد (تجميد)
+        </div>
+        <div className="w-[35%] p-4 text-right font-semibold">
+          150 دولار
+        </div>
+      </div>
+
+      {/* Row 4 */}
+      <div className="flex border-b border-[#101213]">
+        <div className="w-[65%] p-4 text-sm text-muted-foreground">
+          إعادة ترشيح (لكل عام)
+        </div>
+        <div className="w-[35%] p-4 text-right font-semibold">
+          150 دولار
+        </div>
+      </div>
+
+      {/* Row 5 */}
+      <div className="flex border-b border-[#101213]">
+        <div className="w-[65%] p-4 text-sm text-muted-foreground">
+          استثناء شرط حداثة المؤهل
+        </div>
+        <div className="w-[35%] p-4 text-right font-semibold">
+          300 دولار
+        </div>
+      </div>
+
+      {/* Row 6 */}
+      <div className="flex border-b border-[#101213]">
+        <div className="w-[65%] p-4 text-sm text-muted-foreground">
+          القيد الجامعي
+        </div>
+        <div className="w-[35%] p-4 text-right font-semibold">
+          1500 دولار
+        </div>
+      </div>
+
+      {/* Row 7 */}
+      <div className="flex border-b border-[#101213]">
+        <div className="w-[65%] p-4 text-sm text-muted-foreground">
+          نقل قيد
+        </div>
+        <div className="w-[35%] p-4 text-right font-semibold">
+          1000 دولار
+        </div>
+      </div>
+
+      {/* Row 8 */}
+      <div className="flex border-b border-[#101213]">
+        <div className="w-[65%] p-4 text-sm text-muted-foreground">
+          تعديل ترشيح
+        </div>
+        <div className="w-[35%] p-4 text-right font-semibold">
+          250 دولار
+        </div>
+      </div>
+
+      {/* Row 9 */}
+      <div className="flex border-b border-[#101213]">
+        <div className="w-[65%] p-4 text-sm text-muted-foreground">
+          سحب ملف
+        </div>
+        <div className="w-[35%] p-4 text-right font-semibold">
+          1000 دولار
+        </div>
+      </div>
+
+      {/* Row 10 */}
+      <div className="flex">
+        <div className="w-[65%] p-4 text-sm text-muted-foreground">
+          تحويل من الخارج
+        </div>
+        <div className="w-[35%] p-4 text-right font-semibold">
+          1 دولار
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+        <section className="py-10 md:py-20">
+  <div className="mx-auto max-w-7xl px-4 md:px-6">
+
+    {/* Wrapper */}
+    <div className="relative">
+
+      {/* 👉 Hint Arrow */}
+      <div className="absolute right-3 top-1/2 -translate-y-1/2 z-10 pointer-events-none animate-bounce">
+        <div className="bg-black/40 text-white p-2 rounded-full text-xl">
+          →
+        </div>
+      </div>
+
+      {/* Slider */}
+      <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-smooth scrollbar-hide">
+
+        {[
+          "https://i.pinimg.com/736x/b5/b1/ae/b5b1ae0ea9440f6fe54339a11154ddd6.jpg",
+          "https://i.pinimg.com/736x/8d/52/b0/8d52b04e2d2e4975673a3c94ac1e6df5.jpg",
+          "https://i.pinimg.com/1200x/17/9d/e1/179de1afe096d5602ba6d94646520183.jpg",
+          "https://i.pinimg.com/736x/71/5e/40/715e40599b335ded54efce0e5c192dcf.jpg",
+          "https://i.pinimg.com/webp/1200x/b3/85/fe/b385fe50daeacc53edf7abbef6233472.webp",
+          "https://i.pinimg.com/736x/a5/02/9a/a5029a21754784022ba39f1ecdf87e29.jpg",
+        ].map((img, i) => (
+          <div
+            key={i}
+            className="min-w-full md:min-w-[48%] lg:min-w-[32%] snap-center"
+          >
+            <div className="relative aspect-[4/4] rounded-3xl overflow-hidden shadow-xl">
+              <Image
+                src={img}
+                alt={`image-${i}`}
+                fill
+                className="object-cover"
+              />
+            </div>
+          </div>
+        ))}
+
+      </div>
+
+      {/* 👉 Swipe Text */}
+      <p className="text-center text-sm text-muted-foreground mt-3">
+        اسحب لعرض المزيد ←
+      </p>
+
+    </div>
+
+  </div>
+</section>
 
       {/* CTA */}
       
