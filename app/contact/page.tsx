@@ -70,19 +70,19 @@ export default async function ContactPage({
 
 </div>
 
-      <section className="py-8 md:py-20">
+      <section className="py-8 md:py-20 bg-[#f4f7f2]">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           <div className="grid gap-8 lg:grid-cols-5">
             {/* Form */}
             <div className="lg:col-span-3">
-              <div className="bg-card border border-border rounded-3xl p-6 md:p-8 shadow-sm">
-                <h2 className="text-2xl md:text-3xl font-bold text-foreground">
+              <div className="bg-card border border-border rounded-[8px] p-6 md:p-8 shadow-sm">
+                <h2 className="text-2xl md:text-3xl font-bold text-[#27215f] ">
                   احجز استشارتك المجانية
                 </h2>
-                <p className="mt-2 text-muted-foreground">
+                <p className="mt-2 text-[#27215f]">
                   املأ البيانات وسنتواصل معك في أقرب وقت.
                 </p>
-                <div className="mt-6">
+                <div className="mt-6 text-[#27215f]">
                   <ContactForm defaultService={defaultService} />
                 </div>
               </div>
@@ -91,7 +91,7 @@ export default async function ContactPage({
             <section className="py-8 md:py-24">
   <div className="mx-auto max-w-5xl px-4 md:px-6">
 
-    <div className="relative overflow-hidden rounded-3xl text-white">
+    <div className="relative overflow-hidden rounded-[12px] text-white">
 
       {/* Background Image */}
       <img
@@ -122,7 +122,7 @@ export default async function ContactPage({
   href="https://wa.me/201234567890"
   target="_blank"
   rel="noopener noreferrer"
-  className="flex items-center gap-2 rounded-full border border-white/30 px-6 py-2 text-white hover:bg-white/10 transition"
+  className="flex items-center gap-2 rounded-[9px] border border-white/30 px-6 py-2 text-white hover:bg-white/10 transition"
 >
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -146,7 +146,7 @@ export default async function ContactPage({
 
             {/* Info */}
             <div className="lg:col-span-2 space-y-4">
-              <div className="rounded-3xl bg-primary text-primary-foreground p-7 relative overflow-hidden">
+              <div className="rounded-3xl bg-[#27215f] text-primary-foreground p-7 relative overflow-hidden">
                 <div aria-hidden className="absolute inset-0 bg-pattern-grid opacity-[0.15]" />
                 <div className="relative">
                   <h3 className="text-xl font-bold">معلومات التواصل</h3>

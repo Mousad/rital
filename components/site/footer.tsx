@@ -21,8 +21,8 @@ const QUICK_LINKS = [
 
 export function Footer() {
   return (
-    <footer className="mt-16 bg-primary text-primary-foreground">
-      <div className="mx-auto max-w-7xl px-4 md:px-6 pt-16 pb-8">
+    <footer className="mt-8 bg-[#27215f] text-primary-foreground">
+      <div className="mx-auto max-w-7xl px-4 md:px-6 pt-8 pb-8">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div>

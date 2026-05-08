@@ -1,6 +1,7 @@
 import Image from "next/image"
 import { FileText } from "lucide-react"
 import Link from "next/link"
+
 import { PageHero } from "@/components/site/page-hero"
 import { Timeline } from "@/components/site/timeline"
 import { SectionHeading } from "@/components/site/section-heading"
@@ -92,22 +93,8 @@ const UNIVERSITIES = [
     logo: "https://upload.wikimedia.org/wikipedia/ar/5/5e/%D8%B4%D8%B9%D8%A7%D8%B1_%D8%AC%D8%A7%D9%85%D8%B9%D8%A9_%D8%A7%D9%84%D9%85%D9%86%D8%B5%D9%88%D8%B1%D8%A9.png",
     image: "https://oktamam.com/wp-content/uploads/2024/03/mansoura-university-campus.jpg.webp",
   },
-  {
-    short: "AZU",
-    name: "Al-Azhar University",
-    ar: "جامعة الأزهر",
-    rank: "إسلامية",
-    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTF3pjveBHwoK8PyMVheQf80exUg-C4VWlrTg&s",
-    image: "https://media.gemini.media/img/medium/2025/7/24/2025_7_24_14_50_18_1.webp",
-  },
-  {
-    short: "ASU",
-    name: "Assiut University",
-    ar: "جامعة أسيوط",
-    rank: "إقليمية",
-    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAUpscSqRd_vP1QS9hZTuUpdLthR-2ywXJqg&s",
-    image: "https://i.pinimg.com/1200x/ee/a4/9e/eea49ec489c75243ae4b2618ef2d138b.jpg",
-  },
+ 
+ 
 ];
 
 const MAJORS = [
@@ -122,7 +109,7 @@ const MAJORS = [
 ]
 
 const STEPS = [
-  { title: "التقييم", description: "تقييم ملفك الأكاديمي والشهادات المطلوبة." },
+  { title: "التقييم", description: "تقييم ملفك الأكاديمي والشهادات ." },
   { title: "اختيار الجامعة", description: "اختيار الجامعة والتخصص الأنسب." },
   { title: "التقديم", description: "إجراءات التقديم والأوراق الرسمية." },
   { title: "القبول", description: "استلام القبول المبدئي والنهائي." },
@@ -153,7 +140,7 @@ export default function StudyEgyptPage() {
       الدراسة في مصر
     </p>
 
-    <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+    <h1 className="text-3xl  md:text-5xl font-bold mb-6 leading-tight">
       الدراسة في أرض الفراعنة 
     </h1>
 
@@ -167,7 +154,7 @@ export default function StudyEgyptPage() {
       <Button
         asChild
         size="lg"
-        className="rounded-full bg-blue-600 text-white hover:bg-blue-700"
+        className="rounded-[12px] bg-[#27215f] text-white hover:bg-[#27215f]"
       >
         <Link href="/contact?service=study-egypt">
           ابدأ التقديم
@@ -179,10 +166,10 @@ export default function StudyEgyptPage() {
         asChild
         size="lg"
         variant="outline"
-        className="rounded-full border-white/30 text-[#101213] hover:bg-white/10"
+        className="rounded-[10px] border-white/30 text-[#27215f] hover:bg-[#f4f7f2]"
       >
         <Link href="#universities">
-          استعرض الجامعات
+           الجامعات
         </Link>
       </Button>
 
@@ -193,7 +180,7 @@ export default function StudyEgyptPage() {
 </div>
 
 
-<section className="py-10 md:py-20 bg-secondary/40">
+<section className="py-6 md:py-20 bg-[#f4f7f2]">
   <div className="mx-auto max-w-6xl px-4 md:px-6">
 
     <div className="grid md:grid-cols-2 gap-10 items-center">
@@ -201,22 +188,22 @@ export default function StudyEgyptPage() {
       {/* Text */}
       <div>
 
-        <h2 className="text-2xl md:text-4xl font-bold text-foreground">
-          كيف تساعدك ريتال في تحقيق حلمك الدراسي؟
+        <h2 className="text-2xl text-[#27215f] md:text-4xl font-bold ">
+          كيف ريتال تساعدك في تحقيق حلمك الدراسي؟
         </h2>
 
-        <p className="mt-4 text-muted-foreground leading-relaxed">
+        <p className="mt-4 text-[#27215f] leading-relaxed">
           نحن في ريتال نرافقك خطوة بخطوة من لحظة اختيار الدولة والجامعة المناسبة،
           وحتى القبول النهائي والسفر، مع متابعة كاملة لكل تفاصيل التقديم.
         </p>
 
-        <ul className="mt-6 space-y-3 text-sm text-muted-foreground">
+        <ul className="mt-6 space-y-3 text-sm text-[#27215f]">
 
-          <li>✔ اختيار الجامعة والتخصص المناسب حسب ملفك</li>
-          <li>✔ تجهيز وتدقيق جميع الأوراق المطلوبة</li>
-          <li>✔ التقديم للجامعات والمنح الدراسية</li>
-          <li>✔ متابعة القبول وإجراءات الفيزا</li>
-          <li>✔ دعم كامل حتى الوصول وبدء الدراسة</li>
+          <li><span className="text-[#f21e27]">✔</span> اختيار الجامعة والتخصص المناسب حسب ملفك</li>
+          <li><span className="text-[#f21e27]">✔</span> تجهيز وتدقيق جميع الأوراق المطلوبة</li>
+          <li><span className="text-[#f21e27]">✔</span> التقديم للجامعات والمنح الدراسية</li>
+          <li><span className="text-[#f21e27]">✔</span> متابعة القبول وإجراءات الفيزا</li>
+          <li><span className="text-[#f21e27]">✔</span> دعم كامل حتى الوصول وبدء الدراسة</li>
 
         </ul>
 
@@ -225,7 +212,7 @@ export default function StudyEgyptPage() {
 <a
   href="/study-egypt.pdf"
   download
-  className="inline-flex items-center px-5 py-2 rounded-full bg-accent text-accent-foreground"
+  className="inline-flex items-center px-5 py-2 rounded-[12px] bg-[#27215f] text-[#f4f7f2]"
 >
   المزيد
 </a>
@@ -240,14 +227,16 @@ export default function StudyEgyptPage() {
 </section>
  
 
- <section className="py-10 md:py-20 bg-secondary/40" >
+ <section className="py-10 md:py-20 bg-[#f4f7f2]" >
   <div className="mx-auto max-w-6xl px-4 md:px-6">
 
-    <div className="text-center mb-10">
-      <h2 className="text-2xl md:text-4xl font-bold">
-        الأوراق المطلوبة للتقديم
-      </h2>
-    </div>
+   <div className="flex justify-center mb-10">
+  <div className="border border-[#101213] px-8 py-4">
+    <h2 className="text-2xl md:text-4xl font-bold text-[#27215f]">
+      الأوراق المطلوبة للتقديم
+    </h2>
+  </div>
+</div>
 
     {/* Box */}
     <div className="relative border border-[#101213] rounded- overflow-hidden">
@@ -258,7 +247,7 @@ export default function StudyEgyptPage() {
       {/* Row 1 */}
       <div className="flex border-b border-[#101213]">
 <div className="w-[35%] p-4 flex items-center justify-start text-right">      
-      <h3 className="font-semibold text-[15px]"> جواز السفر</h3>
+      <h3 className="font-semibold text-[#27215f] text-[15px]"> جواز السفر</h3>
         </div>
         <div className="w-[65%] p-4 text-muted-foreground text-sm leading-relaxed">
          ﻳﺸﺘﺮط ان ﻳﻜﻮن ﺳﺎري او ﻋﻠﻴﻪ ﺗﻤﺪﻳﺪ ﻟﻤﺪة 6 اﺷﻬﺮ
@@ -269,7 +258,7 @@ export default function StudyEgyptPage() {
       {/* Row 2 */}
       <div className="flex border-b border-[#101213]">
 <div className="w-[35%] p-4 flex items-center justify-start text-right">        
-    <h3 className="font-semibold text-[13px]"> الشهادة الثانوية</h3>
+    <h3 className="font-semibold text-[13px] text-[#27215f]"> الشهادة الثانوية</h3>
         </div>
         <div className="w-[65%] p-4 text-muted-foreground text-sm leading-relaxed">
           في التقديم الإلكتروني يتم إرسال صورة من المستندات فقط، وبعد القبول يتم طلب الأصول.  
@@ -280,7 +269,7 @@ export default function StudyEgyptPage() {
       {/* Row 3 */}
       <div className="flex border-b border-[#101213]">
         <div className="w-[35%] p-4 flex items-center justify-start text-right">
-  <h3 className="font-semibold text-[14px]">
+  <h3 className="font-semibold text-[14px] text-[#27215f]">
     شهادة الميلاد
   </h3>
 </div>
@@ -294,7 +283,7 @@ export default function StudyEgyptPage() {
       {/* Row 4 */}
       <div className="flex">
         <div className="w-[35%] p-4 flex items-center justify-start text-right">
-          <h3 className="font-semibold text-[14px]"> صور شخصية</h3>
+          <h3 className="font-semibold text-[14px] text-[#27215f]"> صور شخصية</h3>
         </div>
         <div className="w-[65%] p-4 text-muted-foreground text-sm leading-relaxed">
           ﻋﺪد 8 ﺻﻮر ﺷﺨﺼﻴﺔ ﺑﺨﻠﻔﻴﺔ ﺑﻴﻀﺎء
@@ -308,53 +297,83 @@ export default function StudyEgyptPage() {
 </section>
    
       {/* Why */}
-      <section className="pb-10 md:pb-20">
+      <section className="pb-10 md:pb-20 bg-[#f4f7f2]">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
-          <SectionHeading
-            eyebrow="لماذا مصر؟"
-            title="مميزات الدراسة في مصر"
-            description="أسباب قوية تجعل مصر خياراً مثالياً لإكمال دراستك."
-          />
-          <div className="mt-12 grid gap-5 md:grid-cols-3">
-            {WHY_CARDS.map((c) => {
-              const Icon = c.icon
-              return (
-                <div
-                  key={c.title}
-                  className="bg-card border border-border rounded-3xl p-6 md:p-7 hover:border-primary/30 hover:shadow-lg transition-all"
-                >
-                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-secondary text-primary">
-                    <Icon className="h-6 w-6" />
-                  </div>
-                  <h3 className="mt-5 text-lg font-bold text-foreground">
-                    {c.title}
-                  </h3>
-                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                    {c.description}
-                  </p>
-                </div>
-              )
-            })}
-          </div>
+    <div className="[&_h2]:text-[#27215f]">
+  <SectionHeading
+    eyebrow="لماذا مصر؟"
+    title="مميزات الدراسة في مصر"
+    description="أسباب قوية تجعل مصر خياراً مثالياً لإكمال دراستك."
+  />
+</div>
+
+<div className="mt-12 grid grid-cols-2 md:grid-cols-3 gap-1 md:gap-5">
+  {WHY_CARDS.map((c, index) => {
+    const Icon = c.icon
+
+    return (
+      <div
+        key={c.title}
+        className={`
+          bg-card border border-border
+          rounded-3xl
+          p-4 md:p-7
+          hover:border-primary/30
+          hover:shadow-lg
+          transition-all
+          text-center md:text-right
+          flex flex-col items-center md:items-start
+
+          ${index === 2 ? "col-span-2 w-[70%] mx-auto md:col-span-1 md:w-full" : ""}
+        `}
+      >
+        {/* Icon */}
+        <div
+          className="
+            flex h-12 w-12 md:h-14 md:w-14
+            items-center justify-center
+            rounded-2xl
+            bg-[#27215f]
+            text-[#f4f7f2]
+          "
+        >
+          <Icon className="h-5 w-5 md:h-6 md:w-6" />
+        </div>
+
+        {/* Title */}
+        <h3 className="mt-4 text-sm md:text-lg font-bold text-foreground">
+          {c.title}
+        </h3>
+
+        {/* Description */}
+        <p className="mt-2 text-[12px] md:text-sm text-muted-foreground leading-relaxed">
+          {c.description}
+        </p>
+      </div>
+    )
+  })}
+</div>
         </div>
       </section>
 
       {/* Universities */}
-     <section id="universities" className="py-10 md:py-20 bg-secondary/40">
+     <section id="universities" className="py-7 md:py-20 bg-[#f4f7f2]">
   <div className="mx-auto max-w-7xl px-4 md:px-6">
 
-    <SectionHeading
-      eyebrow="الجامعات الشريكة"
-      title="أعرق الجامعات المصرية"
-      description="نتعاون مع أفضل الجامعات المصرية الحكومية والخاصة."
-    />
+  <div className="[&_h2]:text-[#27215f] [&_p]:text-[#27215f] [&_span]:text-[#27215f] [&_*]:text-[#27215f]">
+  <SectionHeading
+    eyebrow="الجامعات الشريكة"
+    title="أعرق الجامعات المصرية"
+    description="نتعاون مع أفضل الجامعات المصرية الحكومية والخاصة."
+  />
+</div>
 
-    <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-5">
+    <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-2">
 
       {UNIVERSITIES.map((u) => (
         <div
           key={u.short}
-          className="group relative overflow-hidden rounded-2xl border border-border bg-card hover:shadow-xl transition-all"
+          className="group relative overflow-hidden rounded-[8px] border border-border bg-card hover:shadow-xl transition-all"
         >
 
           {/* Image */}
@@ -381,12 +400,12 @@ export default function StudyEgyptPage() {
             </div>
 
             {/* Name */}
-            <h4 className="font-semibold text-sm text-foreground leading-snug">
+            <h4 className="font-semibold text-sm text-[#27215f] leading-snug">
               {u.ar}
             </h4>
 
             {/* Rank badge */}
-            <span className="inline-block text-xs text-green-600 font-medium">
+            <span className="inline-block text-xs text-[#f21e27] font-medium">
               {u.rank}
             </span>
 
@@ -400,56 +419,77 @@ export default function StudyEgyptPage() {
 </section>
 
       {/* Majors */}
-      <section className="py-10 md:py-20">
+      <section className="py-8 md:py-20 bg-[#f4f7f2]">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
-          <SectionHeading
-            eyebrow="التخصصات"
-            title="تخصصات متنوعة في متناولك"
-            description="اختر من بين مئات التخصصات المتاحة في الجامعات المصرية."
-          />
-          <div className="mt-12 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-            {MAJORS.map((m) => {
-              const Icon = m.icon
-              return (
-                <div
-                  key={m.label}
-                  className="group bg-card border border-border rounded-2xl p-5 flex flex-col items-center text-center gap-3 hover:border-primary/40 hover:shadow-md transition-all"
-                >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-secondary text-primary group-hover:bg-accent group-hover:text-accent-foreground transition-colors">
-                    <Icon className="h-6 w-6" />
-                  </div>
-                  <span className="text-sm font-semibold text-foreground">
-                    {m.label}
-                  </span>
-                </div>
-              )
-            })}
+          <div className="[&_h2]:text-[#27215f] [&_p]:text-[#27215f] [&_*]:text-[#27215f]">
+  <SectionHeading
+    title="تخصصات متنوعة في متناولك"
+    description="اختر من بين مئات التخصصات المتاحة في الجامعات المصرية."
+  />
+</div>
+          <div className="mt-12">
+
+  {/* Cards */}
+  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-1">
+    {MAJORS.map((m) => {
+      const Icon = m.icon
+
+      return (
+        <div
+          key={m.label}
+          className="group bg-card border border-border rounded-[8px] p-5 flex flex-col items-center text-center gap-3 hover:border-primary/40 hover:shadow-md transition-all"
+        >
+          <div className="flex h-12 w-12 items-center justify-center rounded-[10px] bg-[#27215f] text-[#f4f7f2] group-hover:bg-accent group-hover:text-accent-foreground transition-colors">
+            <Icon className="h-6 w-6" />
           </div>
+
+          <span className="text-sm font-semibold text-[#27215f]">
+            {m.label}
+          </span>
+        </div>
+      )
+    })}
+  </div>
+
+  {/* Single Button */}
+  <div className="mt-6 flex justify-center">
+   <Link href="/contact">
+  <button className="px-6 py-2 text-sm bg-[#27215f] rounded-[8px] text-[#f4f7f2] hover:bg-[#1f1b4a] transition">
+    تقدّم
+  </button>
+</Link>
+  </div>
+
+</div>
         </div>
       </section>
 
       {/* Steps */}
-      <section className="py-10 md:py-20 bg-secondary/40">
+      <section className="py-8 md:py-20 bg-[#f4f7f2]">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
-          <SectionHeading
-            eyebrow="خطواتك معنا"
-            title="من التقديم إلى القبول"
-            description="خمس خطوات مبسطة للالتحاق بالجامعات المصرية."
-          />
-          <div className="mt-14 bg-card border border-border rounded-3xl p-6 md:p-10">
+        <div className="[&_h2]:text-[#27215f] [&_p]:text-[#27215f] [&_span]:text-[#27215f]">
+  <SectionHeading
+    eyebrow="خطواتك معنا"
+    title="من التقديم إلى القبول"
+    description="خمس خطوات مبسطة للالتحاق بالجامعات المصرية."
+  />
+</div>
+          <div className="mt-8 bg-card border border-border rounded-3xl p-6 md:p-10">
             <Timeline steps={STEPS} />
           </div>
         </div>
       </section>
 
-      <section className="py-10 md:py-20">
+      <section className="py-6 md:py-20 bg-[#f4f7f2]">
   <div className="mx-auto max-w-6xl px-4 md:px-6">
 
-    <div className="text-center mb-10">
-      <h2 className="text-2xl md:text-4xl font-bold">
-        الخدمات والرسوم
-      </h2>
-    </div>
+   <div className="mb-10 text-center">
+  <div className="inline-block border border-[#101213] rounded-[5px] px-6 py-3">
+    <h2 className="text-2xl text-[#27215f] md:text-4xl font-bold">
+       اﻟﺨــــــــــــــــدمات
+    </h2>
+  </div>
+</div>
 
     <div className="relative border border-[#101213]  overflow-hidden">
 
@@ -458,10 +498,10 @@ export default function StudyEgyptPage() {
 
       {/* Header */}
       <div className="flex bg-secondary/30 border-b border-[#3c3c3c]">
-        <div className="w-[65%] p-4 text-right font-bold">
+        <div className="w-[65%] p-4 text-right text-[#27215f] font-bold">
           اﻟﺨـــــــــــــــــــــــــﺪﻣﺔ
         </div>
-        <div className="w-[35%] p-4 text-right font-bold">
+        <div className="w-[35%] p-4 text-right font-bold text-[#f21e27]">
           الرسوم
         </div>
       </div>
@@ -470,90 +510,90 @@ export default function StudyEgyptPage() {
 
       {/* Row 2 */}
       <div className="flex border-b border-[#101213]">
-        <div className="w-[65%] p-4 text-sm text-muted-foreground">
+        <div className="w-[65%] p-4 text-sm  text-[#27215f]">
           خدمات التنسيق
         </div>
-        <div className="w-[35%] p-4 text-right font-semibold">
+        <div className="w-[35%] p-4 text-right font-semibold text-[#f21e27]">
           172 دولار
         </div>
       </div>
 
       {/* Row 3 */}
       <div className="flex border-b border-[#101213]">
-        <div className="w-[65%] p-4 text-sm text-muted-foreground">
+        <div className="w-[65%] p-4 text-sm text-[#27215f]">
           تأجيل القيد (تجميد)
         </div>
-        <div className="w-[35%] p-4 text-right font-semibold">
+        <div className="w-[35%] p-4 text-right font-semibold text-[#f21e27]">
           150 دولار
         </div>
       </div>
 
       {/* Row 4 */}
       <div className="flex border-b border-[#101213]">
-        <div className="w-[65%] p-4 text-sm text-muted-foreground">
+        <div className="w-[65%] p-4 text-sm text-[#27215f]">
           إعادة ترشيح (لكل عام)
         </div>
-        <div className="w-[35%] p-4 text-right font-semibold">
+        <div className="w-[35%] p-4 text-right font-semibold text-[#f21e27]">
           150 دولار
         </div>
       </div>
 
       {/* Row 5 */}
       <div className="flex border-b border-[#101213]">
-        <div className="w-[65%] p-4 text-sm text-muted-foreground">
+        <div className="w-[65%] p-4 text-sm text-[#27215f]">
           استثناء شرط حداثة المؤهل
         </div>
-        <div className="w-[35%] p-4 text-right font-semibold">
+        <div className="w-[35%] p-4 text-right font-semibold text-[#f21e27]">
           300 دولار
         </div>
       </div>
 
       {/* Row 6 */}
       <div className="flex border-b border-[#101213]">
-        <div className="w-[65%] p-4 text-sm text-muted-foreground">
+        <div className="w-[65%] p-4 text-sm  text-[#27215f]">
           القيد الجامعي
         </div>
-        <div className="w-[35%] p-4 text-right font-semibold">
+        <div className="w-[35%] p-4 text-right font-semibold text-[#f21e27]" >
           1500 دولار
         </div>
       </div>
 
       {/* Row 7 */}
       <div className="flex border-b border-[#101213]">
-        <div className="w-[65%] p-4 text-sm text-muted-foreground">
+        <div className="w-[65%] p-4 text-sm text-[#27215f]">
           نقل قيد
         </div>
-        <div className="w-[35%] p-4 text-right font-semibold">
+        <div className="w-[35%] p-4 text-right font-semibold text-[#f21e27]">
           1000 دولار
         </div>
       </div>
 
       {/* Row 8 */}
       <div className="flex border-b border-[#101213]">
-        <div className="w-[65%] p-4 text-sm text-muted-foreground">
+        <div className="w-[65%] p-4 text-sm text-[#27215f]">
           تعديل ترشيح
         </div>
-        <div className="w-[35%] p-4 text-right font-semibold">
+        <div className="w-[35%] p-4 text-right font-semibold text-[#f21e27]">
           250 دولار
         </div>
       </div>
 
       {/* Row 9 */}
       <div className="flex border-b border-[#101213]">
-        <div className="w-[65%] p-4 text-sm text-muted-foreground">
+        <div className="w-[65%] p-4 text-sm text-[#27215f]">
           سحب ملف
         </div>
-        <div className="w-[35%] p-4 text-right font-semibold">
+        <div className="w-[35%] p-4 text-right font-semibold text-[#f21e27]">
           1000 دولار
         </div>
       </div>
 
       {/* Row 10 */}
       <div className="flex">
-        <div className="w-[65%] p-4 text-sm text-muted-foreground">
+        <div className="w-[65%] p-4 text-sm text-[#27215f]">
           تحويل من الخارج
         </div>
-        <div className="w-[35%] p-4 text-right font-semibold">
+        <div className="w-[35%] p-4 text-right font-semibold text-[#f21e27]">
           1 دولار
         </div>
       </div>
@@ -563,7 +603,7 @@ export default function StudyEgyptPage() {
   </div>
 </section>
 
-        <section className="py-10 md:py-20">
+        <section className="py-10 md:py-20 bg-[#f4f7f2]">
   <div className="mx-auto max-w-7xl px-4 md:px-6">
 
     {/* Wrapper */}
@@ -589,9 +629,9 @@ export default function StudyEgyptPage() {
         ].map((img, i) => (
           <div
             key={i}
-            className="min-w-full md:min-w-[48%] lg:min-w-[32%] snap-center"
+            className="min-w-full md:min-w-[38%] lg:min-w-[22%] snap-center"
           >
-            <div className="relative aspect-[4/4] rounded-3xl overflow-hidden shadow-xl">
+            <div className="relative aspect-[3/3] rounded-[12px] overflow-hidden shadow-xl">
               <Image
                 src={img}
                 alt={`image-${i}`}
@@ -617,10 +657,10 @@ export default function StudyEgyptPage() {
       {/* CTA */}
       
 
-       <section className="py-8 md:py-24">
+       <section className="py-8 md:py-24 bg-[#f4f7f2]">
   <div className="mx-auto max-w-5xl px-4 md:px-6">
 
-    <div className="relative overflow-hidden rounded-3xl text-white">
+    <div className="relative overflow-hidden rounded-[9px] text-white">
 
       {/* Background Image */}
       <img
@@ -650,7 +690,7 @@ export default function StudyEgyptPage() {
   <Button
     asChild
     size="lg"
-    className="rounded-full bg-accent text-accent-foreground hover:bg-accent/90"
+    className="rounded-[13px] bg-[#27215f] text-[#f4f7f2] hover:bg-accent/90"
   >
     <Link href="/contact?service=study-china">
       احجز استشارتك
@@ -663,7 +703,7 @@ export default function StudyEgyptPage() {
   href="https://wa.me/201234567890"
   target="_blank"
   rel="noopener noreferrer"
-  className="flex items-center gap-2 rounded-full border border-white/30 px-6 py-2 text-white hover:bg-white/10 transition"
+  className="flex items-center gap-2 rounded-[12px] border border-white/30 px-6 py-2 text-white hover:bg-white/10 transition"
 >
   <svg
     xmlns="http://www.w3.org/2000/svg"

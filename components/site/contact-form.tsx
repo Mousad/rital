@@ -152,13 +152,14 @@ export function ContactForm({ defaultService }: { defaultService?: string }) {
       {/* الاسم + الدولة الحالية */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         <div className="grid gap-2">
-          <Label htmlFor="name">الاسم الكامل</Label>
+          <Label htmlFor="name ">الاسم الكامل</Label>
 
           <Input
             id="name"
             name="name"
             required
             placeholder="أدخل اسمك الكامل"
+            className=""
           />
         </div>
 
@@ -346,7 +347,7 @@ export function ContactForm({ defaultService }: { defaultService?: string }) {
       </div>
 
       {/* زر الإرسال */}
-      <Button type="submit" disabled={loading} className="w-full">
+      <Button type="submit" disabled={loading} className="w-full bg-[#27215f]">
         {loading ? (
           <>
             <Loader2 className="animate-spin w-4 h-4" />
@@ -355,7 +356,7 @@ export function ContactForm({ defaultService }: { defaultService?: string }) {
         ) : (
           <>
             <Send className="w-4 h-4" />
-            إرسال الطلب
+            إرسال 
           </>
         )}
       </Button>
