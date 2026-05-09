@@ -12,15 +12,14 @@ const FEATURES = [
 
 export function AboutPreview() {
   return (
-    <section className="py-9 md:py-24">
+    <section className="py-9 md:py-24 bg-[#f4f7f2]">
       <div className="mx-auto max-w-7xl px-4 md:px-6">
+
+        
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
           <div className="relative">
-            <span className="inline-flex items-center gap-2 rounded-full bg-secondary text-primary px-3.5 py-1 text-xs font-semibold">
-              
-             
-            </span>
-           <div className="relative aspect-[4/3] max-w-md mx-auto lg:max-w-none rounded-[2rem] overflow-hidden shadow-2xl ring-1 ring-primary/10">
+          
+           <div className="relative aspect-[4/3] max-w-md mx-auto lg:max-w-none rounded-[12px] overflow-hidden shadow-2xl ring-1 ring-primary/10">
 
   {/* 🖼️ Image */}
   <Image
@@ -58,7 +57,7 @@ export function AboutPreview() {
               {FEATURES.map((feature) => (
                 <li key={feature} className="flex items-start gap-3">
                   <CheckCircle2 className="h-5 w-5 text-brand-green-light shrink-0 mt-0.5" />
-                  <span className="text-sm md:text-[15px] text-foreground/90">
+                  <span className="text-sm md:text-[15px] text-[#27215f]">
                     {feature}
                   </span>
                 </li>
@@ -69,7 +68,7 @@ export function AboutPreview() {
               <Button
                 asChild
                 size="lg"
-                className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground"
+                className="rounded-full bg-[#27215f] hover:bg-primary/90 text-primary-foreground"
               >
                 <Link href="/about">
                   تعرف علينا أكثر

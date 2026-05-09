@@ -27,15 +27,13 @@ export function Footer() {
           {/* Brand */}
           <div>
             <Link href="/" className="flex items-center gap-2">
-              <span className="flex h-10 w-10 items-center justify-center rounded-xl  text-accent">
-                <GraduationCap className="h-5 w-5" />
-              </span>
+              
               <span className="flex flex-col leading-tight">
-                <span className="font-bold text-lg">Rital</span>
+                <span className="font-bold text-[22px]">Rital</span>
                
               </span>
             </Link>
-            <p className="mt-4 text-sm text-primary-foreground/75 leading-relaxed text-pretty">
+            <p className="mt-4 text-sm text-[#fcfbf3] leading-relaxed text-pretty">
               نرافقك في رحلتك التعليمية من استخراج الشهادات الرسمية إلى التسجيل
               في أفضل الجامعات والحصول على المنح الدراسية.
             </p>
@@ -58,7 +56,7 @@ export function Footer() {
 
           {/* Quick links */}
           <div>
-            <h3 className="text-sm font-semibold text-accent uppercase tracking-wide">
+            <h3 className="text-sm font-semibold text-[#fcfbf3] uppercase tracking-wide">
               روابط سريعة
             </h3>
             <ul className="mt-4 space-y-2.5 text-sm">
@@ -79,25 +77,7 @@ export function Footer() {
           
 
           {/* Contact */}
-          <div>
-            <h3 className="text-sm font-semibold text-accent uppercase tracking-wide">
-              تواصل معنا
-            </h3>
-            <ul className="mt-4 space-y-3 text-sm">
-              <li className="flex items-start gap-2.5 text-primary-foreground/80">
-                <MapPin className="h-4 w-4 mt-0.5 shrink-0 text-accent" />
-                <span>مصر - القاهرة - ٤ محي الدين ابو العز/ الدقي </span>
-              </li>
-              <li className="flex items-center gap-2.5 text-primary-foreground/80">
-                <Phone className="h-4 w-4 shrink-0 text-accent" />
-                <span dir="ltr">+20 </span>
-              </li>
-              <li className="flex items-center gap-2.5 text-primary-foreground/80">
-                <Mail className="h-4 w-4 shrink-0 text-accent" />
-                <span dir="ltr"> Ritaloffice22@gmail.com</span>
-              </li>
-            </ul>
-          </div>
+         
         </div>
 
         <div className="mt-12 pt-6 border-t border-primary-foreground/15 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-primary-foreground/60">

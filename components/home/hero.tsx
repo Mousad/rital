@@ -5,7 +5,7 @@ import { ArrowLeft, GraduationCap, Star } from "lucide-react";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-[#fbfaf6] from-secondary/60 via-background to-background">
+    <section className="relative overflow-hidden bg-[#f4f7f2] from-secondary/60 via-background to-background">
       <div
         aria-hidden
         className="absolute inset-0 bg-pattern-dots opacity-60"
@@ -22,22 +22,22 @@ export function Hero() {
       <div className="relative mx-auto max-w-7xl px-5 md:px-6 py-8 md:py-24 lg:py-28">
         <div className="grid items-center gap-8 lg:grid-cols-2">
           <div className="order-2 lg:order-1 animate-fade-up">
-            <span className="inline-flex items-center gap-2 rounded-full bg-secondary text-primary px-4 py-0.5 text-xs font-semibold ring-1 ring-primary/10">
+            <span className="inline-flex items-center gap-2 rounded-full bg-secondary text-[#27215f] px-4 py-0.5 text-xs font-semibold ring-1 ring-primary/10">
               شريكك الموثوق  
             </span>
 
-            <h1 className="mt-2 text-3xl md:text-5xl lg:text-6xl font-bold leading-[1.15] text-primary text-balance">
+            <h1 className="mt-2 text-3xl md:text-5xl lg:text-6xl font-bold leading-[1.15] text-[#27215f] text-[#27215f]">
               ابدأ رحلتك مع{" "}
               <span className="relative inline-block">
                 <span className="relative z-10">Rital</span>
                 <span
                   aria-hidden
-                  className="absolute inset-x-0 bottom-1 h-3 bg-accent/50 rounded-sm -z-0"
+                  className="absolute inset-x-0 bottom-1 h-3 bg-[#f4f7f2] rounded-sm -z-0"
                 />
               </span>
             </h1>
 
-            <p className="mt-2 max-w-xl text-base md:text-lg text-muted-foreground leading-relaxed text-pretty">
+            <p className="mt-2 max-w-xl text-base md:text-lg text-[#27215f] leading-relaxed text-pretty">
               نساعدك في الحصول على أفضل الفرص الدراسية واستخراج الشهادات
               الرسمية، مع فريق خبراء يرافقك خطوة بخطوة حتى تحقيق هدفك.
             </p>
@@ -46,7 +46,7 @@ export function Hero() {
               <Button
                 asChild
                 size="lg"
-                className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground h-10 px-6 shadow-md"
+                className="rounded-[12px] bg-[#27215f] hover:bg-primary/90 text-primary-foreground h-10 px-6 shadow-md"
               >
                 <Link href="/services">
                    الخدمات
@@ -57,7 +57,7 @@ export function Hero() {
                 asChild
                 size="lg"
                 variant="outline"
-                className="rounded-full h-10 px-6 border-primary/20 bg-background hover:bg-secondary"
+                className="rounded-[12px] h-10 px-6 border-primary/20 text-[#27215f] bg-background hover:bg-secondary"
               >
                 <Link href="/contact">احجز استشارة</Link>
               </Button>
@@ -82,12 +82,12 @@ export function Hero() {
                   ))}
                 </div>
                 <div>
-                  <div className="flex items-center gap-0.5 text-accent">
+                  <div className="flex items-center gap-0.5 text-[#f21e27]">
                     {[...Array(5)].map((_, i) => (
                       <Star key={i} className="h-3.5 w-3.5 fill-current" />
                     ))}
                   </div>
-                  <p className="text-xs text-muted-foreground mt-0.5">
+                  <p className="text-xs text-[#27215f] mt-0.5">
                     أكثر من 2000+ طالب سعيد
                   </p>
                 </div>
@@ -95,7 +95,7 @@ export function Hero() {
 
               <div className="h-10 w-px bg-border hidden sm:block" />
 
-              <div className="flex items-center gap-6">
+              <div className="flex items-center gap-6 text-[#27215f]">
                 <Stat value="+7" label="سنة خبرة" />
                 <Stat value="+22" label="جامعة شريكة" />
               </div>
@@ -104,14 +104,14 @@ export function Hero() {
 
           {/* Image */}
           <div className="order-1 lg:order-2 relative animate-fade-up [animation-delay:150ms]">
-            <div className="relative aspect-[4/5] sm:aspect-[5/6] lg:aspect-[4/5] max-w-md mx-auto lg:max-w-none">
+            <div className="relative h-[300px] sm:h-[350px] lg:h-[400px] max-w-md mx-auto lg:max-w-none">
               <div className="absolute inset-0 rounded-[2rem] overflow-hidden shadow-2xl ring-1 ring-primary/10">
                 <Image
                   src="/images/bsnk.jpg"
                   alt="طلاب سعداء يحتفلون بتخرجهم"
                   fill
                   priority
-                  sizes="(min-width: 1024px) 560px, 100vw"
+                  sizes="(min-width: 1024px) 460px, 100vw"
                   className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/40 via-transparent to-transparent" />
@@ -121,10 +121,10 @@ export function Hero() {
               <div className="absolute -bottom-0 -left-0 sm:-left-9 bg-card border border-border rounded-[4px]  p-2 flex items-center gap-3 max-w-[220px]">
                 
                 <div>
-                  <p className="text-[10px] font-semibold text-foreground leading-tight">
+                  <p className="text-[10px] font-semibold text-[#27215f] leading-tight">
                     قبول مضمون
                   </p>
-                  <p className="text-[6px] text-muted-foreground mt-0.5">
+                  <p className="text-[6px] text-[#27215f] mt-0.5">
                     في أفضل الجامعات
                   </p>
                 </div>
@@ -134,7 +134,7 @@ export function Hero() {
               <div className="absolute -top-1 -right-1 sm:-right-6 bg-card border border-border  shadow-xl p-2 max-w-[250px]">
                 <div className="flex items-center gap-2">
                   <span className="h-2.5 w-2.5 rounded-full bg-brand-green-light animate-pulse" />
-                  <span className="text-xs font-semibold text-primary">
+                  <span className="text-xs font-semibold text-[#27215f]">
                     استشارة مجانية
                   </span>
                 </div>

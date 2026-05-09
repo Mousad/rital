@@ -32,13 +32,18 @@ const DESTINATIONS = [
 
 export function Destinations() {
   return (
-    <section className="py-8 md:py-24 bg-secondary/40">
+    <section className="py-8 md:py-24 bg-[#f4f7f2]">
       <div className="mx-auto max-w-7xl px-4 md:px-6">
-        <SectionHeading
+       
+
+          <div className="[&_*]:!text-[#27215f]">
+          <SectionHeading
           eyebrow="وجهات الدراسة"
           title="ادرس في أفضل الدول"
           description="اختر وجهتك الدراسية واستفد من خبرتنا الكاملة في التقديم والقبول."
         />
+        </div>
+
 
         <div className="mt-8 grid gap-3  md:grid-cols-2">
           {DESTINATIONS.map((dest) => (
@@ -57,8 +62,8 @@ export function Destinations() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/50 to-transparent" />
 
-                <span className="absolute top-5 right-5 inline-flex items-center gap-1.5 rounded-full bg-background/95 backdrop-blur-sm text-primary px-3 py-1.5 text-xs font-semibold shadow-sm">
-                  <MapPin className="h-3.5 w-3.5 text-[#1b4332]" />
+                <span className="absolute top-5 right-5 inline-flex items-center gap-1.5 rounded-[12px] bg-background/95 backdrop-blur-sm text-[#27215f] px-3 py-1.5 text-xs font-semibold shadow-sm">
+                  <MapPin className="h-3.5 w-3.5 text-[#27215f]" />
                   {dest.tag}
                 </span>
 
@@ -84,7 +89,7 @@ export function Destinations() {
                       ))}
                     </div>
 
-                    <span className="inline-flex items-center gap-1.5 rounded-full bg-[#1b4332] text-[#fbfaf6] hover:bg-accent/90 transition-colors px-4 h-9 text-xs font-semibold">
+                    <span className="inline-flex items-center gap-1.5 rounded-full bg-[#27215f] text-[#fbfaf6] hover:bg-accent/90 transition-colors px-4 h-9 text-xs font-semibold">
                       اكتشف المزيد
                       <ArrowLeft className="h-4 w-4" />
                     </span>

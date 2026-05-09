@@ -74,7 +74,7 @@ export function Navbar() {
                   href={link.href}
                   className={cn(
                     "relative px-3 py-2 text-sm font-medium transition",
-                    active ? "text-primary" : "text-foreground/70 hover:text-primary"
+                    active ? "text-primary" : "text-foreground/70 hover:text-[#27215f]"
                   )}
                 >
                   {link.label}
@@ -89,7 +89,7 @@ export function Navbar() {
             <Button
               asChild
               size="sm"
-              className="hidden md:inline-flex rounded-full bg-primary text-white"
+              className="hidden md:inline-flex rounded-[12px] bg-[#27215f] text-white"
             >
               <Link href="/contact">احجز استشارة</Link>
             </Button>
@@ -124,7 +124,7 @@ export function Navbar() {
                     </Link>
 
                     <SheetClose asChild>
-                      <button className="p-2 rounded-full hover:bg-muted">
+                      <button className="p-2 rounded-[12px] hover:bg-[#27215f]">
                         <X className="h-5 w-5" />
                       </button>
                     </SheetClose>
@@ -139,7 +139,7 @@ export function Navbar() {
                       key={link.href}
                       href={link.href}
                       onClick={() => setOpen(false)}
-                      className="block px-4 py-3 rounded-xl hover:bg-muted"
+                      className="block px-4 py-3 rounded-xl hover:bg-[#27215f]"
                     >
                       {link.label}
                     </Link>
@@ -148,7 +148,7 @@ export function Navbar() {
 
                 {/* CTA */}
                 <div className="p-4 border-t">
-                  <Button asChild className="w-full rounded-full bg-primary text-white">
+                  <Button asChild className="w- rounded-[12px] bg-[#27215f] text-white">
                     <Link href="/contact" onClick={() => setOpen(false)}>
                       احجز استشارة مجانية
                     </Link>

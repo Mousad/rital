@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 const INFO = [
   {
     icon: MapPin,
-    title: "عنواننا",
+    title: "المقر",
     value: "القاهرة، مصر - محي الدين ابو العز/ الدقي",
   },
   {
@@ -33,7 +33,7 @@ export function MapSection() {
   return (
     <>
       {/* MAP SECTION */}
-      <section className="py-20 md:py-24">
+      <section className="py-20 md:py-24 bg-[#f4f7f2]">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
 
           <SectionHeading
@@ -62,19 +62,19 @@ export function MapSection() {
                 return (
                   <div
                     key={item.title}
-                    className="bg-card border border-border rounded-2xl p-5 flex items-start gap-4 hover:border-primary/30 hover:shadow-md transition-all"
+                    className="bg-card border border-border rounded-[12px] p-5 flex items-start gap-4 hover:border-primary/30 hover:shadow-md transition-all"
                   >
-                    <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-secondary text-primary shrink-0">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-[13px] bg-[#27215f] text-[#f4f7f2] shrink-0">
                       <Icon className="h-5 w-5" />
                     </div>
 
                     <div className="min-w-0">
-                      <p className="text-xs text-muted-foreground">
+                      <p className="text-xs text-[#27215f]">
                         {item.title}
                       </p>
 
                       <p
-                        className="mt-1 font-semibold text-foreground text-sm md:text-base"
+                        className="mt-1 font-semibold text-[#27215f] text-sm md:text-base"
                         dir={item.dir || undefined}
                       >
                         {item.value}
@@ -108,7 +108,7 @@ export function MapSection() {
         {/* Content */}
         <div className="relative z-10 mx-auto max-w-5xl px-4 md:px-6">
 
-          <div className="rounded-3xl bg-white/10 backdrop-blur-md border border-white/20 p-8 md:p-12 text-center shadow-lg text-white">
+          <div className="rounded-[12px] bg-white/10 backdrop-blur-md border border-white/20 p-8 md:p-12 text-center shadow-lg text-white">
 
             <h3 className="text-2xl md:text-3xl font-bold">
               جاهز لبدء رحلتك معنا؟
@@ -123,7 +123,7 @@ export function MapSection() {
   <Button
     asChild
     size="lg"
-    className="rounded-full bg-white text-black hover:bg-gray-200 whitespace-nowrap"
+    className="rounded-[12px] bg-[#27215f] text-white hover:bg-[#27215f]  whitespace-nowrap"
   >
     <Link href="/contact">
        استشارة مجانية
@@ -135,7 +135,7 @@ export function MapSection() {
     href="https://wa.me/201234567890"
     target="_blank"
     rel="noopener noreferrer"
-    className="flex items-center gap-2 rounded-full border border-white/30 px-6 py-2 text-white hover:bg-white/10 transition whitespace-nowrap"
+    className="flex items-center gap-2 rounded-[12px] border border-white/30 px-6 py-2 text-[white] hover:bg-white/10 transition whitespace-nowrap"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"

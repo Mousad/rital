@@ -3,6 +3,12 @@ import Link from "next/link"
 import { PageHero } from "@/components/site/page-hero"
 import { SectionHeading } from "@/components/site/section-heading"
 import { Button } from "@/components/ui/button"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import {
+  faInstagram,
+  faLinkedinIn,
+  faFacebookF,
+} from "@fortawesome/free-brands-svg-icons"
 import {
   ArrowLeft,
   Target,
@@ -36,7 +42,7 @@ const VALUES = [
 ]
 
 const STATS = [
-  { icon: Users, value: "2000+", label: "طالب سعيد" },
+  { icon: Users, value: "7000", label: "طالب سعيد" },
   { icon: GraduationCap, value: "50+", label: "جامعة شريكة" },
   { icon: Building, value: "12+", label: "سنة خبرة" },
   { icon: Trophy, value: "98%", label: "معدل رضا" },
@@ -46,58 +52,68 @@ const TEAM = [
   {
     name: "د. محمد العلي",
     role: "المدير التنفيذي",
-    image: "https://i.pinimg.com/736x/43/d7/16/43d716925da061a194dc992feb4b34ed.jpg",
+    image:
+      "https://i.pinimg.com/736x/43/d7/16/43d716925da061a194dc992feb4b34ed.jpg",
+    instagram: "#",
+    linkedin: "#",
+    facebook: "#",
   },
   {
     name: "أ. عثمان الشامي",
     role: "مسؤولة الاستشارات",
-    image: "https://i.pinimg.com/736x/67/d4/73/67d473ac5acd3069d909813c79d55942.jpg",
+    image:
+      "https://i.pinimg.com/736x/67/d4/73/67d473ac5acd3069d909813c79d55942.jpg",
+    instagram: "#",
+    linkedin: "#",
+    facebook: "#",
   },
   {
     name: "أ. هدى كريم",
     role: "منسق جامعات الصين",
-    image: "https://i.pinimg.com/736x/0a/d1/93/0ad19309a59be71b028548801ac38353.jpg",
+    image:
+      "https://i.pinimg.com/736x/0a/d1/93/0ad19309a59be71b028548801ac38353.jpg",
+    instagram: "#",
+    linkedin: "#",
+    facebook: "#",
   },
   {
     name: "أ. ريم أحمد",
     role: "منسقة جامعات مصر",
-    image: "https://i.pinimg.com/736x/0c/22/90/0c2290cf168019e6cbfe5cb31187a471.jpg",
+    image:
+      "https://i.pinimg.com/736x/0c/22/90/0c2290cf168019e6cbfe5cb31187a471.jpg",
+    instagram: "#",
+    linkedin: "#",
+    facebook: "#",
   },
 ]
 
 export default function AboutPage() {
   return (
     <>
-      
-
-       <div className="relative py-8 overflow-hidden">
-        {/* Background Image */}
+      {/* HERO */}
+      <div className="relative py-8 overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="https://i.pinimg.com/736x/6b/ea/c3/6beac3914fd768904cb963fed155aa5f.jpg"
+            src="/images/ABOUT.png"
             alt="education"
-            className="w-full h-full object-cover" 
+            className="w-full h-full object-cover"
           />
         </div>
 
-        {/* Overlay */}
         <div className="absolute inset-0 bg-black/60"></div>
 
-        {/* Content */}
         <div className="relative z-10 text-center text-white px-4">
           <p className="text-sm md:text-base mb-3 tracking-wider text-gray-200">
             عنّا
           </p>
 
           <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
-        نحن ريتال للخدمات التعليمية
+            نحن ريتال للخدمات التعليمية
           </h1>
-
-          
         </div>
       </div>
 
-      {/* Story */}
+      {/* STORY */}
       <section className="py-8 md:py-24">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           <div className="grid gap-12 lg:grid-cols-2 items-center">
@@ -106,30 +122,24 @@ export default function AboutPage() {
                 src="/images/about.jpg"
                 alt="فريق ريتال"
                 fill
-                sizes="(min-width: 1024px) 560px, 100vw"
                 className="object-cover"
                 priority
               />
             </div>
 
             <div>
-              <span className="inline-flex items-center gap-2 rounded-full bg-secondary text-primary px-3.5 py-1 text-xs font-semibold">
-                <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-                قصتنا
-              </span>
-              <h2 className="mt-4 text-3xl md:text-4xl font-bold text-foreground leading-tight text-balance">
-                من فكرة بسيطة إلى مؤسسة تعليمية رائدة
-              </h2>
-              <div className="mt-5 space-y-4 text-muted-foreground leading-relaxed text-pretty">
+              <SectionHeading
+                eyebrow="قصتنا"
+                title="من فكرة بسيطة إلى مؤسسة تعليمية رائدة"
+                description=""
+              />
+
+              <div className="mt-5 space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  انطلقت ريتال من إيمان عميق بأن التعليم هو مفتاح تغيير الحياة.
-                  بدأنا رحلتنا قبل أكثر من 12 عاماً بهدف بسيط: مساعدة طالب واحد
-                  في الوصول لحلمه الجامعي. واليوم، بعد أن ساعدنا آلاف الطلاب،
-                  ما زلنا نحمل نفس الشغف وذات الالتزام.
+                  انطلقت ريتال من إيمان عميق بأن التعليم هو مفتاح تغيير الحياة...
                 </p>
                 <p>
-                  نحن لا نقدم مجرد خدمات، بل نرافق الطالب وعائلته في رحلة
-                  تعليمية كاملة. كل ملف لدينا هو قصة، وكل طالب هو مسؤولية.
+                  نحن لا نقدم مجرد خدمات، بل نرافق الطالب...
                 </p>
               </div>
             </div>
@@ -137,30 +147,57 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Values */}
+      {/* PARTNERS */}
+      <div className="relative flex flex-col items-center justify-center gap-11">
+        <div className="relative h-[180px] w-[320px] overflow-hidden rounded-[12px] border bg-white shadow-lg z-50">
+          <img
+            src="/images/rietl.png"
+            alt="Rital"
+            className="h-full w-full object-cover"
+          />
+        </div>
+
+        <div className="absolute top-1/2 -translate-y-1/2">
+          <div className="flex h-20 w-20 items-center justify-center rounded-full bg-[#0e1b6c] shadow-2xl border border-white/10">
+            <p className="text-sm text-white font-bold">شراكة</p>
+          </div>
+        </div>
+
+        <div className="relative h-[180px] w-[320px] overflow-hidden rounded-3xl border bg-white shadow-lg">
+          <img
+            src="/images/nobst.png"
+            alt="Nubatia"
+            className="h-full w-full object-cover"
+          />
+        </div>
+      </div>
+
+      {/* VALUES */}
       <section className="py-8 md:py-20 bg-secondary/40">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           <SectionHeading
             eyebrow="ما يميزنا"
             title="رسالتنا ورؤيتنا وقيمنا"
-            description="ثلاثة مبادئ أساسية توجّه كل قرار وكل خطوة نتخذها."
+            description=""
           />
 
-          <div className="mt-12 grid gap-5 grid-cols- md:grid-cols-3">
+          <div className="mt-12 grid gap-5 grid-cols-2 md:grid-cols-3">
             {VALUES.map((v) => {
               const Icon = v.icon
               return (
                 <div
                   key={v.title}
-                  className="bg-card border border-border rounded-3xl p-7 hover:border-primary/30 hover:shadow-lg transition-all"
+                  className="bg-card border border-border rounded-3xl p-7"
                 >
-                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-[12px] bg-[#27215f] text-white">
                     <Icon className="h-6 w-6" />
                   </div>
-                  <h3 className="mt-5 text-xl font-bold text-foreground">
+
+                  <h3 className="mt-5 text-xl font-bold text-[#27215f]">
                     {v.title}
                   </h3>
-                  <p className="mt-2 text-muted-foreground leading-relaxed">
+
+                  <p className="mt-2 text-[#27215f]">
                     {v.description}
                   </p>
                 </div>
@@ -170,116 +207,81 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="py-8 md:py-20">
+      {/* TEAM */}
+      <section className="py-8 md:py-20 bg-secondary/40">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
-          <div className="rounded-3xl bg-primary text-primary-foreground p-8 md:p-12 relative overflow-hidden">
-            <div aria-hidden className="absolute inset-0 bg-pattern-grid opacity-[0.12]" />
-            <div className="relative grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
-              {STATS.map((s) => {
-                const Icon = s.icon
-                return (
-                  <div key={s.label} className="text-center">
-                    <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-accent/15 text-accent">
-                      <Icon className="h-5 w-5" />
-                    </div>
-                    <div className="mt-3 text-3xl md:text-4xl font-bold text-accent">
-                      {s.value}
-                    </div> 
-                    <div className="mt-1 text-sm text-primary-foreground/80">
-                      {s.label}
-                    </div>
-                  </div>
-                )
-              })}
-            </div>
+          <SectionHeading
+            eyebrow="فريقنا"
+            title="أشخاص يجعلون الفرق"
+            description=""
+          />
+
+         <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4">
+  {TEAM.map((t) => (
+    <div
+      key={t.name}
+      className="group bg-card border border-border rounded-[16px] overflow-hidden hover:shadow-xl transition-all"
+    >
+      {/* الصورة */}
+      <div className="aspect-square relative overflow-hidden">
+        <img
+          src={t.image}
+          alt={t.name}
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+        />
+
+        {/* SOCIAL */}
+        <div className="absolute inset-0 flex items-end justify-center pb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <div className="flex gap-3 bg-[#27215f] px-4 py-2 rounded-full shadow-lg text-white">
+
+            <a href={t.instagram}>
+              <FontAwesomeIcon icon={faInstagram} className="text-lg" />
+            </a>
+
+            <a href={t.linkedin}>
+              <FontAwesomeIcon icon={faLinkedinIn} className="text-lg" />
+            </a>
+
+            <a href={t.facebook}>
+              <FontAwesomeIcon icon={faFacebookF} className="text-lg" />
+            </a>
+
           </div>
+        </div>
+      </div>
+
+      {/* الاسم + الوظيفة */}
+      <div className="p-5 text-center text-[#27215f]">
+        <h4 className="font-bold">{t.name}</h4>
+        <p className="text-xs text-[#27215f]/70">{t.role}</p>
+      </div>
+    </div>
+  ))}
+</div>
         </div>
       </section>
 
-      <section className="py-8 md:py-20 bg-secondary/40">
-  <div className="mx-auto max-w-7xl px-4 md:px-6">
-    <SectionHeading
-      eyebrow="فريقنا"
-      title="أشخاص يجعلون الفرق"
-      description="فريق من الخبراء المتخصصين في الإرشاد التعليمي والجامعي."
-    />
-
-    <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-5">
-      {TEAM.map((t) => (
-        <div
-          key={t.name}
-          className="group bg-card border border-border rounded-3xl overflow-hidden hover:shadow-lg transition-all"
-        >
-          {/* الصورة */}
-          <div className="aspect-square overflow-hidden">
-            <img
-              src={t.image}
-              alt={t.name}
-              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-            />
-          </div>
-
-          {/* الاسم + الوظيفة */}
-          <div className="p-5 text-center">
-            <h4 className="font-bold text-foreground">{t.name}</h4>
-            <p className="mt-1 text-xs text-muted-foreground">
-              {t.role}
-            </p>
-          </div>
-        </div>
-      ))}
-    </div>
-  </div>
-</section>
-
-    
-
       {/* CTA */}
-    
       <section className="relative py-8 md:py-24 overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="https://i.pinimg.com/736x/6b/ea/c3/6beac3914fd768904cb963fed155aa5f.jpg"
+            className="w-full h-full object-cover"
+          />
+        </div>
 
-  {/* Background Image */}
-  <div className="absolute inset-0">
-    <img
-      src="https://i.pinimg.com/736x/6b/ea/c3/6beac3914fd768904cb963fed155aa5f.jpg"
-      alt="students"
-      className="w-full h-full object-cover"
-    />
-  </div>
+        <div className="absolute inset-0 bg-black/60"></div>
 
-  {/* Overlay */}
-  <div className="absolute inset-0 bg-black/60"></div>
+        <div className="relative z-10 mx-auto max-w-5xl px-4 md:px-6 text-center text-white">
+          <h3 className="text-2xl md:text-3xl font-bold">
+            جاهز لبدء رحلتك معنا؟
+          </h3>
 
-  {/* Content */}
-  <div className="relative z-10 mx-auto max-w-5xl px-4 md:px-6">
-    <div className="rounded-3xl bg-white/10 backdrop-blur-md border border-white/20 p-8 md:p-12 text-center shadow-lg text-white">
-      
-      <h3 className="text-2xl md:text-3xl font-bold">
-        جاهز لبدء رحلتك معنا؟
-      </h3>
-
-      <p className="mt-3 max-w-xl mx-auto text-gray-200">
-    انضم لآلاف الطلاب الذين بدؤوا رحلتهم التعليمية مع ريتال.
-      </p>
-
-      <Button
-        asChild
-        size="lg"
-        className="mt-6 rounded-full bg-white text-black hover:bg-gray-200"
-      >
-        <Link href="/contact">
-          احجز استشارة مجانية
-          <ArrowLeft className="h-4 w-4" />
-        </Link>
-      </Button>
-
-    </div>
-  </div>
-</section>
-
-
-     
+          <Button asChild className="mt-6 bg-white text-black">
+            <Link href="/contact">احجز استشارة</Link>
+          </Button>
+        </div>
+      </section>
     </>
   )
 }

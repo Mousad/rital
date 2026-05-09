@@ -76,14 +76,18 @@ export function Universities() {
     : UNIVERSITIES.slice(0, 4)
 
   return (
-    <section className="py-8 md:py-18 bg-secondary/40">
+    <section className="py-8 md:py-18 bg-[#f4f7f2]">
       <div className="mx-auto max-w-3xl px-5 md:px-6">
 
-        <SectionHeading
+        
+
+         <div className="[&_*]:!text-[#27215f]">
+         <SectionHeading
           eyebrow="جامعاتنا الشريكة"
           title=" جامعاتنا حول العالم"
           description="نتعاون مع أفضل الجامعات العالمية لتوفير فرص دراسية ممتازة لطلابنا."
         />
+        </div>
 
         <div className="mt-12 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 md:gap-4">
 
@@ -118,7 +122,7 @@ export function Universities() {
 
                 {/* 📝 Name */}
                 <div className="pt-8 pb-2 px-2 text-center">
-                  <span className="text-[15px] text-muted-foreground leading-tight line-clamp-2">
+                  <span className="text-[15px] text-[#27215f] leading-tight line-clamp-2">
                     {uni.ar}
                   </span>
                 </div>
@@ -133,9 +137,9 @@ export function Universities() {
         <div className="mt-6 flex justify-center">
           <button
             onClick={() => setShowAll(!showAll)}
-            className="px-5 py-2 text-sm rounded-xl bg-primary text-white hover:opacity-90 transition"
+            className="px-5 py-2 text-sm rounded-[12px] bg-[#27215f] text-[#f4f7f2] hover:opacity-90 transition"
           >
-            {showAll ? "عرض أقل" : "عرض المزيد"}
+            {showAll ? "عرض أقل" : " المزيد"}
           </button>
         </div>
 

@@ -52,14 +52,19 @@ const REVIEWS: Review[] = [
 
 export function Reviews() {
   return (
-    <section className="py-8 md:py-24 bg-secondary/40">
+    <section className="py-8 md:py-24 bg-[#f4f7f2]">
       <div className="mx-auto max-w-7xl px-4 md:px-6">
 
-        <SectionHeading
+       
+
+        
+          <div className="[&_*]:!text-[#27215f]">
+           <SectionHeading
           eyebrow="شهادات طلابنا"
           title="قصص نجاح تلهمك"
           description="استمع لتجارب طلابنا الذين حققوا أحلامهم التعليمية معنا."
         />
+        </div>
 
         <div className="mt-12">
           <Carousel
