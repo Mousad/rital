@@ -23,10 +23,10 @@ export function Hero() {
         <div className="grid items-center gap-8 lg:grid-cols-2">
           <div className="order-2 lg:order-1 animate-fade-up">
             <span className="inline-flex items-center gap-2 rounded-full bg-secondary text-[#27215f] px-4 py-0.5 text-xs font-semibold ring-1 ring-primary/10">
-              شريكك الموثوق  
+              شريكك الموثوق
             </span>
 
-            <h1 className="mt-2 text-3xl md:text-5xl lg:text-6xl font-bold leading-[1.15] text-[#27215f] text-[#27215f]">
+            <h1 className="mt-2 text-3xl md:text-5xl lg:text-6xl font-bold leading-[1.15]  text-[#27215f] text-[#27215f]">
               ابدأ رحلتك مع{" "}
               <span className="relative inline-block">
                 <span className="relative z-10">Rital</span>
@@ -42,14 +42,14 @@ export function Hero() {
               الرسمية، مع فريق خبراء يرافقك خطوة بخطوة حتى تحقيق هدفك.
             </p>
 
-            <div className="mt-8 flex flex-wrap items-center gap-3">
+            <div className="mt-8 flex flex-wrap items-center gap-3 ">
               <Button
                 asChild
                 size="lg"
                 className="rounded-[12px] bg-[#27215f] hover:bg-primary/90 text-primary-foreground h-10 px-6 shadow-md"
               >
                 <Link href="/services">
-                   الخدمات
+                  الخدمات
                   <ArrowLeft className="h-4 w-4" />
                 </Link>
               </Button>
@@ -64,7 +64,7 @@ export function Hero() {
             </div>
 
             {/* Trust row */}
-            <div className="mt-10 flex flex-wrap items-center gap-6">
+            <div className="mt-10 flex flex-wrap items-center gap-6 ">
               <div className="flex items-center gap-3">
                 <div className="flex -space-x-2 -space-x-reverse">
                   {[
@@ -105,9 +105,9 @@ export function Hero() {
           {/* Image */}
           <div className="order-1 lg:order-2 relative animate-fade-up [animation-delay:150ms]">
             <div className="relative h-[300px] sm:h-[350px] lg:h-[400px] max-w-md mx-auto lg:max-w-none">
-              <div className="absolute inset-0 rounded-[2rem] overflow-hidden shadow-2xl ring-1 ring-primary/10">
+              <div className="absolute inset-0 rounded-[12px] overflow-hidden shadow-2xl ring-1 ring-primary/10">
                 <Image
-                  src="/images/bsnk.jpg"
+                  src="/images/bamk.jpeg"
                   alt="طلاب سعداء يحتفلون بتخرجهم"
                   fill
                   priority
@@ -118,17 +118,6 @@ export function Hero() {
               </div>
 
               {/* Floating card 1 */}
-              <div className="absolute -bottom-0 -left-0 sm:-left-9 bg-card border border-border rounded-[4px]  p-2 flex items-center gap-3 max-w-[220px]">
-                
-                <div>
-                  <p className="text-[10px] font-semibold text-[#27215f] leading-tight">
-                    قبول مضمون
-                  </p>
-                  <p className="text-[6px] text-[#27215f] mt-0.5">
-                    في أفضل الجامعات
-                  </p>
-                </div>
-              </div>
 
               {/* Floating card 2 */}
               <div className="absolute -top-1 -right-1 sm:-right-6 bg-card border border-border  shadow-xl p-2 max-w-[250px]">

@@ -159,7 +159,7 @@ export default async function ContactPage({
                       const Icon = item.icon
                       return (
                         <li key={item.title} className="flex items-start gap-3">
-                          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-accent/15 text-accent">
+                          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#e9f3ec] text-[#27215f]">
                             <Icon className="h-4 w-4" />
                           </span>
                           <div className="min-w-0">

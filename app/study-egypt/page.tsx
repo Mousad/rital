@@ -119,22 +119,23 @@ const STEPS = [
 export default function StudyEgyptPage() {
   return (
     <>
-      <div className="relative py-8 overflow-hidden ">
+    
 
-  {/* Background Image */}
-  <div className="absolute inset-0">
-    <img
-      src="https://i.pinimg.com/1200x/6b/ea/c3/6beac3914fd768904cb963fed155aa5f.jpg"
-      alt="study in egypt"
-      className="w-full h-full object-cover"
-    />
-  </div>
+ <div className="relative py-8 overflow-hidden ">
+        {/* Background Image */}
+       <div className="absolute inset-0">
+  <img
+    src="/images/cain.jpeg"
+    alt="study in china"
+    className="w-full h-[400px] object-cover"
+  />
+</div>
 
-  {/* Overlay */}
-  <div className="absolute inset-0 bg-black/60" />
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/60" />
 
-  {/* Content */}
-  <div className="relative z-10 text-center text-white px-4">
+        {/* Content */}
+        <div className="relative z-10 text-center text-white px-4">
 
     <p className="text-sm md:text-base mb-3 tracking-wider text-gray-200">
       الدراسة في مصر
@@ -176,8 +177,7 @@ export default function StudyEgyptPage() {
     </div>
 
   </div>
-
-</div>
+      </div>
 
 
 <section className="py-6 md:py-20 bg-[#f4f7f2]">

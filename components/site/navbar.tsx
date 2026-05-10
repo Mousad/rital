@@ -115,20 +115,9 @@ export function Navbar() {
 
                   <div className="flex items-center justify-between">
 
-                    <Link href="/" className="flex items-center">
-                      <img
-                        src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcT1V1FRYeC3HdqcX0e-2R9GiJLwcbl_ClOtFMv4kc7L8t9nIAhq"
-                        alt="logo"
-                        className="w-[40px] h-auto object-contain"
-                      />
-                    </Link>
+                   
 
-                    <SheetClose asChild>
-                      <button className="p-2 rounded-[12px] hover:bg-[#27215f]">
-                        <X className="h-5 w-5" />
-                      </button>
-                    </SheetClose>
-
+                   
                   </div>
                 </SheetHeader>
 

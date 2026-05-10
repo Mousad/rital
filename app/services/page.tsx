@@ -41,7 +41,6 @@ const SERVICES = [
     title: "المنح الدراسية",
     description: "التقديم على المنح الكاملة والجزئية في مختلف دول العالم.",
     href: "/scholarships",
-    
   },
   {
     icon: BookOpenCheck,
@@ -93,61 +92,54 @@ export default function ServicesPage() {
       {/* SERVICES */}
       <section className="py-10 md:py-20">
         <div className="mx-auto max-w-3xl px-4 md:px-6">
-          
-
-           
-  
-   
-
-
-<div className="[&_*]:!text-[#27215f]">
-          <SectionHeading
-            eyebrow="ما نقدمه"
-            title="اختر الخدمة التي تحتاجها"
-            description="
+          <div className="[&_*]:!text-[#27215f]">
+            <SectionHeading
+              eyebrow="ما نقدمه"
+              title="اختر الخدمة التي تحتاجها"
+              description="
             نوفر لك كل ما تحتاجه في رحلتك التعليمية، من استخراج الشهادات إلى الوصول
             للجامعة وما بعدها، بخبرة تمتد لسنوات وخدمات موثوقة.
           "
-          />
-        </div>
+            />
+          </div>
 
           <div className="mt-18 grid gap-4 grid-cols-2 lg:grid-cols-3">
-  {SERVICES.map((s) => {
-    const Icon = s.icon;
+            {SERVICES.map((s) => {
+              const Icon = s.icon;
 
-    return (
-      <Link
-        key={s.title}
-        href={s.href}
-        className="group relative rounded-[12px] border border-border bg-card p-5 pt-12 transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-2xl"
-      >
-        {/* Icon */}
-       <div className="absolute  -top-3 left-1/2 -translate-x-1/2 flex items-center justify-center">
-  <div className="flex h-14 w-14 items-center justify-center rounded-[12px] bg-[#27215f] text-[#f4f7f2] shadow-lg group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
-    <Icon className="h-6 w-6" />
-  </div>
-</div>
+              return (
+                <Link
+                  key={s.title}
+                  href={s.href}
+                  className="group relative rounded-[12px] border border-border bg-card p-5 pt-12 transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-2xl"
+                >
+                  {/* Icon */}
+                  <div className="absolute  -top-3 left-1/2 -translate-x-1/2 flex items-center justify-center">
+                    <div className="flex h-14 w-14 items-center justify-center rounded-[12px] bg-[#27215f] text-[#f4f7f2] shadow-lg group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
+                      <Icon className="h-6 w-6" />
+                    </div>
+                  </div>
 
-        {/* Title */}
-       <h3 className="text-[12px] mt-3  font-bold text-[#27215f] transition-colors group-hover:text-primary text-right whitespace-nowrap overflow-hidden text-ellipsis">
-  {s.title}
-</h3>
+                  {/* Title */}
+                  <h3 className="text-[12px] mt-3 font-bold text-[#27215f] transition-colors group-hover:text-primary text-center lg:text-right whitespace-nowrap overflow-hidden text-ellipsis">
+                    {s.title}
+                  </h3>
 
-        {/* Description */}
-        <p className="mt-5 text-sm leading-4 text-muted-foreground text-right min-h-[80px]">
-          {s.description}
-        </p>
+                  {/* Description */}
+                  <p className="mt-5 text-sm leading-4 text-muted-foreground text-right min-h-[80px]">
+                    {s.description}
+                  </p>
 
-        {/* Button */}
-        <div className="mt-2 flex items-center justify-start gap-3 text-sm font-semibold text-[#27215f]">
-          <span>اكتشف </span>
+                  {/* Button */}
+                  <div className="mt-2 flex items-center justify-start gap-3 text-sm font-semibold text-[#27215f]">
+                    <span>اكتشف </span>
 
-          <ArrowLeft className="h-4 w-4 transition-transform text-[#f21e27] duration-300 group-hover:-translate-x-1" />
-        </div>
-      </Link>
-    );
-  })}
-</div>
+                    <ArrowLeft className="h-4 w-4 transition-transform text-[#f21e27] duration-300 group-hover:-translate-x-1" />
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
         </div>
       </section>
 
