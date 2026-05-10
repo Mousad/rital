@@ -19,11 +19,12 @@ import {
 const NAV_LINKS = [
   { href: "/", label: "الرئيسية" },
   { href: "/services", label: "الخدمات" },
+  { href: "/about", label: "عنّا" },
   { href: "/scholarships", label: "منح" },
   { href: "/certificates", label: "استخراج الشهادات" },
   { href: "/study-china", label: "الدراسة في الصين" },
   { href: "/study-egypt", label: "الدراسة في مصر" },
-  { href: "/about", label: "عنّا" },
+  
   { href: "/contact", label: "تواصل معنا" },
 ]
 
