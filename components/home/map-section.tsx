@@ -8,12 +8,12 @@ const INFO = [
   {
     icon: MapPin,
     title: "المقر",
-    value: "القاهرة، مصر - محي الدين ابو العز/ الدقي",
+    value: "لقاهرة / 6 حسين كمال_الدقي",
   },
   {
     icon: Phone,
     title: "اتصل بنا",
-    value: "+963 11 123 4567",
+    value: "+20 100 2337674",
     dir: "ltr" as const,
   },
   {
@@ -48,11 +48,12 @@ export function MapSection() {
             <div className="lg:col-span-2 rounded-3xl overflow-hidden border border-border shadow-sm aspect-[4/3] lg:aspect-auto lg:min-h-[420px] bg-secondary">
               <iframe
                 title="موقعنا على الخريطة"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.6675272203337!2d31.2118!3d30.0444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145841c9c8c7a7ef%3A0x3a2b5d1a2c3d4e5f!2s4%20Mohy%20El%20Din%20Abo%20El%20Ez%2C%20Ad%20Doqi%2C%20Giza%20Governorate%2C%20Egypt!5e0!3m2!1sen!2sus!4v1713459996237!5m2!1sen!2sus"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2689.5322079377697!2d31.2022205!3d30.0335601!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145847d9cdbfb8b9%3A0x257377c4647e1126!2z2LTYsdmD2Kkg2LHZitiq2KfZhCB8INmE2YTYrtiv2YXYp9iqINin2YTYqti52YTZitmF2YrYqQ!5e1!3m2!1sar!2seg!4v1778630405845!5m2!1sar!2seg"
                 className="w-full h-full border-0"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               />
+              
             </div>
 
             {/* INFO */}

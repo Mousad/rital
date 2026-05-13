@@ -822,7 +822,7 @@ export default function StudyChinaPage() {
       </section>
 
       <a
-        href="https://wa.me/201001234567"
+        href="https://wa.me/201117740555"
         target="_blank"
         className="fixed bottom-6 right-6 z-50 flex items-center justify-center h-12 w-12 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg transition hover:scale-110"
       >

@@ -22,9 +22,9 @@ import {
 const TYPES = [
   {
     icon: Award,
-    title: "منحة حكومية صينية كاملة",
+    title: "منحة حكومية  كاملة",
     description:
-      "منحة CSC الحكومية التي تغطي الرسوم الدراسية، السكن، بدل شهري، وتأمين صحي.",
+      "منحة  الحكومية التي تغطي الرسوم الدراسية، السكن، بدل شهري، وتأمين صحي.",
     features: ["الرسوم الدراسية", "السكن الجامعي", "بدل شهري", "تأمين صحي"],
     tone: "primary",
   },
@@ -147,7 +147,7 @@ export default function ScholarshipsPage() {
               return (
                 <div
                   key={t.title}
-                  className={`relative rounded-3xl p-6 md:p-7 border flex flex-col transition-all hover:-translate-y-1 hover:shadow-xl ${
+                  className={`relative rounded-[12px] p-6 md:p-7 border flex flex-col transition-all hover:-translate-y-1 hover:shadow-xl ${
                     highlight
                       ? "bg-[#27215f] text-primary-foreground border-primary shadow-xl lg:scale-[1.02]"
                       : "bg-card text-card-foreground border-border"
@@ -207,10 +207,10 @@ export default function ScholarshipsPage() {
                   <Button
                     asChild
                     size="sm"
-                    className={`mt-6 rounded-full ${
+                    className={`mt-6 rounded-[12px] ${
                       highlight
-                        ? "bg-[#fcfbf3] text-[#27215f] hover:bg-accent/90"
-                        : "bg-[#27215f] text-primary-foreground hover:bg-primary/90"
+                        ? "bg-[#fcfbf3] text-[#27215f] "
+                        : "bg-[#27215f] text-primary-foreground "
                     }`}
                   >
                     <Link href="/contact?service=scholarships">

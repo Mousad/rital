@@ -14,19 +14,13 @@ export function ScholarshipsCTA() {
   return (
     <section className="py-20 md:py-24">
       <div className="mx-auto max-w-7xl px-4 md:px-6">
-        <div className="relative overflow-hidden rounded-3xl bg-primary text-primary-foreground">
-          <div
-            aria-hidden
-            className="absolute inset-0 bg-pattern-grid opacity-[0.15]"
-          />
-          <div
-            aria-hidden
-            className="absolute -top-24 -left-24 h-80 w-80 rounded-full bg-accent/25 blur-3xl"
-          />
+        <div className="relative overflow-hidden rounded-3xl bg-[#27215f] text-primary-foreground">
+          
+          
 
           <div className="relative grid md:grid-cols-2 gap-10 items-center p-8 md:p-12 lg:p-16">
             <div>
-              <span className="inline-flex items-center gap-2 rounded-full bg-accent/15 text-accent px-3.5 py-1.5 text-xs font-semibold ring-1 ring-accent/30">
+              <span className="inline-flex items-center gap-2 rounded-[8px] bg-[#fcf7f4] text-[#27215f] px-3.5 py-1.5 text-xs font-semibold ring-1 ring-accent/30">
                 <Award className="h-3.5 w-3.5" />
                 المنح الدراسية
               </span>
@@ -41,7 +35,7 @@ export function ScholarshipsCTA() {
               <ul className="mt-6 grid sm:grid-cols-2 gap-3">
                 {BENEFITS.map((b) => (
                   <li key={b} className="flex items-start gap-2 text-sm">
-                    <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent text-accent-foreground">
+                    <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#fcf7f4] text-[#27215f]">
                       <Check className="h-3 w-3" />
                     </span>
                     <span className="text-primary-foreground/90">{b}</span>
@@ -53,7 +47,7 @@ export function ScholarshipsCTA() {
                 <Button
                   asChild
                   size="lg"
-                  className="rounded-full bg-accent text-accent-foreground hover:bg-accent/90"
+                  className="rounded-[12px] bg-[#fcf7f4] text-[#27215f] hover:bg-[#fcf7f4]"
                 >
                   <Link href="/scholarships">
                     اكتشف المنح المتاحة
@@ -64,7 +58,7 @@ export function ScholarshipsCTA() {
                   asChild
                   size="lg"
                   variant="outline"
-                  className="rounded-full border-primary-foreground/20 bg-transparent text-primary-foreground hover:bg-primary-foreground/10"
+                  className="rounded-[12px] border-[#fcf7f4] bg-[#27215f] text-primary-foreground "
                 >
                   <Link href="/contact">استشارة مجانية</Link>
                 </Button>
