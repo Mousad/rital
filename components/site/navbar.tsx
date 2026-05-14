@@ -1,10 +1,11 @@
 "use client"
 
-import Image from "next/image"
 import Link from "next/link"
+import Image from "next/image"
 import { usePathname } from "next/navigation"
-import { useEffect, useState } from "react"
-import { Menu, X } from "lucide-react"
+import { useEffect, useState, useMemo } from "react"
+import { Menu } from "lucide-react"
+
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import {
@@ -13,7 +14,6 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-  SheetClose,
 } from "@/components/ui/sheet"
 
 const NAV_LINKS = [
@@ -24,7 +24,6 @@ const NAV_LINKS = [
   { href: "/certificates", label: "استخراج الشهادات" },
   { href: "/study-china", label: "الدراسة في الصين" },
   { href: "/study-egypt", label: "الدراسة في مصر" },
-  
   { href: "/contact", label: "تواصل معنا" },
 ]
 
@@ -33,19 +32,44 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
 
+  // تحسين scroll listener
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 10)
+    let ticking = false
+
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setScrolled(window.scrollY > 10)
+          ticking = false
+        })
+        ticking = true
+      }
+    }
+
     onScroll()
     window.addEventListener("scroll", onScroll, { passive: true })
+
     return () => window.removeEventListener("scroll", onScroll)
   }, [])
+
+  // تحسين حساب active link
+  const links = useMemo(() => {
+    return NAV_LINKS.map((link) => {
+      const active =
+        link.href === "/"
+          ? pathname === "/"
+          : pathname.startsWith(link.href)
+
+      return { ...link, active }
+    })
+  }, [pathname])
 
   return (
     <header
       className={cn(
         "sticky top-0 z-50 w-full transition-all duration-300",
         scrolled
-          ? "bg-[#fbfaf6] backdrop-blur-md border-b border-border shadow-sm"
+          ? "bg-[#fbfaf6]/95 backdrop-blur-md border-b shadow-sm"
           : "bg-[#fbfaf6]"
       )}
     >
@@ -54,34 +78,31 @@ export function Navbar() {
 
           {/* LOGO */}
           <Link href="/" className="flex items-center shrink-0">
-            <img
+            <Image
               src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcT1V1FRYeC3HdqcX0e-2R9GiJLwcbl_ClOtFMv4kc7L8t9nIAhq"
-              alt="logo"
-              className="w-[60px] h-auto object-contain"
+              alt="Rital logo"
+              width={60}
+              height={60}
+              priority
             />
           </Link>
 
           {/* DESKTOP NAV */}
           <nav className="hidden lg:flex items-center gap-1">
-            {NAV_LINKS.map((link) => {
-              const active =
-                link.href === "/"
-                  ? pathname === "/"
-                  : pathname.startsWith(link.href)
-
-              return (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={cn(
-                    "relative px-3 py-2 text-sm font-medium transition",
-                    active ? "text-primary" : "text-foreground/70 hover:text-[#27215f]"
-                  )}
-                >
-                  {link.label}
-                </Link>
-              )
-            })}
+            {links.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={cn(
+                  "px-3 py-2 text-sm font-medium transition",
+                  link.active
+                    ? "text-[#27215f]"
+                    : "text-foreground/70 hover:text-[#27215f]"
+                )}
+              >
+                {link.label}
+              </Link>
+            ))}
           </nav>
 
           {/* CTA + MENU */}
@@ -90,14 +111,13 @@ export function Navbar() {
             <Button
               asChild
               size="sm"
-              className="hidden md:inline-flex rounded-[12px] bg-[#27215f] text-white"
+              className="hidden md:inline-flex rounded-xl bg-[#27215f] text-white"
             >
               <Link href="/contact">احجز استشارة</Link>
             </Button>
 
             {/* MOBILE MENU */}
             <Sheet open={open} onOpenChange={setOpen}>
-
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" className="lg:hidden">
                   <Menu className="h-5 w-5" />
@@ -106,30 +126,25 @@ export function Navbar() {
 
               <SheetContent side="right" className="w-[85%] max-w-sm p-0 flex flex-col">
 
-                {/* IMPORTANT FIX FOR ERROR */}
-                <SheetHeader className="p-5 border-b border-border">
-
-                  {/* REQUIRED TITLE (hidden) */}
+                <SheetHeader className="p-5 border-b">
                   <SheetTitle className="sr-only">
                     القائمة الجانبية
                   </SheetTitle>
-
-                  <div className="flex items-center justify-between">
-
-                   
-
-                   
-                  </div>
                 </SheetHeader>
 
                 {/* LINKS */}
                 <nav className="flex-1 overflow-y-auto px-4 py-4">
-                  {NAV_LINKS.map((link) => (
+                  {links.map((link) => (
                     <Link
                       key={link.href}
                       href={link.href}
                       onClick={() => setOpen(false)}
-                      className="block px-4 py-3 rounded-xl hover:bg-[#27215f]"
+                      className={cn(
+                        "block px-4 py-3 rounded-xl transition",
+                        link.active
+                          ? "bg-[#27215f] text-white"
+                          : "hover:bg-muted"
+                      )}
                     >
                       {link.label}
                     </Link>
@@ -138,7 +153,7 @@ export function Navbar() {
 
                 {/* CTA */}
                 <div className="p-4 border-t">
-                  <Button asChild className="w- rounded-[12px] bg-[#27215f] text-white">
+                  <Button asChild className="w-full rounded-xl bg-[#27215f] text-white">
                     <Link href="/contact" onClick={() => setOpen(false)}>
                       احجز استشارة مجانية
                     </Link>
@@ -146,7 +161,6 @@ export function Navbar() {
                 </div>
 
               </SheetContent>
-
             </Sheet>
 
           </div>

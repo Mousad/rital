@@ -12,7 +12,7 @@ const SERVICES = [
   },
   {
     title: "الاستشارات",
-    description: "نساعدك في اختيار التخصص والمسارات  .",
+    description: "نساعدك في اختيار التخصص والمسارات.",
     href: "/services",
     icon: Users,
   },
@@ -32,7 +32,7 @@ const SERVICES = [
 
 export function Services() {
   return (
-    <section className="py-6 md:py-24 bg-[#f4f7f2]">
+    <section className="py-10 md:py-24 bg-[#f4f7f2]">
       <div className="mx-auto max-w-6xl px-4 md:px-6">
 
         {/* Heading */}
@@ -45,7 +45,7 @@ export function Services() {
         </div>
 
         {/* Grid */}
-        <div className="mt-10 grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
+        <div className="mt-10 grid grid-cols-2 lg:grid-cols-4 gap-4">
 
           {SERVICES.map((service) => {
             const Icon = service.icon
@@ -57,35 +57,36 @@ export function Services() {
                 className="
                   group relative flex flex-col items-center text-center
                   rounded-xl border border-border bg-card
-                  p-5 sm:p-6
-                  min-h-[170px]
-                  transition-all duration-300
-                  hover:shadow-xl hover:-translate-y-1
+                  p-5
+                  min-h-[160px]
+                  transition-transform duration-200
+                  hover:translate-y-[-4px]
+                  hover:shadow-md
                 "
               >
-                {/* Icon */}
-                <div className="mb-3 flex items-center justify-center w-12 h-12 rounded-full bg-[#27215f]/10 group-hover:bg-primary/10 transition">
-                  <Icon className="h-6 w-6 text-[#27215f] group-hover:text-primary transition" />
+                {/* Icon (خفيف بدون animation) */}
+                <div className="mb-3 flex items-center justify-center w-12 h-12 rounded-full bg-[#27215f]/10">
+                  <Icon className="h-6 w-6 text-[#27215f]" />
                 </div>
 
                 {/* Title */}
-                <h3 className="text-sm sm:text-base font-bold text-[#27215f] leading-snug group-hover:text-primary transition">
+                <h3 className="text-sm font-bold text-[#27215f]">
                   {service.title}
                 </h3>
 
                 {/* Description */}
-                <p className="mt-2 text-xs sm:text-sm text-[#27215f]/80 leading-7 text-center">
+                <p className="mt-2 text-xs text-[#27215f]/80 leading-6">
                   {service.description}
                 </p>
 
                 {/* Footer */}
-                <div className="mt-4 flex items-center gap-1 text-xs sm:text-sm font-semibold text-[#27215f]">
+                <div className="mt-4 flex items-center gap-1 text-xs font-semibold text-[#27215f]">
                   <span>المزيد</span>
                   <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1" />
                 </div>
 
-                {/* hover glow */}
-                <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition bg-primary/5 pointer-events-none" />
+                {/* subtle hover */}
+                <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition bg-black/5 pointer-events-none" />
               </Link>
             )
           })}
