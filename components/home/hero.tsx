@@ -106,14 +106,15 @@ export function Hero() {
           <div className="order-1 lg:order-2 relative animate-fade-up [animation-delay:150ms]">
             <div className="relative h-[300px] sm:h-[350px] lg:h-[400px] max-w-md mx-auto lg:max-w-none">
               <div className="absolute inset-0 rounded-[12px] overflow-hidden shadow-2xl ring-1 ring-primary/10">
-                <Image
-                  src="/images/bamk.jpeg"
-                  alt="طلاب سعداء يحتفلون بتخرجهم"
-                  fill
-                  priority
-                  sizes="(min-width: 1024px) 460px, 100vw"
-                  className="object-cover"
-                />
+               <Image
+  src="/images/bamk.webp"
+  alt="طلاب سعداء يحتفلون بتخرجهم"
+  fill
+  priority
+  quality={80}
+  sizes="(min-width: 1024px) 460px, 100vw"
+  className="object-cover"
+/>
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/40 via-transparent to-transparent" />
               </div>
 
