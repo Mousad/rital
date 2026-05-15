@@ -78,13 +78,11 @@ export function Navbar() {
 
           {/* LOGO */}
           <Link href="/" className="flex items-center shrink-0">
-            <Image
-              src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcT1V1FRYeC3HdqcX0e-2R9GiJLwcbl_ClOtFMv4kc7L8t9nIAhq"
-              alt="Rital logo"
-              width={60}
-              height={60}
-              priority
-            />
+           <img
+  src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcT1V1FRYeC3HdqcX0e-2R9GiJLwcbl_ClOtFMv4kc7L8t9nIAhq"
+  alt="logo"
+  className="w-[60px] h-auto object-contain"
+/>
           </Link>
 
           {/* DESKTOP NAV */}

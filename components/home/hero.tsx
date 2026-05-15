@@ -60,35 +60,35 @@ export function Hero() {
           </div>
 
           {/* IMAGE */}
-          <div className="order-1 lg:order-2">
-            <div className="relative h-[300px] sm:h-[350px] lg:h-[420px] max-w-md mx-auto lg:max-w-none">
+         <div className="order-1 lg:order-2">
+  <div className="relative h-[300px] sm:h-[350px] lg:h-[420px] max-w-md mx-auto lg:max-w-none">
 
-              <div className="absolute inset-0 rounded-xl overflow-hidden shadow-xl">
-                <Image
-                  src="/images/bamk.webp"
-                  alt="طلاب سعداء"
-                  fill
-                  priority
-                  quality={70}
-                  sizes="(min-width: 1024px) 460px, 100vw"
-                  className="object-cover"
-                />
+    <div className="absolute inset-0 rounded-xl overflow-hidden shadow-xl">
 
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-              </div>
+      <Image
+        src="/images/bamk.webp"
+        alt="طلاب"
+        fill
+        priority
+        sizes="(min-width: 1024px) 50vw, 100vw"
+        style={{ objectFit: "cover" }}
+      />
 
-              {/* badge */}
-              <div className="absolute -top-2 -right-2 bg-white border shadow-md p-2 rounded-lg">
-                <div className="flex items-center gap-2">
-                  <span className="h-2 w-2 rounded-full bg-green-500 animate-pulse" />
-                  <span className="text-xs font-semibold">
-                    استشارة مجانية
-                  </span>
-                </div>
-              </div>
+      <div className="absolute inset-0 bg-black/20" />
+    </div>
 
-            </div>
-          </div>
+    {/* badge */}
+    <div className="absolute -top-2 -right-2 bg-white border shadow-md p-2 rounded-lg">
+      <div className="flex items-center gap-2">
+        <span className="h-2 w-2 rounded-full bg-green-500 animate-pulse" />
+        <span className="text-xs font-semibold">
+          استشارة مجانية
+        </span>
+      </div>
+    </div>
+
+  </div>
+</div>
 
         </div>
       </div>
