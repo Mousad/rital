@@ -65,14 +65,15 @@ export function Hero() {
 
     <div className="absolute inset-0 rounded-xl overflow-hidden shadow-xl">
 
-      <Image
-        src="/images/bamk.webp"
-        alt="طلاب"
-        fill
-        priority
-        sizes="(min-width: 1024px) 50vw, 100vw"
-        style={{ objectFit: "cover" }}
-      />
+     <Image
+  src="/images/bamk.webp"
+  alt="طلاب سعداء"
+  fill
+  priority
+  sizes="(max-width: 768px) 100vw, 50vw"
+  quality={70}
+  className="object-cover"
+/>
 
       <div className="absolute inset-0 bg-black/20" />
     </div>
