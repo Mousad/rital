@@ -39,10 +39,10 @@ export function Footer() {
             </p>
 
             <div className="mt-5 flex items-center gap-2">
-              <SocialIcon href="#" label="فيسبوك">
+              <SocialIcon href="https://www.facebook.com/Rital.office/?locale=ar_AR" label="فيسبوك">
                 <Facebook className="h-4 w-4" />
               </SocialIcon>
-              <SocialIcon href="#" label="إنستغرام">
+              <SocialIcon href="https://www.instagram.com/rital_office/" label="إنستغرام">
                 <Instagram className="h-4 w-4" />
               </SocialIcon>
               <SocialIcon href="#" label="يوتيوب">
@@ -82,7 +82,7 @@ export function Footer() {
 
         <div className="mt-12 pt-6 border-t border-primary-foreground/15 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-primary-foreground/60">
           <p>© {new Date().getFullYear()} ريتال للخدمات التعليمية. جميع الحقوق محفوظة.</p>
-          <a href="https://soob-portfolio.vercel.app/">تصميم soube</a>
+          <a href="https://soob-portfolio.vercel.app/">soube</a>
         </div>
       </div>
     </footer>
